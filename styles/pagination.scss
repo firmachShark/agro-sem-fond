@@ -1,0 +1,36 @@
+.page-item.active {
+    span {
+        border-color: lighten($color-primary, 10%);
+        background-color: $color-primary;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.page-link {
+    color: #000;
+    font-weight: 700;
+    height: 100%;
+
+    span {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &:hover {
+        color: $color-primary;
+    }
+
+    i {
+        font-size: .7em;
+    }
+
+    &:focus {
+        color: $color-primary;
+        background-color: var(--bs-pagination-focus-bg);
+        box-shadow: none;
+    }
+}

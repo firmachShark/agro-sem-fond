@@ -1,0 +1,82 @@
+.btn {
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.primary {
+    background: $color-primary;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7em 1.5em;
+    border-radius: 1.5em;
+    transition: background 0.3s ease;
+    border-color: $color-primary;
+
+    &:hover {
+        color: #fff;
+        background-color: darken($color-primary, 5%);
+    }
+}
+
+.red {
+    background: red;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7em 1.5em;
+    border-radius: 1.5em;
+    transition: background 0.3s ease;
+    border-color: red;
+
+    &:hover {
+        color: #fff;
+        background-color: darken(red, 5%);
+    }
+}
+
+.orange {
+    background: $color-orange;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7em 1.5em;
+    border-radius: 1.6em;
+    transition: background 0.3s ease;
+    border-color: $color-orange;
+
+    &:hover {
+        color: #fff;
+        background-color: darken($color-orange, 5%);
+    }
+}
+
+.outline {
+    background: transparent;
+    border: 0.142em solid #000;
+}
+
+.outline_primary {
+    background: transparent;
+    color: $color-primary;
+    border: .18em solid $color-primary;
+    padding: 0.52em 1.32em;
+
+    &:hover {
+        border-color: darken($color-primary, 5%);
+    }
+}
+
+.sm {
+    font-size: .85em;
+}
+
+.xs {
+    font-size: .75em;
+}
+
+.lg {
+    font-size: 1.1em;
+}

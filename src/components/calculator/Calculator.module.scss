@@ -1,0 +1,49 @@
+.calculator {
+    padding-bottom: 1em;
+    width: 100%;
+}
+
+.section {
+    &:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        margin-bottom: .5em;
+    }
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 23%;
+
+    input {
+        display: none;
+
+        &:checked+label {
+            background-color: $color-primary;
+            color: #fff;
+        }
+    }
+
+    label {
+        width: 100%;
+        cursor: pointer;
+        color: #000;
+        font-weight: 700;
+        padding: .5em 1em;
+        text-align: center;
+        border: .2em solid $color-primary;
+        border-radius: 1em;
+        transition: background .2s ease, color .2s ease;
+    }
+
+    &:not(:last-child) {
+        margin-right: 3%;
+    }
+}

@@ -1,0 +1,31 @@
+.wrapper {
+    position: relative;
+    font-size: .8em;
+
+    input {
+        text-align: center;
+        max-width: 8em;
+        border: none;
+        background-color: #F9F5EC
+    }
+
+    button {
+        position: absolute;
+        width: 3em;
+        height: 3em;
+        line-height: 2em;
+        text-align: center;
+        top: 50%;
+        padding: 0;
+        transform: translateY(-50%);
+        border-radius: 50%;
+
+        &:first-child {
+            left: 0;
+        }
+
+        &:last-child {
+            right: 0;
+        }
+    }
+}

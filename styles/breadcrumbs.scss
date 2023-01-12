@@ -1,0 +1,10 @@
+.breadcrumb {
+    padding: 1em 0;
+    text-transform: capitalize;
+
+    a {
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

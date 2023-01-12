@@ -1,0 +1,104 @@
+.cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    label {
+        font-size: 1em;
+        position: absolute;
+        top: 0;
+        left: 1.5em;
+        color: #fff;
+        font-weight: 700;
+        height: 1.8em;
+        width: 1.8em;
+        text-align: center;
+        line-height: calc(1.8em - 3px);
+        background-color: $color-primary;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+
+    span {
+        color: #333;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    b {
+        display: inline-block;
+        color: #e63950;
+        font-weight: 900;
+    }
+
+    img {
+        width: 2.7em;
+        margin-right: 1em;
+    }
+
+    &:hover {
+        opacity: 1;
+        text-decoration: underline;
+        color: #333;
+    }
+}
+
+.phone {
+    color: #9c9c9c;
+    display: flex !important;
+    align-items: flex-start;
+
+    @include breakpoint($bp-md) {
+        font-size: 0.95em;
+    }
+
+    img {
+        margin-top: 0.5em;
+        margin-right: 0.5em;
+        width: 1.8em;
+    }
+
+    b {
+        display: block;
+        color: #272727;
+        font-weight: 700;
+        font-size: 1.66em;
+
+        transition: color 0.3s ease;
+    }
+
+    &:hover {
+        color: #9c9c9c;
+        opacity: 1;
+
+        b {
+            color: $color-primary;
+        }
+    }
+}
+
+.iconLink {
+    display: flex;
+    align-items: center;
+
+    transition: opacity 0.3s ease;
+
+    line-height: 1.2;
+
+    img {
+        width: 1.7em;
+        height: auto;
+        margin-right: 0.5em;
+    }
+
+    strong {
+        font-size: 1.08em;
+        font-weight: 400;
+        color: #272727;
+    }
+
+    &:hover {
+        color: #272727;
+        opacity: 0.6;
+    }
+}

@@ -1,0 +1,95 @@
+.section {
+    background: url('../../../public/images/subscription/bg.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 7em 0;
+
+    @include breakpoint($bp-sm) {
+        padding: 3em 0;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -10%;
+        width: 60%;
+        height: 100%;
+        background: rgba(26, 108, 44, 0.63);
+        backdrop-filter: blur(10px);
+        z-index: 0;
+        transform: skew(-10deg, 0deg);
+
+        @include breakpoint($bp-lg) {
+            transform: skew(0deg, 0deg);
+            width: 50%;
+            right: 0;
+        }
+
+        @include breakpoint($bp-md) {
+            width: 100%;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint($bp-sm) {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        input {
+            background-color: #fff;
+            margin-top: .5em;
+            margin-bottom: 1em;
+        }
+
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.inner {
+    @include breakpoint($bp-sm) {
+        font-size: 3.5vw;
+    }
+
+    text-align: center;
+
+    & * {
+        text-shadow: 0 0 5px rgba(#000, .7);
+        line-height: 1.2;
+        color: #fff;
+    }
+
+    h2,
+    h3 {
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 1.7em;
+        margin: 1em 0;
+    }
+
+    p {
+        font-size: 1.3em;
+        font-weight: 500;
+    }
+}

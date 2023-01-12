@@ -1,0 +1,90 @@
+.wrapper {
+    background-color: #F9F5EC;
+
+    @include breakpoint($bp-md) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+    }
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint($bp-lg) {
+        justify-content: center;
+    }
+
+    @include breakpoint($bp-md) {
+        justify-content: space-between;
+    }
+}
+
+.catalogLink {
+    display: none;
+    background: $color-primary;
+    color: #fff;
+    font-weight: 600;
+    padding: .7em 1.5em;
+    border-radius: 1.5em;
+
+    @include breakpoint($bp-md) {
+        display: block;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.cart {
+    display: none;
+
+    span {
+        display: none;
+    }
+
+    @include breakpoint($bp-md) {
+        display: block;
+    }
+}
+
+.logo {
+    display: none;
+
+    img {
+        width: 4em;
+        height: 4em;
+    }
+
+    @include breakpoint($bp-md) {
+        display: block;
+    }
+}
+
+.search {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 3.9em;
+    background-color: #fff;
+    padding: 1em;
+    animation: show .3s ease;
+    box-shadow: 0 1px 3px 0 rgba(#333, .2);
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-3%)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}

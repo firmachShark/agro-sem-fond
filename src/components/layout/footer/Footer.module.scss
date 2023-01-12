@@ -1,0 +1,143 @@
+.footer {
+    background: url('../../../../public/images/footer/bg.jpg');
+    font-size: 0.875em;
+    padding: 2.85em 0 3.5em 0;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        background: rgba(#000, 0.5);
+        height: 2.85em;
+    }
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h5,
+    a,
+    span {
+        font-size: 1em;
+        color: #fff;
+    }
+
+    h5 {
+        font-weight: 600;
+    }
+
+    & > div {
+        width: 23%;
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(:first-child) {
+            margin-top: 0.5em;
+        }
+
+        a {
+            i {
+                margin-right: 0.5em;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        & > button {
+            color: #fff;
+            border-color: #fff;
+            padding: 0;
+            font-weight: 600;
+            text-align: left;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 1em;
+                height: auto;
+                margin-right: 0.5em;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include breakpoint($bp-lg) {
+            &:last-child {
+                display: none;
+            }
+
+            width: 31%;
+        }
+
+        @include breakpoint($bp-md) {
+            &:last-child {
+                display: block;
+            }
+
+            width: 48%;
+
+            &:nth-child(n + 3) {
+                margin-top: 2em;
+            }
+        }
+
+        @include breakpoint($bp-sm) {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 300px;
+
+            &:not(:first-child) {
+                margin-top: 2em;
+            }
+        }
+    }
+
+    form {
+        input,
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.5em;
+            border-radius: 0.285em;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input {
+            background: #fff;
+            border: none;
+            color: #000;
+        }
+
+        button {
+            text-align: center;
+            margin-top: 0.7em;
+            color: #fff;
+            background-color: #4b733e;
+
+            transition: background 0.3s ease;
+
+            &:hover {
+                background-color: darken(#4b733e, 5%);
+            }
+        }
+    }
+}

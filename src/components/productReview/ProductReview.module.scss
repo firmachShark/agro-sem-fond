@@ -1,0 +1,76 @@
+.wrapper {
+    &>*:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.not_yet {
+    font-size: 1.5em;
+}
+
+.review {
+    border: 1px solid #ebebeb;
+    padding: 1em;
+
+    h6 {
+        font-weight: 700;
+        font-size: 1.3em;
+        margin-bottom: 0.5em;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-weight: 500;
+            font-size: 0.7em;
+        }
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+.loader {
+    padding: 7em 0;
+    position: relative;
+}
+
+.error {
+    color: red;
+    font-size: .8em;
+}
+
+.review_form {
+    position: relative;
+
+    &>* {
+        &:not(:first-child) {
+            margin-top: .8em;
+        }
+    }
+
+    label {
+        font-size: .9em;
+    }
+
+    input,
+    textarea {
+        margin-top: .2em !important;
+        border: 1px solid #ebebeb;
+        border-radius: .5em;
+        padding: .5em 1em;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    textarea {
+        min-height: 5em;
+        max-height: 15em;
+    }
+}

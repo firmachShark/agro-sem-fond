@@ -1,0 +1,33 @@
+.checkbox {
+    input {
+        display: none;
+
+        &:checked+label::after {
+            background: $color-primary url('../../../public/images/checkbox.svg') center no-repeat;
+        }
+    }
+
+    label {
+        cursor: pointer;
+        padding-left: 1.8em;
+        position: relative;
+        line-height: 1.2;
+        user-select: none;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1.2em;
+            height: 1.2em;
+            border-radius: .2em;
+            border: 1px solid darken(#ebebeb, 5%);
+
+            transition: background .1s ease;
+            background-size: cover;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}

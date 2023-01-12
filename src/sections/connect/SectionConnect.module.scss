@@ -1,0 +1,108 @@
+.section {
+    background: url('../../../public/images/connect/bg.jpg') no-repeat;
+    background-position: -5em 6%;
+    background-size: auto 92%;
+    padding: 4em 0;
+
+    @include breakpoint($bp-xxl) {
+        background-position: -2em 10%;
+        background-size: auto 79%;
+    }
+
+    @include breakpoint($bp-xl) {
+        background-position: -17em 10%;
+        background-size: auto 83%;
+    }
+
+    @include breakpoint($bp-lg) {
+        background-position: -4em 10%;
+    }
+
+    @include breakpoint($bp-md) {
+        background-position: -13em 10%;
+    }
+
+    @include breakpoint($bp-sm) {
+        background: none;
+        font-size: 3.8vw;
+    }
+}
+
+.inner {
+    padding: 5em 0;
+    text-align: left;
+
+    h2 {
+        text-align: inherit !important;
+        margin-bottom: 1em;
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    @include breakpoint($bp-lg) {
+        text-align: right;
+    }
+
+    @include breakpoint($bp-sm) {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 1.875em;
+    border-bottom-right-radius: 1.875em;
+}
+
+
+.socials {
+    margin-top: 2em;
+    display: flex;
+
+    @include breakpoint($bp-lg) {
+        justify-content: flex-end;
+    }
+
+    @include breakpoint($bp-sm) {
+        justify-content: center;
+    }
+
+    a {
+
+        font-weight: 500;
+
+        div {
+            width: 5em;
+            height: 5em;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../../../public/images/connect/vk.png');
+            transition: filter .2s ease;
+        }
+
+        &:last-child {
+            div {
+                background-image: url('../../../public/images/connect/telegram.png');
+            }
+        }
+
+        &:not(:first-child) {
+            margin-left: 1em;
+        }
+
+        &:hover {
+            color: #000;
+
+            div {
+                filter: drop-shadow(0px 0px 9px #699c3b);
+            }
+        }
+    }
+}

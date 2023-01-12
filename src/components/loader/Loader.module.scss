@@ -1,0 +1,44 @@
+.loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: show 0.3s ease;
+
+    i {
+        color: $color-primary;
+        font-size: 3em;
+        animation: rotate 0.5s linear infinite;
+    }
+}
+
+.overlay {
+    background: rgba(#000, 0.2);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

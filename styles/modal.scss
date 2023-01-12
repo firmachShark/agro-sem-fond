@@ -1,0 +1,84 @@
+.modal {
+    &-content {
+        border-radius: .5em;
+        border: none;
+    }
+
+    &-header {
+        text-align: center;
+        display: block;
+        border: none;
+
+        h5 {
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+    }
+
+    &-body {
+        text-align: center;
+
+        &>*:not(form) {
+            font-size: .9em;
+        }
+    }
+
+    & .btn-close {
+        position: absolute;
+        right: .6em;
+        top: .6em;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    form {
+        margin-top: 1em;
+
+        &>*:not(:first-child) {
+            margin-top: .75em;
+        }
+
+        input,
+        button {
+            display: block;
+            width: 100%;
+
+            border-radius: .5em;
+        }
+
+        &>div {
+            position: relative;
+
+            input {
+                padding-left: 3em;
+
+                &[name=phone]+div {
+                    background-image: url('../public/images/modal/input_phone.svg');
+                }
+
+                &[name=name]+div {
+                    background-image: url('../public/images/modal/input_name.svg');
+                }
+            }
+
+            div {
+                background-size: 1.5em;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 1.5em;
+                height: 1.5em;
+                position: absolute;
+                top: 50%;
+                left: .75em;
+                transform: translateY(-50%);
+                z-index: 1;
+            }
+        }
+    }
+}

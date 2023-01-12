@@ -1,0 +1,14 @@
+.input {
+    border: 1px solid #E2DFD7;
+    padding: .608em 1em;
+    border-radius: 1.42em;
+    background: none;
+
+    transition: box-shadow .3s ease, border .3s ease;
+
+    &:focus {
+        outline: none;
+        border-color: darken(#E2DFD7, 10%);
+        box-shadow: 0 0 3px 0 #E2DFD7;
+    }
+}

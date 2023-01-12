@@ -1,0 +1,141 @@
+$aside-width: 300px;
+
+.section {
+    padding-top: 0;
+    position: relative;
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+
+    @include breakpoint($bp-lg) {
+        flex-direction: column;
+    }
+}
+
+.aside {
+    position: sticky;
+    top: 4.5em;
+    width: $aside-width;
+    border: 1px solid #ebebeb;
+    border-radius: 1.25em;
+    padding: 1em;
+    min-height: 4em;
+
+    &>*:not(:first-child) {
+        margin-top: 0.5em;
+    }
+
+    @include breakpoint($bp-lg) {
+        width: 100%;
+        position: static;
+        overflow: hidden;
+        height: 0;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 4vw;
+        font-size: min(1rem, 4vw);
+    }
+
+    hr {
+        display: block;
+        height: 1px;
+        border: none;
+        background-color: #ebebeb;
+        opacity: 1;
+        margin-bottom: 0;
+    }
+
+    h5 {
+        font-size: 1.4em;
+    }
+
+    &>*:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 0.5em;
+
+        button {
+            display: none;
+            color: $color-primary;
+
+            @include breakpoint($bp-lg) {
+                display: block;
+            }
+        }
+    }
+}
+
+.aside_open {
+    height: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - $aside-width);
+    padding-left: 0.75em;
+
+    @include breakpoint($bp-lg) {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    @include breakpoint($bp-md) {
+        font-size: 0.9em;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-weight: 700;
+        margin-bottom: 1em;
+        font-size: 1.4375em;
+
+        &:not(:first-child) {
+            margin-top: 0.7em;
+        }
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+
+    &>* {
+        width: calc(33.33333% - 2em / 3);
+        margin-top: 1em;
+        margin-left: 0;
+
+        &:not(:nth-child(3n + 3)) {
+            margin-right: 1em;
+        }
+
+        @include breakpoint($bp-xl) {
+            width: calc(50% - 1em / 2);
+
+            &:not(:nth-child(3n + 3)) {
+                margin-right: 0;
+            }
+
+            &:not(:nth-child(2n + 2)) {
+                margin-right: 1em;
+            }
+        }
+
+        @include breakpoint($bp-sm) {
+            width: 100%;
+            margin-right: auto !important;
+            margin-left: auto;
+        }
+    }
+}

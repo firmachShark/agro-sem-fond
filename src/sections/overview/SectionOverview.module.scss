@@ -1,0 +1,123 @@
+.section {
+    @include breakpoint($bp-xxl) {
+        font-size: .9em;
+    }
+
+    @include breakpoint($bp-xl) {
+        font-size: .8em;
+    }
+
+    @include breakpoint($bp-lg) {
+        font-size: 1em;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 2.5vw;
+    }
+}
+
+.item {
+    display: block;
+    background-color: $color-primary;
+    border-radius: 1.25em;
+    padding: 2.5em 1.5em;
+    padding-top: 4em;
+    position: relative;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+
+        background: rgba(#000, .4);
+
+        transition: background .3s ease;
+    }
+
+    &:hover {
+        &::after {
+            background: rgba(#000, .2);
+        }
+    }
+
+    &>img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+
+    h3 {
+        font-size: 1.9em;
+    }
+
+    h4 {
+        font-size: 1.7em;
+    }
+
+    h5 {
+        font-size: 1.45em;
+    }
+
+    h6 {
+        font-size: 1.25em;
+    }
+
+    em {
+        display: block;
+        font-style: normal;
+        color: #fbd301;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    strong {
+        font-weight: 900;
+
+        & * {
+            font-weight: 900;
+        }
+    }
+
+    p {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    &>div>*:not(:first-child),
+    button {
+        display: block;
+        margin-top: 14px;
+        line-height: 1.2;
+    }
+}

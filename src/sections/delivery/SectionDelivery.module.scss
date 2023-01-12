@@ -1,0 +1,68 @@
+.delivery {
+    background: url('../../../public/images/delivery/bg.png') center no-repeat;
+    background-size: cover;
+    padding: 5em 0;
+
+    @include breakpoint($bp-xl) {
+        font-size: .75em;
+    }
+
+    @include breakpoint($bp-lg) {
+        font-size: 1em;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 2.8vw;
+    }
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint($bp-lg) {
+        flex-direction: column;
+    }
+
+    &>* {
+        width: 47%;
+        background-color: #F9F5EC;
+        background-image: url('../../../public/images/delivery/delivery.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 40%;
+
+        padding: 2.1875em;
+        padding-right: 18%;
+        border-radius: 1.875em;
+
+        h3 {
+            font-size: 1.5625em;
+            font-weight: 900;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1.1em;
+            line-height: 1.2;
+            margin-bottom: 1em;
+        }
+
+        &:last-child {
+            background-color: #E3EFE8;
+            background-image: url('../../../public/images/delivery/payment.png');
+
+        }
+
+        @include breakpoint($bp-lg) {
+            width: 100%;
+            padding-right: 40%;
+
+            &:last-child {
+                margin-top: 4%;
+            }
+        }
+    }
+}

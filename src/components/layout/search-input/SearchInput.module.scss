@@ -1,0 +1,42 @@
+.search {
+    position: relative;
+
+    input {
+        width: 100%;
+        color: #555;
+        font-weight: 500;
+
+        &::placeholder {
+            font-weight: 300;
+        }
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.button {
+    color: #fff;
+    width: 2.85em;
+    height: 2.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $color-primary;
+    transition: background .3s ease;
+
+    i {
+        width: 1em;
+        height: 1em;
+        margin-bottom: .1em;
+    }
+
+    &:hover {
+        background-color: darken($color-primary, 7%);
+    }
+}
