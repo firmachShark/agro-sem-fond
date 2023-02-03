@@ -1,0 +1,129 @@
+.preview {
+    background: url('../../public/images/about/page/bg.png') center no-repeat;
+    background-size: cover;
+
+    position: relative;
+    overflow: hidden;
+    padding: 4em;
+
+    @include breakpoint($bp-md) {
+        font-size: 12px;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 2.5vw;
+    }
+}
+
+.preview__img {
+    position: absolute;
+    right: 4em;
+    width: 30%;
+    z-index: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include breakpoint($bp-lg) {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.preview__inner {
+    position: relative;
+    z-index: 1;
+
+    max-width: 70%;
+
+    @include breakpoint($bp-lg) {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 3.4375em;
+        color: #fff;
+        font-weight: 900;
+        text-shadow: 0px 4px 15px $color-primary;
+    }
+
+    h5 {
+        margin-top: 2em;
+        color: $color-orange;
+        text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+        font-size: 1.4em;
+        font-weight: 700;
+    }
+}
+
+.description__inner {
+    @include breakpoint($bp-md) {
+        font-size: 12px;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 3vw;
+    }
+
+    &> {
+        p {
+            font-size: 1.3em;
+            line-height: 1.4em;
+
+            &:not(:last-child) {
+                margin-bottom: 1em;
+            }
+
+            span {
+                color: $color-primary;
+                display: block;
+                font-weight: 500;
+            }
+        }
+
+        strong {
+            color: $color-primary;
+            display: block;
+            font-size: 1.5em;
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.4;
+        }
+    }
+}
+
+.description__items {
+    margin: 2em 0;
+}
+
+.description__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 1.8em 1.125em;
+    box-shadow: 0px 4px 30px rgba($color-primary, .2);
+
+    div {
+        height: 6.4375em;
+        width: 6.4375em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1em;
+
+        img {
+            max-width: 100%;
+            height: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    p {
+        width: calc(100% - 7.4375em);
+        line-height: 1.2;
+    }
+}

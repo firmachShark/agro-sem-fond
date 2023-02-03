@@ -164,6 +164,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ parentRef }) => {
                             styles.status,
                             'd-lg-block d-md-none',
                         ])}
+                        isLink={{ href: '/faq' }}
                     >
                         <Image src={StatusIcon} alt="status" />
                         Что с моим заказом

@@ -21,13 +21,21 @@ export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter()
 
     useEffect(() => {
-        router.events.on('routeChangeStart', () => {
-            start()
-        })
+        const handleStart = (path: string) => {
+            if (path !== router.asPath) {
+                start()
+            }
+        }
 
-        router.events.on('routeChangeComplete', () => {
-            done(false)
-        })
+        const handleComplete = () => done(false)
+
+        router.events.on('routeChangeStart', handleStart)
+        router.events.on('routeChangeComplete', handleComplete)
+
+        return () => {
+            router.events.off('routeChangeStart', handleStart)
+            router.events.off('routeChangeComplete', handleComplete)
+        }
     }, [router])
 
     useEffect(() => {

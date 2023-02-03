@@ -63,14 +63,15 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                         ))}
                     </ul>
                     {imageUrl && (
-                        <Image
-                            placeholder="empty"
-                            width={500}
-                            height={500}
-                            className={styles.previewImage}
-                            src={imageUrl}
-                            alt={title}
-                        />
+                        <div className={styles.previewImage}>
+                            <Image
+                                placeholder="empty"
+                                width={500}
+                                height={500}
+                                src={imageUrl}
+                                alt={title}
+                            />
+                        </div>
                     )}
                 </div>
             </Container>

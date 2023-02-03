@@ -30,22 +30,17 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
             <nav ref={navRef} className={styles.nav}>
                 <Container>
                     <ul className={styles.navLinks}>
-                        {links ? (
-                            <>
-                                <MenuItem href={'/catalog'} title={'Каталог'} />
-                                {links.map((link, i) => (
-                                    <MenuItem
-                                        key={i}
-                                        href={link.href}
-                                        title={link.title}
-                                        submenu={link.submenu}
-                                        imageUrl={link.imageUrl}
-                                    />
-                                ))}
-                            </>
-                        ) : (
-                            <MenuItem href="/" title="Загрузка..." />
-                        )}
+                        <MenuItem href={'/catalog'} title={'Каталог'} />
+                        {links &&
+                            links.map((link, i) => (
+                                <MenuItem
+                                    key={i}
+                                    href={link.href}
+                                    title={link.title}
+                                    submenu={link.submenu}
+                                    imageUrl={link.imageUrl}
+                                />
+                            ))}
                     </ul>
                 </Container>
             </nav>
@@ -53,19 +48,19 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                 <Container className="container px-sm-2 px-0">
                     <ul className={styles.menuLinks}>
                         <li>
-                            <Link href="/delivery">
+                            <Link href="/stock?modal=delivery">
                                 <Image src={DeliveryIcon} alt="delivery" />
                                 Доставка: Бесплатно
                             </Link>
                         </li>
                         <li className="d-md-block d-none">
-                            <Link href="/">
+                            <p>
                                 <Image src={MinOrderIcon} alt="minimal order" />
                                 Мин. Заказ 150 руб.
-                            </Link>
+                            </p>
                         </li>
                         <li className="d-lg-block d-none">
-                            <Link href="/">
+                            <Link href="/faq">
                                 <Image
                                     src={HowToIcon}
                                     alt="how to make order"
@@ -80,7 +75,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                             </p>
                         </li>
                         <li>
-                            <Link href="/">
+                            <Link href="/stock">
                                 <Image src={StockIcon} alt="stock" />
                                 Акции
                             </Link>

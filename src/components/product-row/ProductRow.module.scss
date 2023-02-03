@@ -1,0 +1,38 @@
+.title {
+    display: flex;
+    align-items: center;
+
+    span {
+        font-weight: 500;
+    }
+
+    img {
+        margin-right: .5em;
+        object-fit: cover;
+        width: 5em;
+        height: 5em;
+        border-radius: 1em;
+    }
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.count {
+    &>* {
+        max-width: 8em;
+    }
+}
+
+.price {
+    font-weight: 700;
+}
+
+.delete {
+    i {
+        cursor: pointer;
+        color: red;
+        font-size: 2em;
+    }
+}

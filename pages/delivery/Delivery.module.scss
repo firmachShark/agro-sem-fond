@@ -1,0 +1,72 @@
+.delivery {
+    @include breakpoint($bp-lg) {
+        font-size: 14px;
+    }
+
+    @include breakpoint($bp-md) {
+        font-size: 12px;
+    }
+}
+
+.list {
+    font-weight: 700;
+    background-color: #eef6ef;
+    padding: 4em 2.8125em 4em 3.8em;
+    font-style: italic;
+    color: #333;
+    box-shadow: 0px 4px 30px rgb(41 141 63 / 20%);
+    list-style: disc;
+
+    @include breakpoint($bp-sm) {
+        padding: 2em 2em 2em 3em;
+    }
+
+    li {
+        font-size: 1.2em;
+        line-height: 2;
+
+        &:not(:first-child) {
+            margin-top: 1em;
+        }
+    }
+
+    a {
+        color: #337ab7;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.attention {
+    margin-top: 1.5em;
+    padding: 4em 2.8125em;
+    box-shadow: 0px 4px 30px rgb(41 141 63 / 20%);
+
+    @include breakpoint($bp-sm) {
+        padding: 2em;
+        font-size: .9em;
+    }
+
+    h3 {
+        font-size: 2em;
+        color: $color-primary;
+        font-weight: 600;
+        margin-bottom: .9em;
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 1.3em;
+        color: #f7941d;
+    }
+
+    ul {
+        margin-top: 1.25em;
+        padding-left: 1em;
+        color: $color-primary;
+        list-style: disc;
+        font-size: 1.25em;
+    }
+}

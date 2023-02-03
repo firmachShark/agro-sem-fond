@@ -1,3 +1,9 @@
 .section {
     position: relative;
 }
+
+.item_wrapper {
+    & > * {
+        height: 100%;
+    }
+}

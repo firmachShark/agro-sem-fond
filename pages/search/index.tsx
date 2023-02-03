@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Card } from 'src/components/card'
 import { Container } from 'src/components/layout/container'
 import { IProduct } from 'src/models'
@@ -12,10 +12,17 @@ import styles from './Search.module.scss'
 import searchStyles from 'src/components/layout/search-input/SearchInput.module.scss'
 import { Breadcrumbs } from 'src/components/breadcrumbs'
 import { Loader } from 'src/components/loader'
+import { usePageLoading } from 'src/hooks/usePageLoading'
+import { Pagination } from 'src/components/pagination'
+import { concatClass } from 'utils/concatClass'
 
 interface SearchPageProps {
     products: IProduct[]
     searchQuery: string
+    pagination: {
+        page: number
+        total: number
+    }
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -26,29 +33,50 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             props: {
                 products: [],
                 searchQuery: '',
+                pagination: {
+                    page: 0,
+                    total: 0,
+                },
             },
         }
 
-    const products = await productService.getAll({
-        ...baseQuery,
-        filters: {
-            name: {
-                $contains: searchQuery,
+    const page = Number(context.query.page) || 1
+
+    const { pagination, products } = await productService.getAll(
+        {
+            ...baseQuery,
+            filters: {
+                name: {
+                    $contains: searchQuery,
+                },
+            },
+            pagination: {
+                pageSize: 20,
+                page: page,
             },
         },
-    })
+        true,
+    )
 
     return {
         props: {
             products,
             searchQuery,
+            pagination: {
+                page: pagination.page,
+                total: pagination.pageCount,
+            },
         },
     }
 }
 
-const SearchPage: NextPage<SearchPageProps> = ({ products, searchQuery }) => {
+const SearchPage: NextPage<SearchPageProps> = ({
+    products,
+    searchQuery,
+    pagination,
+}) => {
     const router = useRouter()
-    const [loading, setLoading] = useState(false)
+    const loading = usePageLoading('search')
     const [search, setSearch] = useState(searchQuery)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,18 +96,6 @@ const SearchPage: NextPage<SearchPageProps> = ({ products, searchQuery }) => {
         router.push(`/search?search=${search}`)
         setSearch('')
     }
-
-    useEffect(() => {
-        const handleStart = () => setLoading(true)
-        const handleEnd = () => setLoading(false)
-        router.events.on('routeChangeStart', handleStart)
-        router.events.on('routeChangeComplete', handleEnd)
-
-        return () => {
-            router.events.off('routeChangeStart', handleStart)
-            router.events.off('routeChangeComplete', handleEnd)
-        }
-    }, [router])
 
     return (
         <>
@@ -109,9 +125,15 @@ const SearchPage: NextPage<SearchPageProps> = ({ products, searchQuery }) => {
                     </div>
                     <h4 className="my-3">Результаты поиска:</h4>
                     {products.length ? (
-                        <div className="row">
+                        <div className="row justify-content-md-start justify-content-center">
                             {products.map((product) => (
-                                <div key={product.id} className="col-3">
+                                <div
+                                    key={product.id}
+                                    className={concatClass([
+                                        'col-xl-3 col-lg-4 col-md-6 col-sm-8 col-auto',
+                                        styles.item_wrapper,
+                                    ])}
+                                >
                                     <Card
                                         product={product}
                                         isNew={product.isNew}
@@ -125,6 +147,12 @@ const SearchPage: NextPage<SearchPageProps> = ({ products, searchQuery }) => {
                             найдено.
                         </p>
                     )}
+                    <div className="d-flex justify-content-center mt-3 order-5">
+                        <Pagination
+                            page={pagination.page}
+                            total={pagination.total}
+                        />
+                    </div>
                 </Container>
             </section>
         </>

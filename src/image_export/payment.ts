@@ -1,0 +1,5 @@
+export { default as PaymentBank } from 'public/images/payment/icon_building_green.svg'
+export { default as PaymentCard } from 'public/images/payment/payment_systems_icon.png'
+export { default as PaymentSber } from 'public/images/payment/icon_sber_bank_new.svg'
+export { default as PaymentNalPay } from 'public/images/payment/icon_post_and_price_green.svg'
+export { default as PaymentSBP } from 'public/images/payment/sbp_logo.svg'

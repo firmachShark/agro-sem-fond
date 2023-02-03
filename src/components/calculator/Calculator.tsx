@@ -1,13 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styles from './Calculator.module.scss'
 
 interface CalculatorProps {
     data: Record<string, Record<string, number>>
     setPrice: (value: number) => void
-}
-
-interface InputType {
-    value: string
 }
 
 export const Calculator: React.FC<CalculatorProps> = ({ data, setPrice }) => {

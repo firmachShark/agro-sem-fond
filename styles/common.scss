@@ -8,6 +8,8 @@ $bp-xs: 400px;
 $color-primary: #298D3F;
 $color-orange: #F87B11;
 
+$aside-width: 300px;
+
 @mixin breakpoint($bp) {
     @media (max-width: $bp) {
         @content;

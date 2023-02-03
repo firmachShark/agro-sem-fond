@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import { Pagination } from 'src/components/pagination'
 import { Breadcrumbs } from 'src/components/breadcrumbs'
 import { Card } from 'src/components/card'
@@ -11,11 +11,10 @@ import categoryService from 'src/services/category-service'
 import productService from 'src/services/product-service'
 import { parseURL } from 'utils/parseURL'
 import styles from './Category.module.scss'
-import { useSearchParams } from 'src/hooks/useSearchParams'
 import { convertFromQuery } from 'utils/convertFromQuery'
-import { Filters } from './Filters'
-import { useRouter } from 'next/router'
+import { Filters } from 'src/components/catalog-filters/Filters'
 import { Loader } from 'src/components/loader'
+import { usePageLoading } from 'src/hooks/usePageLoading'
 
 export const FILTERS = {
     SUBCATEGORY: 'filter[subcategory]',
@@ -38,6 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const parsedName = parseURL(name)
 
     const page = Number(context.query.page)
+
     const [subcategoryFilter] = convertFromQuery<Array<number> | null>(
         context.query[FILTERS.SUBCATEGORY] as string,
         null,
@@ -47,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const { products, pagination } = await productService.getByCategoryName(
         parsedName,
         {
-            page: Number.isNaN(page) ? 0 : page - 1,
+            page: Number.isNaN(page) ? 0 : page,
             subcategoryFilters: {
                 ...(subcategoryFilter
                     ? {
@@ -90,9 +90,7 @@ const Category: NextPage<CategoryState> = ({
     products,
     newProducts,
 }) => {
-    const { setParam } = useSearchParams(['categoryName'])
-    const [loading, setLoading] = useState(false)
-    const router = useRouter()
+    const loading = usePageLoading('catalog')
 
     const [slidesToShow, slidesToShow_xl, slidesToShow_sm] = useMemo(() => {
         const count = []
@@ -108,23 +106,6 @@ const Category: NextPage<CategoryState> = ({
         'Каталог - ' +
         category.name.slice(0, 1).toUpperCase() +
         category.name.slice(1)
-
-    const handlePaginationChange = useCallback((page: number) => {
-        setParam('page', page === 1 ? '' : page.toString())
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    useEffect(() => {
-        const handleStart = () => setLoading(true)
-        const handleEnd = () => setLoading(false)
-        router.events.on('routeChangeStart', handleStart)
-        router.events.on('routeChangeComplete', handleEnd)
-
-        return () => {
-            router.events.off('routeChangeStart', handleStart)
-            router.events.off('routeChangeComplete', handleEnd)
-        }
-    }, [router])
 
     return (
         <>
@@ -192,7 +173,6 @@ const Category: NextPage<CategoryState> = ({
                             )}
                             <div className="d-flex justify-content-center mt-3 order-5">
                                 <Pagination
-                                    onChange={handlePaginationChange}
                                     page={pagination.page}
                                     total={pagination.total}
                                 />

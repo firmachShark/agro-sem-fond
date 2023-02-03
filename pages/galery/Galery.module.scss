@@ -1,0 +1,44 @@
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1%;
+
+    div {
+        padding: 3%;
+        width: 25%;
+        position: relative;
+        cursor: pointer;
+
+        @include breakpoint($bp-lg) {
+            width: 33%;
+        }
+
+        @include breakpoint($bp-sm) {
+            width: 50%;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 75%;
+        }
+
+        img {
+            position: absolute;
+            top: 3%;
+            left: 3%;
+            z-index: 1;
+            width: 97%;
+            height: 97%;
+            object-fit: cover;
+            transition: filter .3s ease;
+            cursor: zoom-in;
+        }
+
+        &:hover {
+            img {
+                filter: brightness(0.75);
+            }
+        }
+    }
+}

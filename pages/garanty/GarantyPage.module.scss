@@ -1,0 +1,124 @@
+.garanty {
+    @include breakpoint($bp-lg) {
+        font-size: 14px;
+    }
+
+    @include breakpoint($bp-md) {
+        font-size: 12px;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 3.5vw;
+        font-size: min(3.5vw, 13px);
+    }
+
+    h1 {
+        color: $color-primary;
+        font-size: 2em;
+        font-weight: 700;
+    }
+}
+
+.attention {
+    font-size: 1.5em;
+    padding: 2.5em;
+    box-shadow: 0px 4px 30px rgb(41 141 63 / 20%);
+    color: $color-orange;
+    font-weight: 700;
+    margin: 2em 0;
+
+    @include breakpoint($bp-sm) {
+        padding: 1em;
+    }
+}
+
+.content {
+    &>*:not(:first-child) {
+        margin-top: 2em;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        color: $color-orange;
+        font-size: 1.25em;
+        font-weight: 700;
+        margin: 1.5em 0 !important;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 1.25em;
+    }
+
+    article {
+        padding: 0.625em 1.25em;
+        border-left: 5px solid #eee;
+        font-size: 1.25em;
+
+        h6 {
+            text-transform: uppercase;
+            color: #3e6617;
+            font-weight: 700;
+            font-size: 1.25em;
+            margin-bottom: 1em;
+            font-style: italic;
+        }
+
+        ul {
+            color: #3e6617;
+            font-weight: 500;
+        }
+    }
+
+    &>p {
+        font-style: italic;
+        font-weight: 700;
+        color: #3e6617;
+        font-size: 1.25em;
+        margin-top: 1em !important;
+    }
+
+    h5 {
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+
+    &>ul {
+        font-size: 1.25em;
+        font-weight: 500;
+    }
+}
+
+.form {
+    max-width: 50em;
+    margin: 0 auto;
+    margin-top: 2em;
+
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 0.5em;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    textarea {
+        min-height: 4em;
+        max-height: 50vh;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 1em;
+        max-width: 20em;
+        width: 100%;
+
+        @include breakpoint($bp-md) {
+            max-width: 100%;
+        }
+    }
+}

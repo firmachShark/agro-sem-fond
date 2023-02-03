@@ -1,15 +1,18 @@
 import { Button } from 'src/components/button'
 import { Input } from 'src/components/input'
 import React from 'react'
-import { Modal as BModal } from 'react-bootstrap'
+import { Modal as BModal, ModalProps as BModalProps } from 'react-bootstrap'
 
 interface ModalProps {
-    title: string
-    text: string
+    title: string | JSX.Element
+    text: string | JSX.Element
     onClose: () => void
     isOpen: boolean
     withForm?: boolean
     isCenter?: boolean
+    size?: BModalProps['size']
+    bodyClassName?: string
+    headerClassName?: string
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -19,14 +22,17 @@ export const Modal: React.FC<ModalProps> = ({
     onClose,
     withForm,
     isCenter = false,
+    size,
+    headerClassName,
+    bodyClassName,
 }) => {
     return (
-        <BModal show={isOpen} onHide={onClose} centered={isCenter}>
-            <BModal.Header closeButton>
+        <BModal size={size} show={isOpen} onHide={onClose} centered={isCenter}>
+            <BModal.Header className={headerClassName} closeButton>
                 <h5>{title}</h5>
             </BModal.Header>
-            <BModal.Body>
-                <p>{text}</p>
+            <BModal.Body className={bodyClassName}>
+                {typeof text === 'string' ? <p>{text}</p> : text}
                 {withForm && (
                     <form>
                         <div>

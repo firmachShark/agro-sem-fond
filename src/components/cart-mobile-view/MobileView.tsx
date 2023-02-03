@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
-import { IProductInCart } from './'
-import styles from './CartPage.module.scss'
+import { IProductInCart } from '../../../pages/cart'
+import styles from './MobileView.module.scss'
 import cartApi from 'utils/cart'
 import Image from 'next/image'
 import Link from 'next/link'

@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 import { CountInput } from 'src/components/count-input'
-import styles from './CartPage.module.scss'
+import styles from './ProductRow.module.scss'
 import cartApi from 'utils/cart'
-import { IProductInCart } from '.'
+import { IProductInCart } from 'pages/cart'
 
 interface ProductRowProps {
     product: IProductInCart
@@ -12,7 +12,7 @@ interface ProductRowProps {
     handleChangeCount: (value: number) => void
 }
 
-const ProductRow: React.FC<ProductRowProps> = ({
+export const ProductRow: React.FC<ProductRowProps> = ({
     product,
     idx,
     handleChangeCount,
@@ -89,5 +89,3 @@ const ProductRow: React.FC<ProductRowProps> = ({
         </tr>
     )
 }
-
-export default ProductRow

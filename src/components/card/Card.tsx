@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 import { useLocalStorage } from 'src/hooks/useLocalStorage'
@@ -10,6 +9,7 @@ import cartApi from 'utils/cart'
 import { Button } from '../button'
 import { CountInput } from '../count-input'
 import styles from './Card.module.scss'
+import { Img } from '../img'
 
 interface CardProps {
     product: IProduct
@@ -112,7 +112,7 @@ export const Card: React.FC<CardProps> = ({ product, isNew, description }) => {
             {isNew && <span className={styles.sticker}>Новинка</span>}
             {previewData && (
                 <Link href={href} className={styles.header}>
-                    <Image
+                    <Img
                         width={previewData.imageWidth}
                         height={previewData.imageHeight}
                         src={previewData.imageURL}

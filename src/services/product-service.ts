@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { getModels, getPaginatedModels } from 'src/http'
+import { getPaginatedModels } from 'src/http'
 import { IProduct } from 'src/models/IProduct'
 import {
     getNumbersFromObject,
@@ -26,17 +26,36 @@ export const baseQuery: object = {
     },
 }
 
+type GetAllReturnType<T> = T extends boolean
+    ? WithPaginationReturnType
+    : IProduct[]
+
+type WithPaginationReturnType = {
+    products: IProduct[]
+    pagination: {
+        page: number
+        pageSize: number
+        pageCount: number
+        total: number
+    }
+}
+
 class ProductService {
-    async getAll(_query?: object) {
+    async getAll<T>(
+        _query?: object,
+        withPagination?: T,
+    ): Promise<GetAllReturnType<T>> {
         const query = _query
             ? `?${qs.stringify(_query, { encodeValuesOnly: true })}`
             : ''
 
-        const products = await getModels<IProduct>('products' + query)
+        const { items, pagination } = await getPaginatedModels<IProduct>(
+            'products' + query,
+        )
 
         const ids: number[] = []
 
-        products.forEach((product) => {
+        items.forEach((product) => {
             const id = product.calculator
                 ? getNumbersFromObject(product.calculator)
                 : [product.price_id]
@@ -45,7 +64,17 @@ class ProductService {
 
         const prices = await priceService.loadPrices(ids)
 
-        return products.map((product) => {
+        if (!prices)
+            return (
+                withPagination
+                    ? {
+                          pagination,
+                          products: [],
+                      }
+                    : ([] as IProduct[])
+            ) as GetAllReturnType<T>
+
+        const products = items.map((product) => {
             let price = prices[product.price_id]
 
             if (product.calculator) {
@@ -70,6 +99,15 @@ class ProductService {
 
             return product
         })
+
+        return (
+            withPagination
+                ? {
+                      pagination,
+                      products,
+                  }
+                : products
+        ) as GetAllReturnType<T>
     }
 
     async getByCategoryName(
@@ -94,10 +132,12 @@ class ProductService {
                     },
                     ...(filters?.productFilters || {}),
                 },
-                ...(filters?.page
+                ...(filters?.page !== undefined
                     ? {
-                          page: filters?.page,
-                          pageSize: 20,
+                          pagination: {
+                              page: filters.page,
+                              pageSize: 20,
+                          },
                       }
                     : {}),
             },
@@ -111,27 +151,40 @@ class ProductService {
         )
 
         return {
-            products: result.items.map((product) => {
-                const price = prices[product.price_id]
-                if (price)
-                    return {
-                        ...product,
-                        price,
-                    }
+            products: prices
+                ? result.items.map((product) => {
+                      const price = prices[product.price_id]
+                      if (price)
+                          return {
+                              ...product,
+                              price,
+                          }
 
-                return product
-            }),
+                      return product
+                  })
+                : [],
             pagination: result.pagination,
         }
     }
 
-    async getByFlag(flag: 'isNew' | 'isHit', categoryName?: string) {
+    async getByFlag(
+        flag: 'isNew' | 'isHit',
+        categoryName?: string,
+        exclude?: string,
+    ) {
         return this.getAll({
             ...baseQuery,
             filters: {
                 [flag]: {
                     $eq: true,
                 },
+                ...(exclude
+                    ? {
+                          name: {
+                              $ne: exclude,
+                          },
+                      }
+                    : {}),
                 ...(categoryName
                     ? {
                           subcategories: {

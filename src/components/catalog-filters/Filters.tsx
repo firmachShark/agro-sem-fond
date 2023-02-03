@@ -8,7 +8,7 @@ import { ISubcategory } from 'src/models'
 import { FiltersState, setFilters } from 'src/store/slices/filters.slice'
 import { concatClass } from 'utils/concatClass'
 import { convertFromQuery } from 'utils/convertFromQuery'
-import styles from './Category.module.scss'
+import styles from './Filters.module.scss'
 
 interface FiltersProps {
     subcategories: ISubcategory[]
@@ -125,3 +125,5 @@ export const Filters: React.FC<FiltersProps> = ({ subcategories }) => {
         </aside>
     )
 }
+
+export default Filters

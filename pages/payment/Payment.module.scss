@@ -1,0 +1,119 @@
+.payment {
+    @include breakpoint($bp-lg) {
+        font-size: 14px;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 3vw;
+    }
+}
+
+.ways {
+    h3 {
+        color: $color-primary;
+        font-size: 2em;
+        margin-bottom: 0.25em;
+        font-weight: 700;
+    }
+
+    h5 {
+        font-size: 1.25em;
+        font-weight: 400;
+        margin-bottom: 1em;
+    }
+}
+
+.card {
+    box-shadow: 0px 4px 30px rgba($color-primary, 0.2);
+    background: #fff;
+    padding: 2em 3em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    h6 {
+        color: $color-primary;
+        font-weight: 600;
+        margin-top: 1em;
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: left;
+        margin-top: 1.3em;
+    }
+}
+
+.card__image {
+    height: 66px;
+
+    img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+    }
+}
+
+.card__actions {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 8em;
+    width: 100%;
+
+    & > * {
+        width: 48%;
+        padding: 1em;
+    }
+
+    @include breakpoint($bp-xxl) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        & > * {
+            width: auto;
+            padding: 1em 2em;
+        }
+    }
+
+    & > *:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    span {
+        color: $color-orange;
+        border: 1px solid $color-orange;
+        border-radius: 0.25em;
+        line-height: 1;
+        font-weight: 600;
+    }
+
+    button,
+    a {
+        line-height: 1;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        border-radius: 0.25em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.notes {
+    p {
+        font-size: 1.2em;
+        line-height: 1.4;
+        font-weight: 500;
+        margin-top: 1.2em;
+        letter-spacing: 1px;
+        color: #333;
+    }
+}

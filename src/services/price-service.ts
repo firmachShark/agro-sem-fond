@@ -17,17 +17,21 @@ class PriceService {
         })
 
         if (requestIds.length) {
-            const response = await axios.post<any[]>(
-                `${CRM_URL}/price/get-by-product-ids`,
-                { ids: requestIds },
-            )
+            try {
+                const response = await axios.post<any[]>(
+                    `${CRM_URL}/price/get-by-product-ids`,
+                    { ids: requestIds },
+                )
 
-            if (response.status === 201) {
-                response.data.forEach((priceObj) => {
-                    const price = priceObj[PRICE_KEY]
-                    result[priceObj.product_id] = price
-                    this.cached[priceObj.product_id] = price
-                })
+                if (response.status === 201) {
+                    response.data.forEach((priceObj) => {
+                        const price = priceObj[PRICE_KEY]
+                        result[priceObj.product_id] = price
+                        this.cached[priceObj.product_id] = price
+                    })
+                }
+            } catch (e) {
+                return null
             }
         }
 

@@ -59,6 +59,22 @@ a {
     }
 }
 
+.note {
+    color: $color-primary;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 1em;
+    padding-left: 2.5em;
+
+    background: url('../public/images/note.svg') no-repeat;
+    background-position: left center;
+    background-size: 2em;
+
+    &-sm {
+        font-size: 1.25em;
+    }
+}
+
 @import './modal.scss';
 @import './section.scss';
 @import './slick.scss';

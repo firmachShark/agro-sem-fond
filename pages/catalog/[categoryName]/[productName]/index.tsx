@@ -43,7 +43,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         }
     }
 
-    const products = await productService.getByFlag('isNew', categoryName)
+    const products = await productService.getByFlag(
+        'isNew',
+        categoryName,
+        parsedName,
+    )
 
     return {
         props: { product, products },
@@ -366,7 +370,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                         </div>
                     </div>
                 </Container>
-                <SectionProducts products={products} title="Новинки" />
+                <SectionProducts products={products} isNew title="Новинки" />
             </section>
         </>
     )

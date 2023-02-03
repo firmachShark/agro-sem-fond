@@ -1,0 +1,59 @@
+.details {
+    font-size: 16px;
+
+    @include breakpoint($bp-lg) {
+        font-size: 14px;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 3vw;
+    }
+
+    padding: 4em 3em;
+    position: relative;
+    background: linear-gradient(270.04deg, rgba(252, 137, 13, 0.19) 11.15%, rgba(255, 255, 255, 0) 72.89%),
+    #FFFFFF;
+    box-shadow: 0px 4px 30px rgba($color-primary, .2);
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: url('../../../public/images/payment/credit_card.png') center no-repeat;
+        background-size: contain;
+
+        top: 48px;
+        right: 39px;
+        bottom: 39px;
+        z-index: 0;
+
+        width: 30%;
+
+        @include breakpoint($bp-md) {
+            display: none;
+        }
+    }
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+
+    h3 {
+        color: $color-primary;
+        font-weight: 600;
+        font-size: 2em;
+        margin-bottom: 1.25em;
+    }
+
+    p {
+        color: #333;
+        font-size: 1.2em;
+        line-height: 1.6;
+        letter-spacing: 1px;
+
+        &:not(:first-child) {
+            margin-top: .3em;
+        }
+    }
+}

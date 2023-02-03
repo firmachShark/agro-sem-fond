@@ -7,6 +7,14 @@ const defaultReplace: Record<string, string> = {
     catalog: 'Каталог',
     search: 'Поиск',
     cart: 'Корзина',
+    delivery: 'Доставка',
+    payment: 'Оплата',
+    about: 'О нас',
+    stock: 'Акции',
+    blog: 'Блог',
+    faq: 'Задать вопрос',
+    galery: 'Галерея',
+    garanty: 'Гарантия',
 }
 
 interface BreadcrumbLink {

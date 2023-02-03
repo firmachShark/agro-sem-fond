@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
 
@@ -7,9 +8,11 @@ type ParamsTypeAsFunction = (prev: ParamsType) => ParamsType
 
 export const useSearchParams = (exclude?: string[]) => {
     const router = useRouter()
+
     const params = useMemo(() => {
         return router.query
     }, [router]) as ParamsType
+
     const excludeOBJ = useMemo(() => {
         return exclude?.reduce((result: ParamsType, key) => {
             result[key] = key
@@ -34,13 +37,15 @@ export const useSearchParams = (exclude?: string[]) => {
                     return result
                 }, '')
 
+            console.log(search)
+
             const url = `${window.location.pathname}${
                 search ? `?${search}` : ''
             }`
 
             router.push(url)
         },
-        [router, params, excludeOBJ],
+        [params, excludeOBJ],
     )
 
     const setParam = useCallback(

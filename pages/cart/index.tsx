@@ -10,12 +10,12 @@ import { IProduct } from 'src/models'
 import { ICart } from 'src/models/ICart'
 import productService, { baseQuery } from 'src/services/product-service'
 import styles from './CartPage.module.scss'
-import ProductRow from './ProductRow'
 import cartApi from 'utils/cart'
 import { useLatest } from 'src/hooks/useLatest'
 import { Input } from 'src/components/input'
 import useMediaQuery from 'src/hooks/useMediaQuery'
-import { MobileView } from './MobileView'
+import { MobileView } from 'src/components/cart-mobile-view/MobileView'
+import { ProductRow } from 'src/components/product-row/ProductRow'
 
 export interface IProductInCart extends IProduct {
     count: number
@@ -120,7 +120,7 @@ const CartPage = () => {
                                 <div className="row">
                                     <div className="col-lg-8 col-12">
                                         {isSM ? (
-                                            products.map((product, i) => (
+                                            products.map((product) => (
                                                 <MobileView
                                                     handleChangeCount={handleChangeCount(
                                                         product.id,

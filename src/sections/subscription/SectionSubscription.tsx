@@ -30,6 +30,7 @@ export const SectionSubscription = () => {
                                 placeholder="Ваш номер"
                                 name="phone"
                                 id={id}
+                                required
                             />
                             <Button variant="orange" type="submit">
                                 Получить подарок
