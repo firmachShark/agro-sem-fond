@@ -5,12 +5,12 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'http',
-                hostname: 'localhost',
-                port: '1337',
+                hostname: 'api.xn--80agdjnxfar7i.xn--90ais',
             },
             {
-                protocol: 'https',
-                hostname: 'picsum.photos',
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '1337',
             },
         ],
     },
