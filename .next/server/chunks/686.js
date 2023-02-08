@@ -20,7 +20,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axio
 ([axios__WEBPACK_IMPORTED_MODULE_0__, utils_convertToModel__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
-const API_URL = "http://api.загородный.бел";
+const API_URL = "https://api.загородный.бел";
 const $api = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
     baseURL: API_URL + "/api/"
 });
