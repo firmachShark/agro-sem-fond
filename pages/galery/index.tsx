@@ -18,6 +18,7 @@ export const getStaticProps: GetStaticProps<GaleryPageProps> = async () => {
     const photos = await galeryService.getPhotos()
 
     return {
+        revalidate: 5,
         props: {
             photos,
         },

@@ -56,6 +56,7 @@ src_services_galery_service__WEBPACK_IMPORTED_MODULE_8__ = (__webpack_async_depe
 const getStaticProps = async ()=>{
     const photos = await src_services_galery_service__WEBPACK_IMPORTED_MODULE_8__/* ["default"].getPhotos */ .Z.getPhotos();
     return {
+        revalidate: 5,
         props: {
             photos
         }

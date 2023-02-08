@@ -11,11 +11,11 @@
   "/payment": "pages/payment.html",
   "/stock": "pages/stock.html",
   "/blog": "pages/blog.js",
-  "/catalog/[categoryName]/[productName]": "pages/catalog/[categoryName]/[productName].js",
-  "/blog/[postTitle]": "pages/blog/[postTitle].js",
   "/catalog/[categoryName]": "pages/catalog/[categoryName].js",
   "/catalog": "pages/catalog.js",
-  "/galery": "pages/galery.js",
   "/": "pages/index.js",
-  "/search": "pages/search.js"
+  "/galery": "pages/galery.js",
+  "/catalog/[categoryName]/[productName]": "pages/catalog/[categoryName]/[productName].js",
+  "/search": "pages/search.js",
+  "/blog/[postTitle]": "pages/blog/[postTitle].js"
 }
