@@ -17,6 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const newProducts = await productService.getByFlag('isNew')
 
     return {
+        revalidate: 60,
         props: {
             categories,
             newProducts,

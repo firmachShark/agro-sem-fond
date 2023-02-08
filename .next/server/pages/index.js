@@ -51,7 +51,7 @@ const getStaticProps = async ()=>{
             reviews,
             posts
         },
-        revalidate: 120
+        revalidate: 60
     };
 };
 const Home = ({ overviews , categories , newProducts , hitProducts , reviews , posts  })=>{

@@ -37,6 +37,7 @@ const getStaticProps = async ()=>{
     const categories = await src_services_category_service__WEBPACK_IMPORTED_MODULE_5__/* ["default"].getAll */ .Z.getAll();
     const newProducts = await src_services_product_service__WEBPACK_IMPORTED_MODULE_6__/* ["default"].getByFlag */ .Z.getByFlag("isNew");
     return {
+        revalidate: 60,
         props: {
             categories,
             newProducts

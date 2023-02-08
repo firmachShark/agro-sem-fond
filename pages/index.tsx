@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
             reviews,
             posts,
         },
-        revalidate: 120,
+        revalidate: 60,
     }
 }
 
