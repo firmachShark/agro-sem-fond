@@ -32,8 +32,11 @@ a {
     transition: color .3s ease;
 }
 
+.overflowed {
+    overflow: hidden;
+}
 
-.beaury-underline {
+.beauty-underline {
     position: relative;
 
     &::after {

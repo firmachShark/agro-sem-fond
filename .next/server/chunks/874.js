@@ -102,7 +102,7 @@ function useDispatchCreator(actions) {
 
 
 
-const ProductsCarousel = ({ products , isNew , carouselProps  })=>{
+const ProductsCarousel = ({ products , isNew , isHit , carouselProps  })=>{
     const [initial, lg, md, sm] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(()=>{
         const result = [];
         for(let i = 4; i > 0; i--){
@@ -140,7 +140,8 @@ const ProductsCarousel = ({ products , isNew , carouselProps  })=>{
         children: products.map((product)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_card__WEBPACK_IMPORTED_MODULE_2__/* .Card */ .Z, {
                     product: product,
-                    isNew: !!isNew
+                    isNew: !!isNew,
+                    isHit: !!isHit
                 })
             }, product.id))
     });

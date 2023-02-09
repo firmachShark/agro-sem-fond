@@ -10,7 +10,9 @@ module.exports = {
 	"card": "Card_card__oqWj1",
 	"d_wrapper": "Card_d_wrapper__dTLcm",
 	"description": "Card_description__W3Gvt",
+	"stickers": "Card_stickers__eJxMu",
 	"sticker": "Card_sticker__lSHUa",
+	"sticker_orange": "Card_sticker_orange__AGGqm",
 	"header": "Card_header__wDcIt",
 	"body": "Card_body__rSvQh",
 	"title": "Card_title___WBLo"
@@ -65,7 +67,7 @@ var img = __webpack_require__(6394);
 
 
 
-const Card = ({ product , isNew , description  })=>{
+const Card = ({ product , isNew , isHit , description  })=>{
     const cart = (0,useLocalStorage/* useLocalStorage */._)("cart");
     const inCart = cart && !!cart[product.id];
     const [count, setCount] = (0,external_react_.useState)(()=>{
@@ -145,9 +147,21 @@ const Card = ({ product , isNew , description  })=>{
                         }, key))
                 })
             }),
-            isNew && /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                className: (Card_module_default()).sticker,
-                children: "Новинка"
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: (Card_module_default()).stickers,
+                children: [
+                    isNew && /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: (Card_module_default()).sticker,
+                        children: "Новинка"
+                    }),
+                    isHit && /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: (0,concatClass/* concatClass */.o)([
+                            (Card_module_default()).sticker,
+                            (Card_module_default()).sticker_orange
+                        ]),
+                        children: "ХИТ ПРОДАЖ"
+                    })
+                ]
             }),
             previewData && /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                 href: href,

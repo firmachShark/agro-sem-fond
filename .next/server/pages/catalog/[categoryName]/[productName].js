@@ -95,9 +95,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_components_layout_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2310);
 /* harmony import */ var src_sections__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5577);
 /* harmony import */ var src_services_product_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2535);
-/* harmony import */ var utils_parseURL__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(2372);
-/* harmony import */ var _Product_module_scss__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(2219);
-/* harmony import */ var _Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_Product_module_scss__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var utils_parseURL__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(2372);
+/* harmony import */ var _Product_module_scss__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(2219);
+/* harmony import */ var _Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_Product_module_scss__WEBPACK_IMPORTED_MODULE_25__);
 /* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(7182);
 /* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_ui__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _fancyapps_ui_dist_fancybox_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6721);
@@ -109,12 +109,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(2411);
 /* harmony import */ var utils_storage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(5838);
 /* harmony import */ var utils_cart__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(458);
-/* harmony import */ var utils_concatClass__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(9794);
+/* harmony import */ var utils_concatClass__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(9794);
 /* harmony import */ var src_components_calculator__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(4778);
 /* harmony import */ var src_hooks_useStore__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(2333);
 /* harmony import */ var src_store_slices_modal_order_slice__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(6772);
 /* harmony import */ var src_components_productReview__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(9387);
 /* harmony import */ var src_components_input__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(48);
+/* harmony import */ var utils_viewedApi__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(5371);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([src_services_product_service__WEBPACK_IMPORTED_MODULE_8__, src_components_productReview__WEBPACK_IMPORTED_MODULE_20__]);
 ([src_services_product_service__WEBPACK_IMPORTED_MODULE_8__, src_components_productReview__WEBPACK_IMPORTED_MODULE_20__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
@@ -142,9 +143,10 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([src_
 
 
 
+
 const getServerSideProps = async (context)=>{
-    const parsedName = (0,utils_parseURL__WEBPACK_IMPORTED_MODULE_22__/* .parseURL */ .L)(context.query.productName);
-    const categoryName = (0,utils_parseURL__WEBPACK_IMPORTED_MODULE_22__/* .parseURL */ .L)(context.query.categoryName);
+    const parsedName = (0,utils_parseURL__WEBPACK_IMPORTED_MODULE_23__/* .parseURL */ .L)(context.query.productName);
+    const categoryName = (0,utils_parseURL__WEBPACK_IMPORTED_MODULE_23__/* .parseURL */ .L)(context.query.categoryName);
     const product = await src_services_product_service__WEBPACK_IMPORTED_MODULE_8__/* ["default"].getByName */ .Z.getByName(parsedName, categoryName);
     if (!product) {
         return {
@@ -204,6 +206,13 @@ const ProductPage = ({ product , products  })=>{
             text: "Оставьте заявку и наш менеджер с Вами свяжется!"
         });
     };
+    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+        utils_viewedApi__WEBPACK_IMPORTED_MODULE_22__/* ["default"].add */ .Z.add({
+            id: product.id
+        });
+    }, [
+        product.id
+    ]);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
@@ -216,20 +225,20 @@ const ProductPage = ({ product , products  })=>{
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_breadcrumbs__WEBPACK_IMPORTED_MODULE_5__/* .Breadcrumbs */ .O, {}),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_layout_container__WEBPACK_IMPORTED_MODULE_6__/* .Container */ .W, {
-                        className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_23__/* .concatClass */ .o)([
+                        className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_24__/* .concatClass */ .o)([
                             "container",
-                            (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().container)
+                            (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().container)
                         ]),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_23__/* .concatClass */ .o)([
-                                    (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().title),
+                                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_24__/* .concatClass */ .o)([
+                                    (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().title),
                                     "ps-0 d-md-none d-block"
                                 ]),
                                 children: name
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().inner),
+                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().inner),
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         children: !!images?.length && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -244,7 +253,7 @@ const ProductPage = ({ product , products  })=>{
                                                                 "data-fancybox": name,
                                                                 width: image.width,
                                                                 height: image.height,
-                                                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().carousel_image),
+                                                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().carousel_image),
                                                                 src: image.url,
                                                                 alt: name,
                                                                 placeholder: "empty"
@@ -252,11 +261,11 @@ const ProductPage = ({ product , products  })=>{
                                                         }, i))
                                                 }),
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                    className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().carousel_dots),
+                                                    className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().carousel_dots),
                                                     children: images.map((image, i)=>{
                                                         const width = images.length > 3 ? 100 / images.length - 2 : 31;
                                                         return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: i === index ? (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().carousel_dot_active) : undefined,
+                                                            className: i === index ? (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().carousel_dot_active) : undefined,
                                                             style: {
                                                                 width: `${width}%`
                                                             },
@@ -275,23 +284,23 @@ const ProductPage = ({ product , products  })=>{
                                         })
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().info),
+                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().info),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                                                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_23__/* .concatClass */ .o)([
-                                                    (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().title),
+                                                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_24__/* .concatClass */ .o)([
+                                                    (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().title),
                                                     "d-md-block d-none"
                                                 ]),
                                                 children: name
                                             }),
                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().on_stock),
+                                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().on_stock),
                                                 children: [
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                         children: "В наличии"
                                                     }),
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().buy_btn),
+                                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().buy_btn),
                                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_button__WEBPACK_IMPORTED_MODULE_13__/* .Button */ .z, {
                                                             variant: "orange",
                                                             onClick: handleBuyClick,
@@ -356,10 +365,10 @@ const ProductPage = ({ product , products  })=>{
                                                 setPrice: setPrice
                                             }),
                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().content),
+                                                className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().content),
                                                 children: [
                                                     shortProps && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("ul", {
-                                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().short_props),
+                                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().short_props),
                                                         children: Object.keys(shortProps).map((key, i)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
                                                                 style: {
                                                                     animationDelay: `${(i + 1) * 300}ms`
@@ -376,7 +385,7 @@ const ProductPage = ({ product , products  })=>{
                                                             }, key))
                                                     }),
                                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().delivery),
+                                                        className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().delivery),
                                                         children: [
                                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                                 children: [
@@ -428,8 +437,8 @@ const ProductPage = ({ product , products  })=>{
                                                     eventKey: "params",
                                                     title: "Характеристики",
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("ul", {
-                                                        className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_23__/* .concatClass */ .o)([
-                                                            (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().short_props),
+                                                        className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_24__/* .concatClass */ .o)([
+                                                            (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().short_props),
                                                             "mw-100"
                                                         ]),
                                                         children: Object.keys(props).reverse().map((key, i)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
@@ -462,7 +471,7 @@ const ProductPage = ({ product , products  })=>{
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: "col-md-5 col-12 pt-5",
                                         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("form", {
-                                            className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_24___default().form),
+                                            className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().form),
                                             children: [
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
                                                     children: "Оставьте заявку чтобы купить!"
@@ -1350,7 +1359,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,584,152,109,535,874,577], () => (__webpack_exec__(6936)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,584,152,535,109,874,577,371], () => (__webpack_exec__(6936)));
 module.exports = __webpack_exports__;
 
 })();

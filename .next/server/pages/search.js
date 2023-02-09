@@ -178,12 +178,13 @@ const SearchPage = ({ products , searchQuery , pagination  })=>{
                                 className: "row justify-content-md-start justify-content-center",
                                 children: products.map((product)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_15__/* .concatClass */ .o)([
-                                            "col-xl-3 col-lg-4 col-md-6 col-sm-8 col-auto",
+                                            "col-xl-3 col-lg-4 col-md-6 col-sm-8 col-auto mt-3",
                                             (_Search_module_scss__WEBPACK_IMPORTED_MODULE_13___default().item_wrapper)
                                         ]),
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_card__WEBPACK_IMPORTED_MODULE_3__/* .Card */ .Z, {
                                             product: product,
-                                            isNew: product.isNew
+                                            isNew: product.isNew,
+                                            isHit: product.isHit
                                         })
                                     }, product.id))
                             }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
@@ -537,7 +538,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,584,152,535,973], () => (__webpack_exec__(6087)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,584,152,535,63,317], () => (__webpack_exec__(6087)));
 module.exports = __webpack_exports__;
 
 })();

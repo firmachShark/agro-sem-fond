@@ -7,12 +7,14 @@ import { IProduct } from 'src/models'
 interface ProductsCarouselProps {
     products: IProduct[]
     isNew?: boolean
+    isHit?: boolean
     carouselProps?: Settings
 }
 
 export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
     products,
     isNew,
+    isHit,
     carouselProps,
 }) => {
     const [initial, lg, md, sm] = useMemo(() => {
@@ -54,7 +56,7 @@ export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
         >
             {products.map((product) => (
                 <div key={product.id}>
-                    <Card product={product} isNew={!!isNew} />
+                    <Card product={product} isNew={!!isNew} isHit={!!isHit} />
                 </div>
             ))}
         </Carousel>

@@ -1,0 +1,71 @@
+.section {
+    position: relative;
+    min-height: 30vh;
+    padding-top: 0;
+
+    @include breakpoint($bp-lg) {
+        font-size: 12px;
+    }
+
+    @include breakpoint($bp-md) {
+        font-size: 14px;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 16px;
+    }
+
+    @include breakpoint(calc(350px + 2em)) {
+        font-size: 5vw;
+    }
+
+    h4 {
+        font-size: 1.75em;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1em;
+
+        @include breakpoint($bp-sm) {
+            flex-direction: column;
+
+            button {
+                margin-top: 1em;
+            }
+        }
+
+        @include breakpoint(calc(350px + 2em)) {
+            font-size: .8em;
+        }
+    }
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -.5em;
+
+    &>div {
+        width: 25%;
+        padding: .5em;
+
+        &>* {
+            margin: 0 auto;
+        }
+
+        @include breakpoint($bp-xl) {
+            width: 33.33333%;
+        }
+
+        @include breakpoint($bp-md) {
+            width: 50%;
+        }
+
+        @include breakpoint($bp-sm) {
+            width: 100%;
+        }
+    }
+}

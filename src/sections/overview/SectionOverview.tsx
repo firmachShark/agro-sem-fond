@@ -5,6 +5,7 @@ import styles from './SectionOverview.module.scss'
 import { Button } from 'src/components/button'
 import Link from 'next/link'
 import { ISOverviewItem } from 'src/models/ISOverviewItem'
+import { concatClass } from 'utils/concatClass'
 
 interface SectionOverviewProps {
     items: ISOverviewItem[]
@@ -15,6 +16,7 @@ export const SectionOverview: React.FC<SectionOverviewProps> = ({ items }) => {
         <section className={styles.section}>
             <Container>
                 <Carousel
+                    className={styles.carousel}
                     infinite
                     autoplay
                     autoplaySpeed={5000}
@@ -29,10 +31,15 @@ export const SectionOverview: React.FC<SectionOverviewProps> = ({ items }) => {
                     ]}
                 >
                     {items.map((item, i) => (
-                        <div key={i}>
+                        <div key={i} style={{ height: '100%' }}>
                             <Link
                                 href={item.href}
-                                className={styles.item}
+                                className={concatClass([
+                                    styles.item,
+                                    items.length === 1
+                                        ? styles.alone
+                                        : undefined,
+                                ])}
                                 style={{
                                     backgroundImage: item.photo
                                         ? `url(${item.photo.url})`

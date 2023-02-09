@@ -44,6 +44,8 @@ export const SectionReviews: React.FC<SectionReviewsProps> = ({ reviews }) => {
         if (candidate) setCurrent(candidate)
     }
 
+    if (!reviews.length) return null
+
     return (
         <section>
             <Container>

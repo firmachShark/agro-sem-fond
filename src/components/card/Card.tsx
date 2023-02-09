@@ -14,10 +14,16 @@ import { Img } from '../img'
 interface CardProps {
     product: IProduct
     isNew?: boolean
+    isHit?: boolean
     description?: boolean
 }
 
-export const Card: React.FC<CardProps> = ({ product, isNew, description }) => {
+export const Card: React.FC<CardProps> = ({
+    product,
+    isNew,
+    isHit,
+    description,
+}) => {
     const cart = useLocalStorage<ICart>('cart')
     const inCart = cart && !!cart[product.id]
 
@@ -109,7 +115,19 @@ export const Card: React.FC<CardProps> = ({ product, isNew, description }) => {
                     </ul>
                 </div>
             )}
-            {isNew && <span className={styles.sticker}>Новинка</span>}
+            <div className={styles.stickers}>
+                {isNew && <span className={styles.sticker}>Новинка</span>}
+                {isHit && (
+                    <span
+                        className={concatClass([
+                            styles.sticker,
+                            styles.sticker_orange,
+                        ])}
+                    >
+                        ХИТ ПРОДАЖ
+                    </span>
+                )}
+            </div>
             {previewData && (
                 <Link href={href} className={styles.header}>
                     <Img

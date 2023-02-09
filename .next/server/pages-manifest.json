@@ -1,8 +1,8 @@
 {
   "/_app": "pages/_app.js",
-  "/404": "pages/404.html",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/404": "pages/404.html",
   "/about": "pages/about.html",
   "/cart": "pages/cart.html",
   "/delivery": "pages/delivery.html",
@@ -10,12 +10,13 @@
   "/garanty": "pages/garanty.html",
   "/payment": "pages/payment.html",
   "/stock": "pages/stock.html",
-  "/blog": "pages/blog.js",
   "/blog/[postTitle]": "pages/blog/[postTitle].js",
   "/catalog/[categoryName]": "pages/catalog/[categoryName].js",
-  "/catalog/[categoryName]/[productName]": "pages/catalog/[categoryName]/[productName].js",
   "/galery": "pages/galery.js",
-  "/catalog": "pages/catalog.js",
   "/": "pages/index.js",
-  "/search": "pages/search.js"
+  "/catalog": "pages/catalog.js",
+  "/catalog/[categoryName]/[productName]": "pages/catalog/[categoryName]/[productName].js",
+  "/blog": "pages/blog.js",
+  "/search": "pages/search.js",
+  "/viewed": "pages/viewed.js"
 }

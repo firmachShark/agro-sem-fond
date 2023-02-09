@@ -74,6 +74,7 @@ module.exports = {
 // Exports
 module.exports = {
 	"openBtn": "MobileMenu_openBtn__jSz1n",
+	"overlay": "MobileMenu_overlay__dIJv2",
 	"links": "MobileMenu_links__LQJ_k",
 	"active": "MobileMenu_active__5UxHy",
 	"status": "MobileMenu_status__gnV3L",
@@ -668,7 +669,7 @@ const SubMenu = (props)=>{
                                     children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
                                         href: link.href,
                                         onClick: onClose,
-                                        className: "beaury-underline",
+                                        className: "beauty-underline",
                                         children: [
                                             link.imageUrl && /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                                 placeholder: "empty",
@@ -1178,7 +1179,10 @@ const MobileMenu = ({ parentRef  })=>{
     const iconClass = (0,react__WEBPACK_IMPORTED_MODULE_8__.useMemo)(()=>isOpen ? "fa-times" : "fa-bars", [
         isOpen
     ]);
-    const handleToggle = ()=>setOpen((prev)=>!prev);
+    const handleToggle = ()=>{
+        document.body.classList.toggle("overflowed");
+        setOpen((prev)=>!prev);
+    };
     const handleClick = (e)=>{
         if (isOpen && isMD) {
             const target = e.target;
@@ -1197,6 +1201,10 @@ const MobileMenu = ({ parentRef  })=>{
                     ]),
                     "aria-hidden": "true"
                 })
+            }),
+            isOpen && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                onClick: handleToggle,
+                className: (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().overlay)
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
                 onClick: handleClick,

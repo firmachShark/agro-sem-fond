@@ -46,7 +46,7 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                                 <Link
                                     href={link.href}
                                     onClick={onClose}
-                                    className="beaury-underline"
+                                    className="beauty-underline"
                                 >
                                     {link.imageUrl && (
                                         <Image

@@ -92,7 +92,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ parentRef }) => {
 
     const iconClass = useMemo(() => (isOpen ? 'fa-times' : 'fa-bars'), [isOpen])
 
-    const handleToggle = () => setOpen((prev) => !prev)
+    const handleToggle = () => {
+        document.body.classList.toggle('overflowed')
+        setOpen((prev) => !prev)
+    }
 
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
         if (isOpen && isMD) {
@@ -109,6 +112,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ parentRef }) => {
                     aria-hidden="true"
                 />
             </Button>
+            {isOpen && (
+                <div onClick={handleToggle} className={styles.overlay} />
+            )}
             <ul
                 onClick={handleClick}
                 className={concatClass([

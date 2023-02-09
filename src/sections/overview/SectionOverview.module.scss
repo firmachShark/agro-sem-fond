@@ -16,7 +16,33 @@
     }
 }
 
+.carousel {
+    &>div>div {
+        display: flex;
+        align-items: stretch;
+
+        &>div {
+            height: inherit;
+
+            &>div {
+                height: 100%;
+
+                &>div {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.alone {
+    @media (min-width: $bp-lg) {
+        width: 50%;
+    }
+}
+
 .item {
+    height: 100%;
     display: block;
     background-color: $color-primary;
     border-radius: 1.25em;

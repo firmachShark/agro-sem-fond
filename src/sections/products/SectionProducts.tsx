@@ -8,12 +8,14 @@ interface SectionProductsProps {
     products: IProduct[]
     title: string
     isNew?: boolean
+    isHit?: boolean
 }
 
 export const SectionProducts: React.FC<SectionProductsProps> = ({
     products,
     title,
     isNew,
+    isHit,
 }) => {
     if (!products.length) return null
 
@@ -24,6 +26,7 @@ export const SectionProducts: React.FC<SectionProductsProps> = ({
                 <ProductsCarousel
                     carouselProps={{ variableWidth: true, centerMode: true }}
                     isNew={!!isNew}
+                    isHit={!!isHit}
                     products={products}
                 />
             </Container>

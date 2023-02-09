@@ -73,7 +73,7 @@ export const Home: NextPage<HomePageProps> = ({
             <SectionProducts isNew products={newProducts} title="Новинки" />
             <SectionReviews reviews={reviews} />
             <SectionDelivery />
-            <SectionProducts products={hitProducts} title="Хит продаж" />
+            <SectionProducts isHit products={hitProducts} title="Хит продаж" />
             <SectionCatalogMail />
             <SectionConnect />
             <SectionBlog posts={posts} title="Полезно знать" />

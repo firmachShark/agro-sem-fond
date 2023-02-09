@@ -130,13 +130,14 @@ const SearchPage: NextPage<SearchPageProps> = ({
                                 <div
                                     key={product.id}
                                     className={concatClass([
-                                        'col-xl-3 col-lg-4 col-md-6 col-sm-8 col-auto',
+                                        'col-xl-3 col-lg-4 col-md-6 col-sm-8 col-auto mt-3',
                                         styles.item_wrapper,
                                     ])}
                                 >
                                     <Card
                                         product={product}
                                         isNew={product.isNew}
+                                        isHit={product.isHit}
                                     />
                                 </div>
                             ))}

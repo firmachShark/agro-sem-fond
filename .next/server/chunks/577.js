@@ -87,6 +87,8 @@ module.exports = {
 // Exports
 module.exports = {
 	"section": "SectionOverview_section__G_nz2",
+	"carousel": "SectionOverview_carousel__vly8Z",
+	"alone": "SectionOverview_alone__BZ0DD",
 	"item": "SectionOverview_item__my4dV",
 	"inner": "SectionOverview_inner__eA_Xm"
 };
@@ -167,7 +169,10 @@ var components_button = __webpack_require__(5168);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
+// EXTERNAL MODULE: ./utils/concatClass.ts
+var concatClass = __webpack_require__(9794);
 ;// CONCATENATED MODULE: ./src/sections/overview/SectionOverview.tsx
+
 
 
 
@@ -180,6 +185,7 @@ const SectionOverview = ({ items  })=>{
         className: (SectionOverview_module_default()).section,
         children: /*#__PURE__*/ jsx_runtime_.jsx(container/* Container */.W, {
             children: /*#__PURE__*/ jsx_runtime_.jsx(carousel/* Carousel */.l, {
+                className: (SectionOverview_module_default()).carousel,
                 infinite: true,
                 autoplay: true,
                 autoplaySpeed: 5000,
@@ -193,9 +199,15 @@ const SectionOverview = ({ items  })=>{
                     }
                 ],
                 children: items.map((item, i)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        style: {
+                            height: "100%"
+                        },
                         children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                             href: item.href,
-                            className: (SectionOverview_module_default()).item,
+                            className: (0,concatClass/* concatClass */.o)([
+                                (SectionOverview_module_default()).item,
+                                items.length === 1 ? (SectionOverview_module_default()).alone : undefined
+                            ]),
                             style: {
                                 backgroundImage: item.photo ? `url(${item.photo.url})` : "none"
                             },
@@ -282,8 +294,6 @@ const SectionDelivery = ()=>{
 ;// CONCATENATED MODULE: ./src/sections/delivery/index.ts
 
 
-// EXTERNAL MODULE: ./utils/concatClass.ts
-var concatClass = __webpack_require__(9794);
 // EXTERNAL MODULE: ./src/sections/categories/SectionCategories.module.scss
 var SectionCategories_module = __webpack_require__(8570);
 var SectionCategories_module_default = /*#__PURE__*/__webpack_require__.n(SectionCategories_module);
@@ -347,7 +357,7 @@ var SectionProducts_module_default = /*#__PURE__*/__webpack_require__.n(SectionP
 
 
 
-const SectionProducts = ({ products , title , isNew  })=>{
+const SectionProducts = ({ products , title , isNew , isHit  })=>{
     if (!products.length) return null;
     return /*#__PURE__*/ jsx_runtime_.jsx("section", {
         className: (SectionProducts_module_default()).section,
@@ -363,6 +373,7 @@ const SectionProducts = ({ products , title , isNew  })=>{
                         centerMode: true
                     },
                     isNew: !!isNew,
+                    isHit: !!isHit,
                     products: products
                 })
             ]
@@ -416,6 +427,7 @@ const SectionReviews = ({ reviews  })=>{
         const candidate = items[idx];
         if (candidate) setCurrent(candidate);
     };
+    if (!reviews.length) return null;
     return /*#__PURE__*/ jsx_runtime_.jsx("section", {
         children: /*#__PURE__*/ jsx_runtime_.jsx(container/* Container */.W, {
             children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {

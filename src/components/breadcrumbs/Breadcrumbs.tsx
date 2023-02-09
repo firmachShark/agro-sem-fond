@@ -15,6 +15,7 @@ const defaultReplace: Record<string, string> = {
     faq: 'Задать вопрос',
     galery: 'Галерея',
     garanty: 'Гарантия',
+    viewed: 'Раннее вы смотрели',
 }
 
 interface BreadcrumbLink {

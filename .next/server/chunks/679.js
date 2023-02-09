@@ -40,7 +40,8 @@ const defaultReplace = {
     blog: "Блог",
     faq: "Задать вопрос",
     galery: "Галерея",
-    garanty: "Гарантия"
+    garanty: "Гарантия",
+    viewed: "Раннее вы смотрели"
 };
 const Breadcrumbs = ({ replace  })=>{
     const [state, setState] = (0,external_react_.useState)([

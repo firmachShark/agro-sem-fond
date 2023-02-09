@@ -80,6 +80,7 @@ const Home = ({ overviews , categories , newProducts , hitProducts , reviews , p
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_sections__WEBPACK_IMPORTED_MODULE_2__/* .SectionDelivery */ ._5, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_sections__WEBPACK_IMPORTED_MODULE_2__/* .SectionProducts */ .WO, {
+                isHit: true,
                 products: hitProducts,
                 title: "Хит продаж"
             }),
@@ -477,7 +478,7 @@ module.exports = import("remark-html");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,168,686,700,584,152,109,535,874,577,822,29], () => (__webpack_exec__(4186)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,168,686,700,584,152,535,109,874,577,822,29], () => (__webpack_exec__(4186)));
 module.exports = __webpack_exports__;
 
 })();

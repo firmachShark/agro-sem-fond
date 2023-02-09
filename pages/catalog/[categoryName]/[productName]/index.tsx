@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Carousel, Tab, Tabs } from 'react-bootstrap'
 import { Breadcrumbs } from 'src/components/breadcrumbs'
 import { Container } from 'src/components/layout/container'
@@ -25,6 +25,7 @@ import { useDispatchCreator } from 'src/hooks/useStore'
 import { openModalOrder } from 'src/store/slices/modal-order.slice'
 import { ProductReview } from 'src/components/productReview'
 import { Input } from 'src/components/input'
+import viewedApi from 'utils/viewedApi'
 
 interface ProductPageProps {
     product: IProduct
@@ -117,6 +118,10 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
             text: 'Оставьте заявку и наш менеджер с Вами свяжется!',
         })
     }
+
+    useEffect(() => {
+        viewedApi.add({ id: product.id })
+    }, [product.id])
 
     return (
         <>
