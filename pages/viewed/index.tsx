@@ -30,8 +30,8 @@ export const getServerSideProps: GetServerSideProps<ViewedPageProps> = async (
     const ids = items.map((item) => item.id)
     const page = Number(context.query.page) || 1
 
-    const { products, pagination } = await productService.getAll(
-        {
+    const { products, pagination } = await productService.getAll({
+        _query: {
             ...baseQuery,
             filters: {
                 id: {
@@ -43,8 +43,8 @@ export const getServerSideProps: GetServerSideProps<ViewedPageProps> = async (
                 page: page,
             },
         },
-        true,
-    )
+        withPagination: true,
+    })
 
     const sorted = ids.reduce((result: IProduct[], id) => {
         const product = products.find((product) => product.id === id)

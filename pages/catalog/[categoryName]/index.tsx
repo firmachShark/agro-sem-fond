@@ -161,6 +161,7 @@ const Category: NextPage<CategoryState> = ({
                                                 key={product.id}
                                                 description={!!product.props}
                                                 isNew={product.isNew}
+                                                isHit={product.isHit}
                                                 product={product}
                                             />
                                         )

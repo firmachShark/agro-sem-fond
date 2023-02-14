@@ -14,6 +14,7 @@ import { Footer } from 'src/components/layout/footer'
 import { Provider } from 'react-redux'
 import { store } from 'src/store'
 import { ModalOrder } from 'src/components/modalOrder'
+import { SSRProvider } from 'react-bootstrap'
 
 configure({ showSpinner: false })
 
@@ -42,19 +43,21 @@ export default function App({ Component, pageProps }: AppProps) {
         require('bootstrap/dist/js/bootstrap.bundle.min.js')
     }, [])
     return (
-        <Provider store={store}>
-            <Head>
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-            </Head>
-            <Header />
-            <main>
-                <Component {...pageProps} />
-            </main>
-            <Footer />
-            <ModalOrder />
-        </Provider>
+        <SSRProvider>
+            <Provider store={store}>
+                <Head>
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1"
+                    />
+                </Head>
+                <Header />
+                <main>
+                    <Component {...pageProps} />
+                </main>
+                <Footer />
+                <ModalOrder />
+            </Provider>
+        </SSRProvider>
     )
 }

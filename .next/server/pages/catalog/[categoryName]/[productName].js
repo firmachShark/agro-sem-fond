@@ -21,7 +21,8 @@ module.exports = {
 	"short_props": "Product_short_props__GbY_5",
 	"fade": "Product_fade__HX72Y",
 	"delivery": "Product_delivery__uilaa",
-	"form": "Product_form__WDThY"
+	"form": "Product_form__WDThY",
+	"description": "Product_description__MMCLW"
 };
 
 
@@ -180,7 +181,7 @@ const ProductPage = ({ product , products  })=>{
     });
     const shortProps = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(()=>{
         if (!props) return null;
-        return Object.keys(props).slice(0, 4).reduce((result, key)=>({
+        return Object.keys(props).filter((key)=>props[key].length <= 30).slice(0, 4).reduce((result, key)=>({
                 ...result,
                 [key]: props[key]
             }), {});
@@ -431,7 +432,10 @@ const ProductPage = ({ product , products  })=>{
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.Tab, {
                                                     eventKey: "description",
                                                     title: "Описание",
-                                                    children: description
+                                                    className: (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().description),
+                                                    dangerouslySetInnerHTML: {
+                                                        __html: description
+                                                    }
                                                 }),
                                                 props && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.Tab, {
                                                     eventKey: "params",
@@ -441,7 +445,7 @@ const ProductPage = ({ product , products  })=>{
                                                             (_Product_module_scss__WEBPACK_IMPORTED_MODULE_25___default().short_props),
                                                             "mw-100"
                                                         ]),
-                                                        children: Object.keys(props).reverse().map((key, i)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+                                                        children: Object.keys(props).map((key, i)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
                                                                 style: {
                                                                     animationDelay: `${i * 200}ms`
                                                                 },
@@ -449,7 +453,6 @@ const ProductPage = ({ product , products  })=>{
                                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                                         children: key
                                                                     }),
-                                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("hr", {}),
                                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
                                                                         children: props[key]
                                                                     })
@@ -1350,6 +1353,22 @@ module.exports = require("react/jsx-runtime");
 "use strict";
 module.exports = import("axios");;
 
+/***/ }),
+
+/***/ 1774:
+/***/ ((module) => {
+
+"use strict";
+module.exports = import("remark");;
+
+/***/ }),
+
+/***/ 7740:
+/***/ ((module) => {
+
+"use strict";
+module.exports = import("remark-html");;
+
 /***/ })
 
 };
@@ -1359,7 +1378,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,584,152,535,109,874,577,371], () => (__webpack_exec__(6936)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,853,152,535,109,874,577,371], () => (__webpack_exec__(6936)));
 module.exports = __webpack_exports__;
 
 })();

@@ -58,7 +58,8 @@
 
     img {
         width: 4em;
-        height: 4em;
+        height: auto;
+        filter: invert(36%) sepia(99%) saturate(324%) hue-rotate(82deg) brightness(101%) contrast(95%);
     }
 
     @include breakpoint($bp-md) {

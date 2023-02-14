@@ -106,16 +106,18 @@ export const Card: React.FC<CardProps> = ({
             {description && props && (
                 <div className={concatClass([styles.description])}>
                     <ul>
-                        {Object.keys(props).map((key) => (
-                            <li key={key}>
-                                <strong>{key}</strong>
-                                <span>{props[key]}</span>
-                            </li>
-                        ))}
+                        {Object.keys(props)
+                            .filter((key) => props[key].length <= 30)
+                            .map((key) => (
+                                <li key={key}>
+                                    <strong>{key}</strong>
+                                    <span>{props[key]}</span>
+                                </li>
+                            ))}
                     </ul>
                 </div>
             )}
-            <div className={styles.stickers}>
+            <Link href={href} className={styles.stickers}>
                 {isNew && <span className={styles.sticker}>Новинка</span>}
                 {isHit && (
                     <span
@@ -127,7 +129,17 @@ export const Card: React.FC<CardProps> = ({
                         ХИТ ПРОДАЖ
                     </span>
                 )}
-            </div>
+                {product.isGift && (
+                    <span
+                        className={concatClass([
+                            styles.sticker,
+                            styles.sticker_red,
+                        ])}
+                    >
+                        + Подарок
+                    </span>
+                )}
+            </Link>
             {previewData && (
                 <Link href={href} className={styles.header}>
                     <Img

@@ -68,19 +68,22 @@ const getServerSideProps = async (context)=>{
     const ids = items.map((item)=>item.id);
     const page = Number(context.query.page) || 1;
     const { products , pagination  } = await src_services_product_service__WEBPACK_IMPORTED_MODULE_8__/* ["default"].getAll */ .Z.getAll({
-        ...src_services_product_service__WEBPACK_IMPORTED_MODULE_8__/* .baseQuery */ .r,
-        filters: {
-            id: {
-                $in: ids.length ? ids : [
-                    -1
-                ]
+        _query: {
+            ...src_services_product_service__WEBPACK_IMPORTED_MODULE_8__/* .baseQuery */ .r,
+            filters: {
+                id: {
+                    $in: ids.length ? ids : [
+                        -1
+                    ]
+                }
+            },
+            pagination: {
+                pageSize: 20,
+                page: page
             }
         },
-        pagination: {
-            pageSize: 20,
-            page: page
-        }
-    }, true);
+        withPagination: true
+    });
     const sorted = ids.reduce((result, id)=>{
         const product = products.find((product)=>product.id === id);
         if (product) result.push(product);
@@ -494,6 +497,22 @@ module.exports = require("react/jsx-runtime");
 "use strict";
 module.exports = import("axios");;
 
+/***/ }),
+
+/***/ 1774:
+/***/ ((module) => {
+
+"use strict";
+module.exports = import("remark");;
+
+/***/ }),
+
+/***/ 7740:
+/***/ ((module) => {
+
+"use strict";
+module.exports = import("remark-html");;
+
 /***/ })
 
 };
@@ -503,7 +522,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,584,152,535,63,371], () => (__webpack_exec__(5435)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,168,686,700,853,152,535,63,371], () => (__webpack_exec__(5435)));
 module.exports = __webpack_exports__;
 
 })();

@@ -207,26 +207,38 @@ $offset-left: 3.5rem;
 
     li {
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
+        justify-content: space-between;
         padding: .75em 0;
         opacity: 0;
         animation: fade 1s ease;
         animation-fill-mode: forwards;
+        position: relative;
 
         span {
             padding-left: 2em;
             background: url('../../../../public/images/rhombus.svg') no-repeat;
             background-position: left center;
             background-size: 1.5em;
+            background-color: #fff;
         }
 
-        hr {
+
+        b {
+            text-align: right;
+            background-color: #fff;
+            position: relative;
+            z-index: 1;
+
+            display: flex;
             flex-grow: 1;
-            border: 0;
-            border-bottom: 1px dashed #000;
-            opacity: .5;
-            margin: .25em;
-            background: transparent;
+
+            &:before {
+                content: "";
+                display: block;
+                flex-grow: 1;
+                border-bottom: 1px dashed #000;
+            }
         }
     }
 }
@@ -299,5 +311,22 @@ $offset-left: 3.5rem;
 
     input {
         width: 100%;
+    }
+}
+
+.description {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        color: $color-primary;
+    }
+
+    h1 {
+        font-size: 2em;
     }
 }

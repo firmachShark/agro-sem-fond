@@ -49,10 +49,12 @@ const CartPage = () => {
         setLoading(true)
         try {
             const products = await productService.getAll({
-                ...baseQuery,
-                filters: {
-                    id: {
-                        $in: ids.length ? ids : [-1],
+                _query: {
+                    ...baseQuery,
+                    filters: {
+                        id: {
+                            $in: ids.length ? ids : [-1],
+                        },
                     },
                 },
             })

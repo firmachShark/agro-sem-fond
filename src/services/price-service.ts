@@ -2,19 +2,17 @@ import axios from 'axios'
 
 const CRM_URL = process.env.NEXT_PUBLIC_CRM_URL
 const PRICE_KEY = process.env.NEXT_PUBLIC_PRICE_KEY || ''
+const PRICE_DELIVERY_KEY = process.env.NEXT_PUBLIC_PRICE_DELIVERY_KEY || ''
+
+export interface PriceRequestItem {
+    id: number
+    priceWithDelivery: boolean
+}
 
 class PriceService {
-    cached: Record<number, number> = {}
-
-    async loadPrices(ids: number[]) {
+    async loadPrices(ids: PriceRequestItem[]) {
         const result: Record<number, number> = {}
-        const requestIds: number[] = []
-        ids.forEach((id) => {
-            if (this.cached[id] !== undefined)
-                return (result[id] = this.cached[id])
-
-            requestIds.push(id)
-        })
+        const requestIds: number[] = ids.map((id) => id.id)
 
         if (requestIds.length) {
             try {
@@ -25,9 +23,18 @@ class PriceService {
 
                 if (response.status === 201) {
                     response.data.forEach((priceObj) => {
-                        const price = priceObj[PRICE_KEY]
+                        const requested = ids.find(
+                            (item) => item.id === priceObj.product_id,
+                        )
+
+                        let priceKey = PRICE_KEY
+                        if (requested?.priceWithDelivery) {
+                            priceKey = PRICE_DELIVERY_KEY
+                        }
+
+                        const price = priceObj[priceKey]
+
                         result[priceObj.product_id] = price
-                        this.cached[priceObj.product_id] = price
                     })
                 }
             } catch (e) {

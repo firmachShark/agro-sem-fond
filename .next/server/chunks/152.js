@@ -13,6 +13,7 @@ module.exports = {
 	"stickers": "Card_stickers__eJxMu",
 	"sticker": "Card_sticker__lSHUa",
 	"sticker_orange": "Card_sticker_orange__AGGqm",
+	"sticker_red": "Card_sticker_red__2_dEN",
 	"header": "Card_header__wDcIt",
 	"body": "Card_body__rSvQh",
 	"title": "Card_title___WBLo"
@@ -135,7 +136,7 @@ const Card = ({ product , isNew , isHit , description  })=>{
                     (Card_module_default()).description
                 ]),
                 children: /*#__PURE__*/ jsx_runtime_.jsx("ul", {
-                    children: Object.keys(props).map((key)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)("li", {
+                    children: Object.keys(props).filter((key)=>props[key].length <= 30).map((key)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)("li", {
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx("strong", {
                                     children: key
@@ -147,7 +148,8 @@ const Card = ({ product , isNew , isHit , description  })=>{
                         }, key))
                 })
             }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
+                href: href,
                 className: (Card_module_default()).stickers,
                 children: [
                     isNew && /*#__PURE__*/ jsx_runtime_.jsx("span", {
@@ -160,6 +162,13 @@ const Card = ({ product , isNew , isHit , description  })=>{
                             (Card_module_default()).sticker_orange
                         ]),
                         children: "ХИТ ПРОДАЖ"
+                    }),
+                    product.isGift && /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: (0,concatClass/* concatClass */.o)([
+                            (Card_module_default()).sticker,
+                            (Card_module_default()).sticker_red
+                        ]),
+                        children: "+ Подарок"
                     })
                 ]
             }),

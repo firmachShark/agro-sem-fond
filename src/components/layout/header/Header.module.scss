@@ -83,10 +83,11 @@
     cursor: pointer;
 
     img {
-        width: 18.5em;
+        width: 13.4em;
+        height: auto;
 
         @include breakpoint($bp-lg) {
-            width: 8em;
+            width: 9em;
         }
     }
 }

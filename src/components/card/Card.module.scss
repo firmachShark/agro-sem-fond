@@ -158,6 +158,7 @@
 .sticker {
     display: block;
     padding: 0.25em 0.5em;
+    padding-right: .75em;
     color: #fff;
     background-color: #538cff;
     border-top-right-radius: 1em;
@@ -166,6 +167,10 @@
 
 .sticker_orange {
     background-color: $color-orange;
+}
+
+.sticker_red {
+    background-color: red;
 }
 
 .header {

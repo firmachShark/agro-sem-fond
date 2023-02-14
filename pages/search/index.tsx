@@ -42,8 +42,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const page = Number(context.query.page) || 1
 
-    const { pagination, products } = await productService.getAll(
-        {
+    const { pagination, products } = await productService.getAll({
+        _query: {
             ...baseQuery,
             filters: {
                 name: {
@@ -55,8 +55,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
                 page: page,
             },
         },
-        true,
-    )
+        withPagination: true,
+    })
 
     return {
         props: {

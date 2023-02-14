@@ -11,10 +11,11 @@ import {
     MailIcon,
     CatalogIcon,
     ViewedIcon,
-    LogoWord,
+    // LogoWord,
 } from 'src/image_export/header'
 import { useRouter } from 'next/router'
 import { Phone, IconLink, Cart } from './Common'
+import { LogoWord } from 'src/components/logo-word/LogoWord'
 
 export const Header = () => {
     const router = useRouter()
@@ -54,7 +55,8 @@ export const Header = () => {
                                 onClick={handleClickLogo}
                                 className={styles.fixedLogo}
                             >
-                                <Image priority src={LogoWord} alt="Logo" />
+                                <LogoWord />
+                                {/* <Image priority src={LogoWord} alt="Logo" /> */}
                             </div>
                             <div className={styles.fixedSearch}>
                                 <SearchInput />
@@ -69,7 +71,13 @@ export const Header = () => {
             <Container>
                 <div className={styles.inner}>
                     <div onClick={handleClickLogo} className={styles.logo}>
-                        <Image priority src={Logo} alt="Logo" />
+                        <Image
+                            priority
+                            src={Logo}
+                            width={Logo.width}
+                            height={Logo.height}
+                            alt="Logo"
+                        />
                     </div>
                     <div className={styles.search}>
                         <p className="d-lg-block d-none">

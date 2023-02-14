@@ -5,7 +5,8 @@ import {
     getNumbersFromObject,
     getObjectByNumber,
 } from 'utils/getNumbersFromObject'
-import priceService from './price-service'
+import priceService, { PriceRequestItem } from './price-service'
+import { convertToHTML } from 'utils/convertToHTML'
 
 export const baseQuery: object = {
     populate: {
@@ -42,9 +43,14 @@ type WithPaginationReturnType = {
 
 class ProductService {
     async getAll<T>(
-        _query?: object,
-        withPagination?: T,
+        options: {
+            _query?: object
+            withPagination?: T
+            withDescription?: boolean
+        } = {},
     ): Promise<GetAllReturnType<T>> {
+        const { _query, withDescription, withPagination } = options
+
         const query = _query
             ? `?${qs.stringify(_query, { encodeValuesOnly: true })}`
             : ''
@@ -53,13 +59,15 @@ class ProductService {
             'products' + query,
         )
 
-        const ids: number[] = []
+        const ids: PriceRequestItem[] = []
 
         items.forEach((product) => {
             const id = product.calculator
                 ? getNumbersFromObject(product.calculator)
                 : [product.price_id]
-            ids.push(...id)
+            id.forEach((id) =>
+                ids.push({ id, priceWithDelivery: product.priceWithDelivery }),
+            )
         })
 
         const prices = await priceService.loadPrices(ids)
@@ -74,7 +82,8 @@ class ProductService {
                     : ([] as IProduct[])
             ) as GetAllReturnType<T>
 
-        const products = items.map((product) => {
+        const products = []
+        for (const product of items) {
             let price = prices[product.price_id]
 
             if (product.calculator) {
@@ -91,14 +100,17 @@ class ProductService {
                 })
             }
 
-            if (price)
-                return {
-                    ...product,
-                    price,
-                }
+            const resultProduct = { ...product }
 
-            return product
-        })
+            if (price) resultProduct.price = price
+
+            if (withDescription)
+                resultProduct.description = await convertToHTML(
+                    product.description,
+                )
+
+            products.push(resultProduct)
+        }
 
         return (
             withPagination
@@ -147,7 +159,10 @@ class ProductService {
         const result = await getPaginatedModels<IProduct>('products' + query)
 
         const prices = await priceService.loadPrices(
-            result.items.map((product) => product.price_id),
+            result.items.map((product) => ({
+                id: product.price_id,
+                priceWithDelivery: product.priceWithDelivery,
+            })),
         )
 
         return {
@@ -173,51 +188,56 @@ class ProductService {
         exclude?: string,
     ) {
         return this.getAll({
-            ...baseQuery,
-            filters: {
-                [flag]: {
-                    $eq: true,
-                },
-                ...(exclude
-                    ? {
-                          name: {
-                              $ne: exclude,
-                          },
-                      }
-                    : {}),
-                ...(categoryName
-                    ? {
-                          subcategories: {
-                              category: {
-                                  name: {
-                                      $eqi: categoryName,
+            _query: {
+                ...baseQuery,
+                filters: {
+                    [flag]: {
+                        $eq: true,
+                    },
+                    ...(exclude
+                        ? {
+                              name: {
+                                  $ne: exclude,
+                              },
+                          }
+                        : {}),
+                    ...(categoryName
+                        ? {
+                              subcategories: {
+                                  category: {
+                                      name: {
+                                          $eqi: categoryName,
+                                      },
                                   },
                               },
-                          },
-                      }
-                    : {}),
-            },
-            pagination: {
-                limit: 10,
+                          }
+                        : {}),
+                },
+                pagination: {
+                    limit: 10,
+                },
             },
         })
     }
 
     async getByName(name: string, categoryName: string) {
         const products = await this.getAll({
-            ...baseQuery,
-            filters: {
-                name: {
-                    $eqi: name,
-                },
-                subcategories: {
-                    category: {
-                        name: {
-                            $eqi: categoryName,
+            _query: {
+                ...baseQuery,
+                filters: {
+                    name: {
+                        $eqi: name,
+                    },
+                    subcategories: {
+                        category: {
+                            name: {
+                                $eqi: categoryName,
+                            },
                         },
                     },
                 },
             },
+            withDescription: true,
         })
 
         if (!products.length) return null

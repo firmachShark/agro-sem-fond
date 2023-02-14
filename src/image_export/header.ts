@@ -1,6 +1,6 @@
 export { default as PhoneIcon } from 'public/images/header/phone.svg'
-export { default as Logo } from 'public/images/header/logo.svg'
-export { default as LogoSmall } from 'public/images/header/logo-small.svg'
+export { default as Logo } from 'public/images/header/logo.png'
+export { default as LogoSmall } from 'public/images/header/logo-small.png'
 export { default as LogoWord } from 'public/images/header/logo-word.svg'
 export { default as StatusIcon } from 'public/images/header/status.svg'
 export { default as CartIcon } from 'public/images/header/cart.svg'

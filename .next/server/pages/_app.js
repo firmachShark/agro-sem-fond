@@ -113,6 +113,17 @@ module.exports = {
 
 /***/ }),
 
+/***/ 1449:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"logo": "LogoWord_logo__wcGp_"
+};
+
+
+/***/ }),
+
 /***/ 3847:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -150,8 +161,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var src_store__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(8313);
 /* harmony import */ var src_components_modalOrder__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(718);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(358);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_16__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([src_components_layout_header__WEBPACK_IMPORTED_MODULE_3__]);
 src_components_layout_header__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -192,24 +206,26 @@ function App({ Component , pageProps  }) {
     (0,react__WEBPACK_IMPORTED_MODULE_11__.useEffect)(()=>{
         __webpack_require__(399);
     }, []);
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_13__.Provider, {
-        store: src_store__WEBPACK_IMPORTED_MODULE_14__/* .store */ .h,
-        children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_10___default()), {
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                    name: "viewport",
-                    content: "width=device-width, initial-scale=1"
-                })
-            }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_header__WEBPACK_IMPORTED_MODULE_3__/* .Header */ .h4, {}),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
-                    ...pageProps
-                })
-            }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_footer__WEBPACK_IMPORTED_MODULE_12__/* .Footer */ .$, {}),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_modalOrder__WEBPACK_IMPORTED_MODULE_15__/* .ModalOrder */ .p, {})
-        ]
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_16__.SSRProvider, {
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_13__.Provider, {
+            store: src_store__WEBPACK_IMPORTED_MODULE_14__/* .store */ .h,
+            children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_10___default()), {
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "viewport",
+                        content: "width=device-width, initial-scale=1"
+                    })
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_header__WEBPACK_IMPORTED_MODULE_3__/* .Header */ .h4, {}),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
+                        ...pageProps
+                    })
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_footer__WEBPACK_IMPORTED_MODULE_12__/* .Footer */ .$, {}),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_modalOrder__WEBPACK_IMPORTED_MODULE_15__/* .ModalOrder */ .p, {})
+            ]
+        })
     });
 }
 
@@ -926,8 +942,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8641);
-/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1761);
-/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_Header_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(1761);
+/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Header_module_scss__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2310);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5675);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_4__);
@@ -937,8 +953,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1853);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _Common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5552);
+/* harmony import */ var src_components_logo_word_LogoWord__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6686);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([___WEBPACK_IMPORTED_MODULE_2__]);
 ___WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -970,26 +988,22 @@ const Header = ()=>{
         };
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("header", {
-        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().header),
+        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().header),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(___WEBPACK_IMPORTED_MODULE_2__/* .TopMenu */ .Ff, {}),
             isFixed && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().fixed),
+                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixed),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_container__WEBPACK_IMPORTED_MODULE_3__/* .Container */ .W, {
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().fixedInner),
+                        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixedInner),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 onClick: handleClickLogo,
-                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().fixedLogo),
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
-                                    priority: true,
-                                    src: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .LogoWord */ .bp,
-                                    alt: "Logo"
-                                })
+                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixedLogo),
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_logo_word_LogoWord__WEBPACK_IMPORTED_MODULE_10__/* .LogoWord */ .b, {})
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().fixedSearch),
+                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixedSearch),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_search_input__WEBPACK_IMPORTED_MODULE_5__/* .SearchInput */ .M, {})
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_9__/* .Phone */ .LP, {
@@ -1004,19 +1018,21 @@ const Header = ()=>{
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_container__WEBPACK_IMPORTED_MODULE_3__/* .Container */ .W, {
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().inner),
+                    className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().inner),
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             onClick: handleClickLogo,
-                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().logo),
+                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().logo),
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                 priority: true,
                                 src: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .Logo */ .TR,
+                                width: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .Logo.width */ .TR.width,
+                                height: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .Logo.height */ .TR.height,
                                 alt: "Logo"
                             })
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().search),
+                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().search),
                             children: [
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                                     className: "d-lg-block d-none",
@@ -1033,7 +1049,7 @@ const Header = ()=>{
                             ]
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_10___default().info),
+                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().info),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_9__/* .Phone */ .LP, {}),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
@@ -1512,6 +1528,37 @@ const SearchInput = (props)=>{
 
 /***/ }),
 
+/***/ 6686:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "b": () => (/* binding */ LogoWord)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _LogoWord_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1449);
+/* harmony import */ var _LogoWord_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_LogoWord_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const LogoWord = ()=>{
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+        className: (_LogoWord_module_scss__WEBPACK_IMPORTED_MODULE_2___default().logo),
+        children: [
+            "ЗАГОРОДНЫЙ",
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
+                children: ".БЕЛ"
+            })
+        ]
+    });
+};
+
+
+/***/ }),
+
 /***/ 718:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1662,7 +1709,6 @@ __webpack_require__.d(__webpack_exports__, {
   "YQ": () => (/* reexport */ howto),
   "TR": () => (/* reexport */ logo),
   "Ew": () => (/* reexport */ logo_small),
-  "bp": () => (/* reexport */ logo_word),
   "bV": () => (/* reexport */ mail),
   "n8": () => (/* reexport */ order),
   "qW": () => (/* reexport */ phone),
@@ -1672,14 +1718,14 @@ __webpack_require__.d(__webpack_exports__, {
   "ZU": () => (/* reexport */ viewed)
 });
 
-// UNUSED EXPORTS: SearchIcon
+// UNUSED EXPORTS: LogoWord, SearchIcon
 
 ;// CONCATENATED MODULE: ./public/images/header/phone.svg
 /* harmony default export */ const phone = ({"src":"/_next/static/media/phone.725ee7e8.svg","height":25,"width":25});
-;// CONCATENATED MODULE: ./public/images/header/logo.svg
-/* harmony default export */ const logo = ({"src":"/_next/static/media/logo.5ba09d0b.svg","height":103,"width":150});
-;// CONCATENATED MODULE: ./public/images/header/logo-small.svg
-/* harmony default export */ const logo_small = ({"src":"/_next/static/media/logo-small.5041a857.svg","height":77,"width":115});
+;// CONCATENATED MODULE: ./public/images/header/logo.png
+/* harmony default export */ const logo = ({"src":"/_next/static/media/logo.95d6da0f.png","height":103,"width":150,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAbElEQVR42j3JLQqEUABF4eu8malTZiabxB1oEPEHTEZ3YLcZrCJ2wYWYrW7A5Ho8yMMDHzdckQORQYsBP9yfgSjChhUFpJeesn2wYMeB+rob35Htjw49RlRy355sJVLkeihjE31NrDksNAX5CSYBDIC/dFW4AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
+;// CONCATENATED MODULE: ./public/images/header/logo-small.png
+/* harmony default export */ const logo_small = ({"src":"/_next/static/media/logo-small.33c132a9.png","height":83,"width":100,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAQAAACfUMTVAAAAbElEQVR42iXIIQoCURRA0aOibXAFLsIoGkUwmAwmg2WS67C5BJsIgkmrBjH+IMwCZhlT33wYLrcceiFYWpnoB8HQSaNyMOhgLLl5eMrAyE5ydvEKgbm32j//UeQsXP18JXdbJTNHG6W9tamiBSXoHWUQkSu4AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":7});
 ;// CONCATENATED MODULE: ./public/images/header/logo-word.svg
 /* harmony default export */ const logo_word = ({"src":"/_next/static/media/logo-word.9f6f2062.svg","height":16,"width":150});
 ;// CONCATENATED MODULE: ./public/images/header/status.svg

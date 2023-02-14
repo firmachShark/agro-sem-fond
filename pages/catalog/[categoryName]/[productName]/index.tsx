@@ -86,6 +86,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
         if (!props) return null
 
         return Object.keys(props)
+            .filter((key) => props[key].length <= 30)
             .slice(0, 4)
             .reduce(
                 (result: Record<string, string>, key) => ({
@@ -318,9 +319,14 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                 activeKey={tabKey}
                                 onSelect={(k) => setKey(k as string)}
                             >
-                                <Tab eventKey="description" title="Описание">
-                                    {description}
-                                </Tab>
+                                <Tab
+                                    eventKey="description"
+                                    title="Описание"
+                                    className={styles.description}
+                                    dangerouslySetInnerHTML={{
+                                        __html: description,
+                                    }}
+                                />
                                 {props && (
                                     <Tab
                                         eventKey="params"
@@ -332,9 +338,8 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                                 'mw-100',
                                             ])}
                                         >
-                                            {Object.keys(props)
-                                                .reverse()
-                                                .map((key, i) => (
+                                            {Object.keys(props).map(
+                                                (key, i) => (
                                                     <li
                                                         key={key}
                                                         style={{
@@ -344,10 +349,10 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                                         }}
                                                     >
                                                         <span>{key}</span>
-                                                        <hr />
                                                         <b>{props[key]}</b>
                                                     </li>
-                                                ))}
+                                                ),
+                                            )}
                                         </ul>
                                     </Tab>
                                 )}

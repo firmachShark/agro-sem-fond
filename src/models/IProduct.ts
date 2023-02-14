@@ -12,6 +12,8 @@ export interface IProduct {
     href: string
     isNew: boolean
     isHit: boolean
+    isGift: boolean
+    priceWithDelivery: boolean
     props: Record<string, string> | null
     calculator?: Record<string, Record<string, number>>
 }
