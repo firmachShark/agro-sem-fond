@@ -9,23 +9,23 @@ import productService from 'src/services/product-service'
 
 interface CatalogState {
     categories: ICategory[]
-    newProducts: IProduct[]
+    hitProducts: IProduct[]
 }
 
 export const getStaticProps: GetStaticProps = async () => {
     const categories = await categoryService.getAll()
-    const newProducts = await productService.getByFlag('isNew')
+    const hitProducts = await productService.getByFlag('isHit')
 
     return {
         revalidate: 60,
         props: {
             categories,
-            newProducts,
+            hitProducts,
         },
     }
 }
 
-const Catalog: NextPage<CatalogState> = ({ categories, newProducts }) => {
+const Catalog: NextPage<CatalogState> = ({ categories, hitProducts }) => {
     return (
         <>
             <Head>
@@ -36,7 +36,7 @@ const Catalog: NextPage<CatalogState> = ({ categories, newProducts }) => {
                 categories={categories}
                 title="Категории товаров"
             />
-            <SectionProducts title="Новинки" isNew products={newProducts} />
+            <SectionProducts title="Хиты продаж" isHit products={hitProducts} />
         </>
     )
 }

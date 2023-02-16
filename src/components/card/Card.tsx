@@ -102,6 +102,8 @@ export const Card: React.FC<CardProps> = ({
                 styles.card,
                 description ? styles.d_wrapper : undefined,
             ])}
+            itemScope
+            itemType="http://schema.org/Product"
         >
             {description && props && (
                 <div className={concatClass([styles.description])}>
@@ -143,6 +145,7 @@ export const Card: React.FC<CardProps> = ({
             {previewData && (
                 <Link href={href} className={styles.header}>
                     <Img
+                        itemProp="image"
                         width={previewData.imageWidth}
                         height={previewData.imageHeight}
                         src={previewData.imageURL}
@@ -153,11 +156,18 @@ export const Card: React.FC<CardProps> = ({
             )}
             <div className={styles.body}>
                 <div className="d-flex justify-content-between">
-                    <Link href={href} className={styles.title}>
+                    <Link href={href} className={styles.title} itemProp="name">
                         {product.name}
                     </Link>
                 </div>
-                <strong>{product.price} руб.</strong>
+                <strong
+                    itemProp="offers"
+                    itemScope
+                    itemType="http://schema.org/Offer"
+                >
+                    <span itemProp="lowPrice">{product.price}</span>{' '}
+                    <span itemProp="priceCurrency">BYN</span>
+                </strong>
                 <div className="d-flex justify-content-between mt-3 align-items-center">
                     {inCart ? (
                         <>

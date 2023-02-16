@@ -148,7 +148,7 @@ class ProductService {
                     ? {
                           pagination: {
                               page: filters.page,
-                              pageSize: 20,
+                              pageSize: 21,
                           },
                       }
                     : {}),

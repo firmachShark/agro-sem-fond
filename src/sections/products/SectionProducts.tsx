@@ -24,7 +24,7 @@ export const SectionProducts: React.FC<SectionProductsProps> = ({
             <Container>
                 <h2 className="section__title">{title}</h2>
                 <ProductsCarousel
-                    carouselProps={{ variableWidth: true, centerMode: true }}
+                    carouselProps={{ centerMode: false }}
                     isNew={!!isNew}
                     isHit={!!isHit}
                     products={products}

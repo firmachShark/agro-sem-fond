@@ -10,19 +10,11 @@ import { Container } from 'src/components/layout/container'
 import { Modal } from 'src/components/modal'
 import {
     StockItem_1,
-    StockItem_10,
-    StockItem_11,
-    StockItem_12,
-    StockItem_13,
-    StockItem_14,
     StockItem_2,
     StockItem_3,
     StockItem_4,
     StockItem_5,
     StockItem_6,
-    StockItem_7,
-    StockItem_8,
-    StockItem_9,
 } from 'src/image_export/stock'
 import styles from './Stock.module.scss'
 
@@ -35,79 +27,36 @@ interface StockItem {
 
 const items: StockItem[] = [
     {
-        title: 'ПОДАРКИ НА ГЛАДИОЛУСЫ',
+        title: 'СКИДКА ОТ 100 РУБ ПРИ ЗАКАЗЕ с СОСЕДОМ',
         img: StockItem_1,
         modalName: 'gifts',
     },
     {
-        title: 'ПОДАРКИ',
-        text: 'НА ВЕСЕННИЕ ЛУКОВИЧНЫЕ',
+        title: 'МАНГАЛ В ПОДАРОК К БЕСЕДКЕ',
         img: StockItem_2,
         modalName: 'gifts2',
     },
     {
-        title: 'ЦВЕТЫ НЕДЕЛИ',
-        text: 'Фрезии',
+        title: 'ШУРУПОВЕРТ В ПОДАРОК',
+        text: 'К БЕНЗОПИЛАМ',
         img: StockItem_3,
         modalName: 'flowers_week',
     },
     {
-        title: 'Скидки',
+        title: 'ДО 12 БОНУСОВ К БЕНЗОКОСАМ',
         img: StockItem_4,
+        modalName: 'discount',
+    },
+    {
+        title: 'Скидки',
+        img: StockItem_5,
         modalName: 'discount',
     },
     {
         title: 'Бесплатная и льготная доставка',
         text: 'На семена',
-        img: StockItem_5,
-        modalName: 'delivery',
-    },
-    {
-        title: 'Подарки на семена',
         img: StockItem_6,
-        modalName: 'gifts3',
-    },
-    {
-        title: 'Подарки на семена сортов и гибридов "Ваше Хозяйство"',
-        img: StockItem_7,
-        modalName: 'gifts4',
-    },
-    {
-        title: 'Подарки на семена серий Штайнерт и Био-Старт',
-        img: StockItem_8,
-        modalName: 'gifts5',
-    },
-    {
-        title: 'ПОДАРКИ НА РОЗЫ',
-        img: StockItem_9,
-        modalName: 'gifts6',
-    },
-    {
-        title: 'Подарки к саженцам декоративных',
-        img: StockItem_10,
-        modalName: 'gifts7',
-    },
-    {
-        title: 'Подарки к саженцам плодовых',
-        img: StockItem_11,
-        modalName: 'gifts8',
-    },
-    {
-        title: 'Подарки на лук севок',
-        text: 'с 1 января 2023г.',
-        img: StockItem_12,
-        modalName: 'gifts9',
-    },
-    {
-        title: 'Подарки к саженцам ягодных',
-        img: StockItem_13,
-        modalName: 'gifts10',
-    },
-    {
-        title: 'Подарок за первый заказ',
-        text: 'Гель Активист 40 мл',
-        img: StockItem_14,
-        modalName: 'gifts11',
+        modalName: 'delivery',
     },
 ]
 

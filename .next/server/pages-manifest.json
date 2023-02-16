@@ -1,22 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html",
   "/_error": "pages/_error.js",
-  "/cart": "pages/cart.html",
-  "/about": "pages/about.html",
-  "/delivery": "pages/delivery.html",
-  "/garanty": "pages/garanty.html",
-  "/payment": "pages/payment.html",
-  "/stock": "pages/stock.html",
-  "/blog": "pages/blog.js",
-  "/faq": "pages/faq.html",
-  "/catalog/[categoryName]": "pages/catalog/[categoryName].js",
-  "/catalog": "pages/catalog.js",
-  "/": "pages/index.js",
-  "/blog/[postTitle]": "pages/blog/[postTitle].js",
-  "/search": "pages/search.js",
-  "/galery": "pages/galery.js",
-  "/viewed": "pages/viewed.js",
-  "/catalog/[categoryName]/[productName]": "pages/catalog/[categoryName]/[productName].js"
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.js",
+  "/": "pages/index.js"
 }

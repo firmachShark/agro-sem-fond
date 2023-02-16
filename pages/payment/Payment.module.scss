@@ -65,10 +65,9 @@
     flex-grow: 1;
     align-items: flex-end;
     justify-content: space-between;
-    min-height: 8em;
     width: 100%;
 
-    & > * {
+    &>* {
         width: 48%;
         padding: 1em;
     }
@@ -78,13 +77,13 @@
         align-items: center;
         justify-content: flex-end;
 
-        & > * {
+        &>* {
             width: auto;
             padding: 1em 2em;
         }
     }
 
-    & > *:not(:first-child) {
+    &>*:not(:first-child) {
         margin-top: 1em;
     }
 

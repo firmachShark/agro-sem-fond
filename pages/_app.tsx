@@ -2,6 +2,7 @@ import { AppProps } from 'next/app'
 import { start, done, configure } from 'nprogress'
 import { useRouter } from 'next/router'
 import { Header } from 'src/components/layout/header'
+import Icon from 'public/icon.png'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'font-awesome/css/font-awesome.min.css'
 import 'slick-carousel/slick/slick.css'
@@ -50,6 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         name="viewport"
                         content="width=device-width, initial-scale=1"
                     />
+                    <link rel="shortcut icon" href={Icon.src} />
                 </Head>
                 <Header />
                 <main>

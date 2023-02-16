@@ -133,12 +133,15 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                 <Breadcrumbs />
                 <Container
                     className={concatClass(['container', styles.container])}
+                    itemScope
+                    itemType="http://schema.org/Product"
                 >
                     <h3
                         className={concatClass([
                             styles.title,
                             'ps-0 d-md-none d-block',
                         ])}
+                        itemProp="name"
                     >
                         {name}
                     </h3>
@@ -155,6 +158,9 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                         {images.map((image, i) => (
                                             <Carousel.Item key={i}>
                                                 <Image
+                                                    itemProp={
+                                                        i === 0 ? 'image' : ''
+                                                    }
                                                     data-fancybox={name}
                                                     width={image.width}
                                                     height={image.height}
@@ -223,9 +229,17 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                         Купить в один клик
                                     </Button>
                                 </div>
-                                <div>
+                                <div
+                                    itemProp="offers"
+                                    itemScope
+                                    itemType="http://schema.org/Offer"
+                                >
                                     <strong>
-                                        <span>{price}</span> руб./шт
+                                        <span itemProp="lowPrice">{price}</span>{' '}
+                                        <span itemProp="priceCurrency">
+                                            BYN
+                                        </span>
+                                        /шт
                                     </strong>
                                     {inCart ? (
                                         <>

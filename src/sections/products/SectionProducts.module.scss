@@ -1,6 +1,18 @@
 .section {
+    & article {
+        width: 18.75em;
+    }
+
+    @include breakpoint($bp-xxl) {
+
+        & article {
+            width: 16.75em;
+        }
+    }
+
     @include breakpoint($bp-xl) {
         font-size: .8em;
+
     }
 
     @include breakpoint($bp-lg) {
@@ -9,9 +21,12 @@
 
     @include breakpoint($bp-sm) {
         font-size: 1em;
+
+
+        & article {
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 
-    & article {
-        width: 18.75em;
-    }
 }

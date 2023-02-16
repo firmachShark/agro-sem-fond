@@ -10,7 +10,14 @@ import {
     UserIcon,
 } from 'src/image_export/footer'
 import Image from 'next/image'
-import { ADDRESS, MAIL, MAIL_ATTR, PHONE, PHONE_ATTR } from 'src/constants/info'
+import {
+    ADDRESS,
+    MAIL,
+    MAIL_ATTR,
+    ORGANIZATION,
+    PHONE,
+    PHONE_ATTR,
+} from 'src/constants/info'
 import { Button } from 'src/components/button'
 import { useDispatchCreator } from 'src/hooks/useStore'
 import { openModalOrder } from 'src/store/slices/modal-order.slice'
@@ -64,8 +71,8 @@ export const Footer = () => {
                 <div className={styles.inner}>
                     <div>
                         <h5>
-                            © {new Date().getFullYear()}. ООО
-                            &quot;Агросемфонд&quot;
+                            © {new Date().getFullYear()}. ООО &quot;
+                            {ORGANIZATION}&quot;
                         </h5>
                         {links.map((link, i) => (
                             <Link href={link.href} key={i}>

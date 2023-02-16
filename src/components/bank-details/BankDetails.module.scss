@@ -51,9 +51,18 @@
         font-size: 1.2em;
         line-height: 1.6;
         letter-spacing: 1px;
+        max-width: 60%;
 
         &:not(:first-child) {
             margin-top: .3em;
+        }
+
+        @include breakpoint($bp-xxl) {
+            max-width: 70%;
+        }
+
+        @include breakpoint($bp-lg) {
+            max-width: 100%;
         }
     }
 }

@@ -36,9 +36,9 @@ export const Filters: React.FC<FiltersProps> = ({ subcategories }) => {
 
     const defaultFilters: Record<string, any> = useMemo(
         () => ({
-            subcategory: subcategories.map((s) => s.id),
+            subcategory: [],
         }),
-        [subcategories],
+        [],
     )
 
     const hadnleConfirmFilters = () => {

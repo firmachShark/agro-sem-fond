@@ -24,7 +24,7 @@ interface CategoryState {
     category: ICategory
     subcategories: ISubcategory[]
     products: IProduct[]
-    newProducts: IProduct[]
+    hitProducts: IProduct[]
     pagination: {
         page: number
         total: number
@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         },
     )
 
-    const newProducts = await productService.getByFlag('isNew', parsedName)
+    const hitProducts = await productService.getByFlag('isHit', parsedName)
 
     if (!category)
         return {
@@ -74,7 +74,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             category,
             subcategories: category.subcategories,
             products,
-            newProducts,
+            hitProducts,
             pagination: {
                 page: pagination.page,
                 total: pagination.pageCount,
@@ -88,7 +88,7 @@ const Category: NextPage<CategoryState> = ({
     subcategories,
     pagination,
     products,
-    newProducts,
+    hitProducts,
 }) => {
     const loading = usePageLoading('catalog')
 
@@ -96,11 +96,11 @@ const Category: NextPage<CategoryState> = ({
         const count = []
 
         for (let i = 3; i > 0; i--) {
-            count.push(newProducts.length > 3 ? i : newProducts.length)
+            count.push(hitProducts.length > 3 ? i : hitProducts.length)
         }
 
         return [count[0], count[1], count[2]] as const
-    }, [newProducts])
+    }, [hitProducts])
 
     const title =
         'Каталог - ' +
@@ -119,14 +119,14 @@ const Category: NextPage<CategoryState> = ({
                     <div className={styles.main}>
                         <Filters subcategories={subcategories} />
                         <div className={styles.content}>
-                            {!!newProducts.length && (
+                            {!!hitProducts.length && (
                                 <div className="order-lg-0 order-1 mt-lg-0 mt-3">
                                     <h3 className="text-lg-start text-center">
                                         Новинки
                                     </h3>
                                     <ProductsCarousel
-                                        isNew
-                                        products={newProducts}
+                                        isHit
+                                        products={hitProducts}
                                         carouselProps={{
                                             slidesToShow,
                                             variableWidth: true,
