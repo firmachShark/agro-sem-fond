@@ -2,6 +2,21 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html",
+  "/about": "pages/about.html",
+  "/cart": "pages/cart.html",
+  "/delivery": "pages/delivery.html",
+  "/faq": "pages/faq.html",
+  "/garanty": "pages/garanty.html",
+  "/payment": "pages/payment.html",
+  "/stock": "pages/stock.html",
+  "/blog": "pages/blog.js",
+  "/blog/[postTitle]": "pages/blog/[postTitle].js",
+  "/catalog": "pages/catalog.js",
+  "/galery": "pages/galery.js",
+  "/": "pages/index.js",
+  "/viewed": "pages/viewed.js",
+  "/search": "pages/search.js",
+  "/catalog/[categoryName]/[productName]": "pages/catalog/[categoryName]/[productName].js",
+  "/catalog/[categoryName]": "pages/catalog/[categoryName].js"
 }
