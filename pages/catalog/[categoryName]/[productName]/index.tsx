@@ -117,6 +117,12 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
         dispatchOpenModalOrder({
             title: 'Купить в один клик',
             text: 'Оставьте заявку и наш менеджер с Вами свяжется!',
+            addons: [
+                {
+                    name: 'product_id',
+                    value: product.price_id.toString(),
+                },
+            ],
         })
     }
 
@@ -381,6 +387,11 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                         <div className="col-md-5 col-12 pt-5">
                             <form className={styles.form}>
                                 <h4>Оставьте заявку чтобы купить!</h4>
+                                <Input
+                                    type="hidden"
+                                    value={product.price_id}
+                                    name="product_id"
+                                />
                                 <Input name="name" placeholder="Ваше Имя" />
                                 <Input
                                     name="phone"

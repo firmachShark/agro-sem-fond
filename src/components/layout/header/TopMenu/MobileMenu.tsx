@@ -15,6 +15,7 @@ import { createPortal } from 'react-dom'
 import { concatClass } from 'utils/concatClass'
 import { IconLink, Phone } from '../Common'
 import styles from './MobileMenu.module.scss'
+import ROUTES from 'src/constants/routes'
 
 export const links = [
     {
@@ -22,31 +23,31 @@ export const links = [
         name: 'Главная',
     },
     {
-        href: '/delivery',
+        href: ROUTES.delivery,
         name: 'Доставка',
     },
     {
-        href: '/payment',
+        href: ROUTES.payment,
         name: 'Оплата',
     },
     {
-        href: '/about',
+        href: ROUTES.about,
         name: 'О нас',
     },
     {
-        href: '/stock',
+        href: ROUTES.stock,
         name: 'Бонусы',
     },
     {
-        href: '/faq',
+        href: ROUTES.faq,
         name: 'Вопрос агроному',
     },
     {
-        href: '/galery',
+        href: ROUTES.galery,
         name: 'Фотогалерея',
     },
     {
-        href: '/garanty',
+        href: ROUTES.garanty,
         name: 'Гарантия',
     },
 ]
@@ -149,14 +150,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ parentRef }) => {
                     <IconLink
                         text="Заказ по каталогу"
                         imageSrc={CatalogIcon}
-                        href="/catalog"
+                        href={ROUTES.catalog}
                     />
                 </li>
                 <li className="d-md-none d-block">
                     <IconLink
                         text="Вы смотрели"
                         imageSrc={ViewedIcon}
-                        href="/viewed"
+                        href={ROUTES.viewed}
                     />
                 </li>
                 <Links />
@@ -170,7 +171,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ parentRef }) => {
                             styles.status,
                             'd-lg-block d-md-none',
                         ])}
-                        isLink={{ href: '/faq' }}
+                        isLink={{ href: ROUTES.faq }}
                     >
                         <Image src={StatusIcon} alt="status" />
                         Что с моим заказом

@@ -5,13 +5,14 @@ import { IPost } from 'src/models/IBlog'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from 'src/components/button'
+import ROUTES from 'src/constants/routes'
 
 interface BlogItemProps {
     post: IPost
 }
 
 export const BlogItem: React.FC<BlogItemProps> = ({ post }) => {
-    const href = '/blog/' + post.href
+    const href = `${ROUTES.blog}/${post.href}`
     const content = useMemo(() => {
         return post.content
             .replace(/<([\s\S]*?)>/g, '')

@@ -10,6 +10,7 @@ import { Button } from '../button'
 import { CountInput } from '../count-input'
 import styles from './Card.module.scss'
 import { Img } from '../img'
+import ROUTES from 'src/constants/routes'
 
 interface CardProps {
     product: IProduct
@@ -78,7 +79,7 @@ export const Card: React.FC<CardProps> = ({
             const pathname = product.href
             const category = product.subcategories[0].category.href
 
-            href = `/catalog/${category}/${pathname}`
+            href = `${ROUTES.catalog}/${category}/${pathname}`
         }
 
         return href

@@ -235,10 +235,14 @@ const SectionOverview = ({ items  })=>{
 ;// CONCATENATED MODULE: ./src/sections/overview/index.ts
 
 
+// EXTERNAL MODULE: ./src/constants/routes.js
+var routes = __webpack_require__(5844);
+var routes_default = /*#__PURE__*/__webpack_require__.n(routes);
 // EXTERNAL MODULE: ./src/sections/delivery/SectionDelivery.module.scss
 var SectionDelivery_module = __webpack_require__(6917);
 var SectionDelivery_module_default = /*#__PURE__*/__webpack_require__.n(SectionDelivery_module);
 ;// CONCATENATED MODULE: ./src/sections/delivery/SectionDelivery.tsx
+
 
 
 
@@ -261,7 +265,7 @@ const SectionDelivery = ()=>{
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(components_button/* Button */.z, {
                                 isLink: {
-                                    href: "/delivery"
+                                    href: (routes_default()).delivery
                                 },
                                 variant: "orange",
                                 children: "Подробнее"
@@ -278,7 +282,7 @@ const SectionDelivery = ()=>{
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(components_button/* Button */.z, {
                                 isLink: {
-                                    href: "/payment"
+                                    href: (routes_default()).payment
                                 },
                                 variant: "orange",
                                 children: "Подробнее"
@@ -304,6 +308,7 @@ var SectionCategories_module_default = /*#__PURE__*/__webpack_require__.n(Sectio
 
 
 
+
 const SectionCategories = ({ categories , title , withBg  })=>{
     return /*#__PURE__*/ jsx_runtime_.jsx("section", {
         className: (0,concatClass/* concatClass */.o)([
@@ -319,7 +324,7 @@ const SectionCategories = ({ categories , title , withBg  })=>{
                 /*#__PURE__*/ jsx_runtime_.jsx("div", {
                     className: (SectionCategories_module_default()).items,
                     children: categories.map((category)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                            href: "/catalog/" + category.href,
+                            href: `${(routes_default()).catalog}/${category.href}`,
                             className: (SectionCategories_module_default()).item,
                             style: {
                                 backgroundImage: category.preview ? `url(${category.preview.url})` : "none"
@@ -523,6 +528,7 @@ var SectionCatalogMail_module_default = /*#__PURE__*/__webpack_require__.n(Secti
 
 
 
+
 const SectionCatalogMail = ()=>{
     const { dispatchOpenModalOrder  } = (0,useStore/* useDispatchCreator */.BA)({
         openModalOrder: modal_order_slice/* openModalOrder */.ar
@@ -587,7 +593,7 @@ const SectionCatalogMail = ()=>{
                                                 }),
                                                 /*#__PURE__*/ jsx_runtime_.jsx(components_button/* Button */.z, {
                                                     isLink: {
-                                                        href: "/catalog"
+                                                        href: (routes_default()).catalog
                                                     },
                                                     variant: "primary",
                                                     className: "my-3",
@@ -609,7 +615,7 @@ const SectionCatalogMail = ()=>{
                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                         className: "col-lg-6 col-12 mt-lg-0 mt-4",
                         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
-                            href: "/stock",
+                            href: (routes_default()).stock,
                             className: (0,concatClass/* concatClass */.o)([
                                 (SectionCatalogMail_module_default()).item,
                                 (SectionCatalogMail_module_default()).right_item
@@ -752,8 +758,9 @@ var SectionBlog_module_default = /*#__PURE__*/__webpack_require__.n(SectionBlog_
 
 
 
+
 const BlogItem = ({ post  })=>{
-    const href = "/blog/" + post.href;
+    const href = `${(routes_default()).blog}/${post.href}`;
     const content = (0,external_react_.useMemo)(()=>{
         return post.content.replace(/<([\s\S]*?)>/g, "").split(".")[0].slice(0, 100).concat(" ...");
     }, [
@@ -1065,6 +1072,7 @@ const modalOrderSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createS
             state.isOpen = true;
             state.title = action.payload?.title || "Оставить заявку";
             state.text = action.payload?.text || "Оставьте ваши данные и мы Вам перезвоним!";
+            state.addons = action.payload?.addons;
         },
         closeModalOrder (state) {
             state.isOpen = false;

@@ -56,7 +56,11 @@ var Card_module = __webpack_require__(9788);
 var Card_module_default = /*#__PURE__*/__webpack_require__.n(Card_module);
 // EXTERNAL MODULE: ./src/components/img/index.ts + 1 modules
 var img = __webpack_require__(6394);
+// EXTERNAL MODULE: ./src/constants/routes.js
+var routes = __webpack_require__(5844);
+var routes_default = /*#__PURE__*/__webpack_require__.n(routes);
 ;// CONCATENATED MODULE: ./src/components/card/Card.tsx
+
 
 
 
@@ -109,7 +113,7 @@ const Card = ({ product , isNew , isHit , description  })=>{
         if (product.subcategories?.length && product.subcategories[0].category) {
             const pathname = product.href;
             const category = product.subcategories[0].category.href;
-            href = `/catalog/${category}/${pathname}`;
+            href = `${(routes_default()).catalog}/${category}/${pathname}`;
         }
         return href;
     }, [
@@ -294,6 +298,36 @@ const Img = ({ alt , ...props })=>{
 
 ;// CONCATENATED MODULE: ./src/components/img/index.ts
 
+
+
+/***/ }),
+
+/***/ 5844:
+/***/ ((module) => {
+
+"use strict";
+
+const ROUTES = {
+    blog: "/блог",
+    about: "/о-нас",
+    cart: "/корзина",
+    delivery: "/доставка",
+    faq: "/помощь",
+    galery: "/галерея",
+    garanty: "/гарантия",
+    payment: "/оплата",
+    search: "/поиск",
+    stock: "/акции",
+    viewed: "/просмотрено",
+    catalog: "/каталог",
+    "catalog/:categoryName": "/каталог/:categoryName",
+    "catalog/:categoryName/:productName": "/каталог/:categoryName/:productName"
+};
+// const ROUTES_ENG = Object.keys(ROUTES).reduce((result, route) => {
+//     result[route] = '/' + [route]
+//     return result
+// }, {})
+module.exports = ROUTES;
 
 
 /***/ })

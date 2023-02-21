@@ -1,6 +1,6 @@
 import { Button } from 'src/components/button'
 import { Input } from 'src/components/input'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Modal as BModal, ModalProps as BModalProps } from 'react-bootstrap'
 
 interface ModalProps {
@@ -13,6 +13,7 @@ interface ModalProps {
     size?: BModalProps['size']
     bodyClassName?: string
     headerClassName?: string
+    formAddons?: ReactNode
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -25,6 +26,7 @@ export const Modal: React.FC<ModalProps> = ({
     size,
     headerClassName,
     bodyClassName,
+    formAddons,
 }) => {
     return (
         <BModal size={size} show={isOpen} onHide={onClose} centered={isCenter}>
@@ -35,6 +37,7 @@ export const Modal: React.FC<ModalProps> = ({
                 {typeof text === 'string' ? <p>{text}</p> : text}
                 {withForm && (
                     <form>
+                        {formAddons}
                         <div>
                             <Input
                                 autoFocus

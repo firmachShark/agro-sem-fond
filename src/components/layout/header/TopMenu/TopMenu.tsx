@@ -8,6 +8,7 @@ import styles from './TopMenu.module.scss'
 import { Cart } from '../Common'
 import MobileMenu from './MobileMenu'
 import { ToggledSearch } from './ToggledSearch'
+import ROUTES from 'src/constants/routes'
 
 export const TopMenu = () => {
     const divRef = useRef<HTMLDivElement>(null)
@@ -20,7 +21,7 @@ export const TopMenu = () => {
                         <Image alt="logo" src={LogoSmall} />
                     </Link>
 
-                    <Link className={styles.catalogLink} href="/catalog">
+                    <Link className={styles.catalogLink} href={ROUTES.catalog}>
                         Каталог
                     </Link>
 

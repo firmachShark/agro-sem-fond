@@ -29,20 +29,6 @@ var container = __webpack_require__(2310);
 
 
 
-const defaultReplace = {
-    catalog: "Каталог",
-    search: "Поиск",
-    cart: "Корзина",
-    delivery: "Доставка",
-    payment: "Оплата",
-    about: "О нас",
-    stock: "Акции",
-    blog: "Блог",
-    faq: "Задать вопрос",
-    galery: "Галерея",
-    garanty: "Гарантия",
-    viewed: "Раннее вы смотрели"
-};
 const Breadcrumbs = ({ replace  })=>{
     const [state, setState] = (0,external_react_.useState)([
         [],
@@ -54,9 +40,7 @@ const Breadcrumbs = ({ replace  })=>{
         const links = decodeURI(window.location.pathname).split("/").slice(1).map((link)=>{
             const href = prev + link + "/";
             prev = href;
-            const inReplace = !!(replace && replace[link] !== undefined);
-            const inDefaultReplace = !!(defaultReplace[link] !== undefined);
-            const name = inReplace ? replace[link] : inDefaultReplace ? defaultReplace[link] : (0,parseURL/* parseURL */.L)(link);
+            const name = (0,parseURL/* parseURL */.L)(link);
             return {
                 href,
                 name

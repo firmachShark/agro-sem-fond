@@ -6,6 +6,7 @@ import { concatClass } from 'utils/concatClass'
 import styles from './Common.module.scss'
 import { ICart } from 'src/models/ICart'
 import { useLocalStorage } from 'src/hooks/useLocalStorage'
+import ROUTES from 'src/constants/routes'
 
 interface CartProps {
     className?: string
@@ -30,7 +31,10 @@ export const Cart: React.FC<CartProps> = ({ className }) => {
     }, [cart])
 
     return (
-        <Link href="/cart" className={concatClass([styles.cart, className])}>
+        <Link
+            href={ROUTES.cart}
+            className={concatClass([styles.cart, className])}
+        >
             <label>{count}</label>
             <Image src={CartIcon} alt="cart" />
             <span>

@@ -204,7 +204,13 @@ const ProductPage = ({ product , products  })=>{
     const handleBuyClick = ()=>{
         dispatchOpenModalOrder({
             title: "Купить в один клик",
-            text: "Оставьте заявку и наш менеджер с Вами свяжется!"
+            text: "Оставьте заявку и наш менеджер с Вами свяжется!",
+            addons: [
+                {
+                    name: "product_id",
+                    value: product.price_id.toString()
+                }
+            ]
         });
     };
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
@@ -491,6 +497,11 @@ const ProductPage = ({ product , products  })=>{
                                             children: [
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
                                                     children: "Оставьте заявку чтобы купить!"
+                                                }),
+                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_input__WEBPACK_IMPORTED_MODULE_21__/* .Input */ .I, {
+                                                    type: "hidden",
+                                                    value: product.price_id,
+                                                    name: "product_id"
                                                 }),
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_input__WEBPACK_IMPORTED_MODULE_21__/* .Input */ .I, {
                                                     name: "name",
@@ -1399,7 +1410,7 @@ module.exports = import("remark-html");;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,679,497,686,411,853,152,535,78,874,577,371], () => (__webpack_exec__(6936)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,505,664,121,675,310,679,497,686,411,853,152,535,78,874,577,371], () => (__webpack_exec__(6936)));
 module.exports = __webpack_exports__;
 
 })();

@@ -22,7 +22,7 @@ exports.modules = {
 
 
 
-const Modal = ({ title , text , isOpen , onClose , withForm , isCenter =false , size , headerClassName , bodyClassName  })=>{
+const Modal = ({ title , text , isOpen , onClose , withForm , isCenter =false , size , headerClassName , bodyClassName , formAddons  })=>{
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.Modal, {
         size: size,
         show: isOpen,
@@ -44,6 +44,7 @@ const Modal = ({ title , text , isOpen , onClose , withForm , isCenter =false , 
                     }) : text,
                     withForm && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("form", {
                         children: [
+                            formAddons,
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_input__WEBPACK_IMPORTED_MODULE_2__/* .Input */ .I, {

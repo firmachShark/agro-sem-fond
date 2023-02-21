@@ -302,7 +302,11 @@ var components_button = __webpack_require__(5168);
 var useStore = __webpack_require__(2333);
 // EXTERNAL MODULE: ./src/store/slices/modal-order.slice.ts
 var modal_order_slice = __webpack_require__(6772);
+// EXTERNAL MODULE: ./src/constants/routes.js
+var routes = __webpack_require__(5844);
+var routes_default = /*#__PURE__*/__webpack_require__.n(routes);
 ;// CONCATENATED MODULE: ./src/components/layout/footer/Footer.tsx
+
 
 
 
@@ -318,15 +322,15 @@ var modal_order_slice = __webpack_require__(6772);
 const links = [
     {
         name: "Сидки и акции",
-        href: "/stock"
+        href: (routes_default()).stock
     },
     {
         name: "О компании",
-        href: "/about"
+        href: (routes_default()).about
     },
     {
         name: "Блог",
-        href: "/blog"
+        href: (routes_default()).blog
     }
 ];
 const modalText = {
@@ -378,7 +382,7 @@ const Footer = ()=>{
                                     children: link.name
                                 }, i)),
                             /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                href: "/payment",
+                                href: (routes_default()).payment,
                                 className: "flex-grow-1 d-flex align-items-end pb-1",
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     src: payment,
@@ -514,8 +518,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var src_components_layout_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2310);
-/* harmony import */ var _BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6246);
-/* harmony import */ var _BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6246);
+/* harmony import */ var _BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _MenuItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2968);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
@@ -524,8 +528,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var src_image_export_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3672);
 /* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5941);
 /* harmony import */ var src_services_category_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3822);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5844);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(src_constants_routes__WEBPACK_IMPORTED_MODULE_9__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([swr__WEBPACK_IMPORTED_MODULE_7__, src_services_category_service__WEBPACK_IMPORTED_MODULE_8__]);
 ([swr__WEBPACK_IMPORTED_MODULE_7__, src_services_category_service__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -542,13 +549,13 @@ const BottomMenu = ({ navRef  })=>{
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("nav", {
                 ref: navRef,
-                className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9___default().nav),
+                className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10___default().nav),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_container__WEBPACK_IMPORTED_MODULE_2__/* .Container */ .W, {
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-                        className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9___default().navLinks),
+                        className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10___default().navLinks),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_MenuItem__WEBPACK_IMPORTED_MODULE_3__/* .MenuItem */ .s, {
-                                href: "/catalog",
+                                href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_9___default().catalog),
                                 title: "Каталог"
                             }),
                             links && links.map((link, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_MenuItem__WEBPACK_IMPORTED_MODULE_3__/* .MenuItem */ .s, {
@@ -562,15 +569,15 @@ const BottomMenu = ({ navRef  })=>{
                 })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9___default().menu),
+                className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10___default().menu),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_container__WEBPACK_IMPORTED_MODULE_2__/* .Container */ .W, {
                     className: "container px-sm-2 px-0",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-                        className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_9___default().menuLinks),
+                        className: (_BottomMenu_module_scss__WEBPACK_IMPORTED_MODULE_10___default().menuLinks),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
-                                    href: "/stock?modal=delivery",
+                                    href: `${(src_constants_routes__WEBPACK_IMPORTED_MODULE_9___default().stock) + "?modal=delivery"}`,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_5___default()), {
                                             src: src_image_export_header__WEBPACK_IMPORTED_MODULE_6__/* .DeliveryIcon */ .tM,
@@ -595,7 +602,7 @@ const BottomMenu = ({ navRef  })=>{
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                 className: "d-lg-block d-none",
                                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
-                                    href: "/faq",
+                                    href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_9___default().faq),
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_5___default()), {
                                             src: src_image_export_header__WEBPACK_IMPORTED_MODULE_6__/* .HowToIcon */ .YQ,
@@ -619,7 +626,7 @@ const BottomMenu = ({ navRef  })=>{
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
-                                    href: "/stock",
+                                    href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_9___default().stock),
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_5___default()), {
                                             src: src_image_export_header__WEBPACK_IMPORTED_MODULE_6__/* .StockIcon */ .Oc,
@@ -858,7 +865,11 @@ const IconLink = ({ imageSrc , text , href , className  })=>{
 var header = __webpack_require__(3672);
 // EXTERNAL MODULE: ./src/hooks/useLocalStorage.ts
 var useLocalStorage = __webpack_require__(2411);
+// EXTERNAL MODULE: ./src/constants/routes.js
+var routes = __webpack_require__(5844);
+var routes_default = /*#__PURE__*/__webpack_require__.n(routes);
 ;// CONCATENATED MODULE: ./src/components/layout/header/Common/Cart.tsx
+
 
 
 
@@ -885,7 +896,7 @@ const Cart = ({ className  })=>{
         cart
     ]);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
-        href: "/cart",
+        href: (routes_default()).cart,
         className: (0,concatClass/* concatClass */.o)([
             (Common_module_default()).cart,
             className
@@ -963,8 +974,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8641);
-/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(1761);
-/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Header_module_scss__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(1761);
+/* harmony import */ var _Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Header_module_scss__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2310);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5675);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_4__);
@@ -975,8 +986,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _Common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5552);
 /* harmony import */ var src_components_logo_word_LogoWord__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6686);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5844);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(src_constants_routes__WEBPACK_IMPORTED_MODULE_11__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([___WEBPACK_IMPORTED_MODULE_2__]);
 ___WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -1009,22 +1023,22 @@ const Header = ()=>{
         };
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("header", {
-        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().header),
+        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().header),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(___WEBPACK_IMPORTED_MODULE_2__/* .TopMenu */ .Ff, {}),
             isFixed && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixed),
+                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().fixed),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_container__WEBPACK_IMPORTED_MODULE_3__/* .Container */ .W, {
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixedInner),
+                        className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().fixedInner),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 onClick: handleClickLogo,
-                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixedLogo),
+                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().fixedLogo),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_logo_word_LogoWord__WEBPACK_IMPORTED_MODULE_10__/* .LogoWord */ .b, {})
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().fixedSearch),
+                                className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().fixedSearch),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_layout_search_input__WEBPACK_IMPORTED_MODULE_5__/* .SearchInput */ .M, {})
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_9__/* .Phone */ .LP, {
@@ -1039,11 +1053,11 @@ const Header = ()=>{
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_container__WEBPACK_IMPORTED_MODULE_3__/* .Container */ .W, {
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().inner),
+                    className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().inner),
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             onClick: handleClickLogo,
-                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().logo),
+                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().logo),
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                 priority: true,
                                 src: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .Logo */ .TR,
@@ -1053,7 +1067,7 @@ const Header = ()=>{
                             })
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().search),
+                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().search),
                             children: [
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                                     className: "d-lg-block d-none",
@@ -1070,7 +1084,7 @@ const Header = ()=>{
                             ]
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_11___default().info),
+                            className: (_Header_module_scss__WEBPACK_IMPORTED_MODULE_12___default().info),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_9__/* .Phone */ .LP, {}),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
@@ -1092,13 +1106,13 @@ const Header = ()=>{
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_9__/* .IconLink */ .JH, {
                                     text: "Заказ по каталогу",
                                     imageSrc: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .CatalogIcon */ .db,
-                                    href: "/catalog",
+                                    href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().catalog),
                                     className: "d-lg-block d-none"
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_9__/* .IconLink */ .JH, {
                                     text: "Вы смотрели",
                                     imageSrc: src_image_export_header__WEBPACK_IMPORTED_MODULE_7__/* .ViewedIcon */ .ZU,
-                                    href: "/viewed",
+                                    href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().viewed),
                                     className: "d-lg-block d-none"
                                 })
                             ]
@@ -1142,10 +1156,13 @@ __webpack_async_result__();
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6405);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var utils_concatClass__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(9794);
+/* harmony import */ var utils_concatClass__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9794);
 /* harmony import */ var _Common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(5552);
-/* harmony import */ var _MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5486);
-/* harmony import */ var _MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5486);
+/* harmony import */ var _MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5844);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(src_constants_routes__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -1165,31 +1182,31 @@ const links = [
         name: "Главная"
     },
     {
-        href: "/delivery",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().delivery),
         name: "Доставка"
     },
     {
-        href: "/payment",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().payment),
         name: "Оплата"
     },
     {
-        href: "/about",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().about),
         name: "О нас"
     },
     {
-        href: "/stock",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().stock),
         name: "Бонусы"
     },
     {
-        href: "/faq",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().faq),
         name: "Вопрос агроному"
     },
     {
-        href: "/galery",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().galery),
         name: "Фотогалерея"
     },
     {
-        href: "/garanty",
+        href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().garanty),
         name: "Гарантия"
     }
 ];
@@ -1202,7 +1219,7 @@ const Links = ()=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: links.map((link)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
-                    className: isActive(pathname, link.href) ? (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().active) : undefined,
+                    className: isActive(pathname, link.href) ? (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().active) : undefined,
                     href: link.href,
                     children: link.name
                 })
@@ -1229,10 +1246,10 @@ const MobileMenu = ({ parentRef  })=>{
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_button__WEBPACK_IMPORTED_MODULE_1__/* .Button */ .z, {
-                className: (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().openBtn),
+                className: (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().openBtn),
                 onClick: handleToggle,
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
-                    className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_12__/* .concatClass */ .o)([
+                    className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_13__/* .concatClass */ .o)([
                         "fa",
                         iconClass
                     ]),
@@ -1241,24 +1258,24 @@ const MobileMenu = ({ parentRef  })=>{
             }),
             isOpen && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 onClick: handleToggle,
-                className: (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().overlay)
+                className: (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().overlay)
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
                 onClick: handleClick,
-                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_12__/* .concatClass */ .o)([
-                    (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().links),
-                    isOpen ? (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().active) : undefined
+                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_13__/* .concatClass */ .o)([
+                    (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().links),
+                    isOpen ? (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().active) : undefined
                 ]),
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(src_components_button__WEBPACK_IMPORTED_MODULE_1__/* .Button */ .z, {
-                        className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_12__/* .concatClass */ .o)([
-                            (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().openBtn),
+                        className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_13__/* .concatClass */ .o)([
+                            (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().openBtn),
                             "ms-auto me-2",
                             "d-md-none d-block"
                         ]),
                         onClick: handleToggle,
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
-                            className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_12__/* .concatClass */ .o)([
+                            className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_13__/* .concatClass */ .o)([
                                 "fa",
                                 iconClass
                             ]),
@@ -1282,7 +1299,7 @@ const MobileMenu = ({ parentRef  })=>{
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_10__/* .IconLink */ .JH, {
                             text: "Заказ по каталогу",
                             imageSrc: src_image_export_header__WEBPACK_IMPORTED_MODULE_4__/* .CatalogIcon */ .db,
-                            href: "/catalog"
+                            href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().catalog)
                         })
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
@@ -1290,7 +1307,7 @@ const MobileMenu = ({ parentRef  })=>{
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Common__WEBPACK_IMPORTED_MODULE_10__/* .IconLink */ .JH, {
                             text: "Вы смотрели",
                             imageSrc: src_image_export_header__WEBPACK_IMPORTED_MODULE_4__/* .ViewedIcon */ .ZU,
-                            href: "/viewed"
+                            href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().viewed)
                         })
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Links, {}),
@@ -1301,12 +1318,12 @@ const MobileMenu = ({ parentRef  })=>{
                 ]
             }),
             !!listRef.current && !!parentRef.current && /*#__PURE__*/ (0,react_dom__WEBPACK_IMPORTED_MODULE_9__.createPortal)(/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_button__WEBPACK_IMPORTED_MODULE_1__/* .Button */ .z, {
-                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_12__/* .concatClass */ .o)([
-                    (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_11___default().status),
+                className: (0,utils_concatClass__WEBPACK_IMPORTED_MODULE_13__/* .concatClass */ .o)([
+                    (_MobileMenu_module_scss__WEBPACK_IMPORTED_MODULE_12___default().status),
                     "d-lg-block d-md-none"
                 ]),
                 isLink: {
-                    href: "/faq"
+                    href: (src_constants_routes__WEBPACK_IMPORTED_MODULE_11___default().faq)
                 },
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_5___default()), {
@@ -1393,7 +1410,11 @@ const ToggledSearch = ()=>{
     });
 };
 
+// EXTERNAL MODULE: ./src/constants/routes.js
+var routes = __webpack_require__(5844);
+var routes_default = /*#__PURE__*/__webpack_require__.n(routes);
 ;// CONCATENATED MODULE: ./src/components/layout/header/TopMenu/TopMenu.tsx
+
 
 
 
@@ -1423,7 +1444,7 @@ const TopMenu = ()=>{
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                         className: (TopMenu_module_default()).catalogLink,
-                        href: "/catalog",
+                        href: (routes_default()).catalog,
                         children: "Каталог"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(ToggledSearch, {}),
@@ -1592,28 +1613,46 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/modal/Modal.tsx
 var Modal = __webpack_require__(6529);
 // EXTERNAL MODULE: ./src/hooks/useStore.ts
 var useStore = __webpack_require__(2333);
 // EXTERNAL MODULE: ./src/store/slices/modal-order.slice.ts
 var modal_order_slice = __webpack_require__(6772);
+// EXTERNAL MODULE: ./src/components/input/index.ts + 1 modules
+var input = __webpack_require__(48);
 ;// CONCATENATED MODULE: ./src/components/modalOrder/ModalOrder.tsx
 
 
 
 
+
+
 const ModalOrder = ()=>{
-    const { isOpen , title , text  } = (0,useStore/* useAppSelector */.CG)((state)=>state.modalOrder);
+    const { isOpen , title , text , addons  } = (0,useStore/* useAppSelector */.CG)((state)=>state.modalOrder);
     const { dispatchCloseModalOrder  } = (0,useStore/* useDispatchCreator */.BA)({
         closeModalOrder: modal_order_slice/* closeModalOrder */.Kv
     });
+    const formAddons = (0,external_react_.useMemo)(()=>{
+        if (addons) return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+            children: addons.map((addon)=>/*#__PURE__*/ jsx_runtime_.jsx(input/* Input */.I, {
+                    ...addon,
+                    type: "hidden"
+                }, addon.name))
+        });
+        return undefined;
+    }, [
+        addons
+    ]);
     return /*#__PURE__*/ jsx_runtime_.jsx(Modal/* Modal */.u, {
         withForm: true,
         isOpen: isOpen,
         title: title,
         text: text,
-        onClose: dispatchCloseModalOrder
+        onClose: dispatchCloseModalOrder,
+        formAddons: formAddons
     });
 };
 
@@ -1643,6 +1682,36 @@ const MAIL_ATTR = "mailto:" + MAIL;
 const ADDRESS = "г. Минск, ул. Гамарника, д. 30, оф. 405";
 const SITE_NAME = "Загородный.бел";
 const ORGANIZATION = "ЗИКМЕС";
+
+
+/***/ }),
+
+/***/ 5844:
+/***/ ((module) => {
+
+"use strict";
+
+const ROUTES = {
+    blog: "/блог",
+    about: "/о-нас",
+    cart: "/корзина",
+    delivery: "/доставка",
+    faq: "/помощь",
+    galery: "/галерея",
+    garanty: "/гарантия",
+    payment: "/оплата",
+    search: "/поиск",
+    stock: "/акции",
+    viewed: "/просмотрено",
+    catalog: "/каталог",
+    "catalog/:categoryName": "/каталог/:categoryName",
+    "catalog/:categoryName/:productName": "/каталог/:categoryName/:productName"
+};
+// const ROUTES_ENG = Object.keys(ROUTES).reduce((result, route) => {
+//     result[route] = '/' + [route]
+//     return result
+// }, {})
+module.exports = ROUTES;
 
 
 /***/ }),
@@ -1922,6 +1991,7 @@ const modalOrderSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createS
             state.isOpen = true;
             state.title = action.payload?.title || "Оставить заявку";
             state.text = action.payload?.text || "Оставьте ваши данные и мы Вам перезвоним!";
+            state.addons = action.payload?.addons;
         },
         closeModalOrder (state) {
             state.isOpen = false;
@@ -2343,7 +2413,7 @@ module.exports = import("swr");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,121,675,310,497,686,411,822,529], () => (__webpack_exec__(3847)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,505,664,121,675,310,497,686,411,822,529], () => (__webpack_exec__(3847)));
 module.exports = __webpack_exports__;
 
 })();

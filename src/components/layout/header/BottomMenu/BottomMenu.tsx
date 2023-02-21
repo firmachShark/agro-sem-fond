@@ -14,6 +14,7 @@ import {
 } from 'src/image_export/header'
 import useSWR from 'swr'
 import categoryService from 'src/services/category-service'
+import ROUTES from 'src/constants/routes'
 
 interface BottomMenuProps {
     navRef: React.Ref<HTMLDivElement>
@@ -30,7 +31,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
             <nav ref={navRef} className={styles.nav}>
                 <Container>
                     <ul className={styles.navLinks}>
-                        <MenuItem href={'/catalog'} title={'Каталог'} />
+                        <MenuItem href={ROUTES.catalog} title={'Каталог'} />
                         {links &&
                             links.map((link, i) => (
                                 <MenuItem
@@ -48,7 +49,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                 <Container className="container px-sm-2 px-0">
                     <ul className={styles.menuLinks}>
                         <li>
-                            <Link href="/stock?modal=delivery">
+                            <Link href={`${ROUTES.stock + '?modal=delivery'}`}>
                                 <Image src={DeliveryIcon} alt="delivery" />
                                 Доставка: Бесплатно
                             </Link>
@@ -60,7 +61,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                             </p>
                         </li>
                         <li className="d-lg-block d-none">
-                            <Link href="/faq">
+                            <Link href={ROUTES.faq}>
                                 <Image
                                     src={HowToIcon}
                                     alt="how to make order"
@@ -75,7 +76,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                             </p>
                         </li>
                         <li>
-                            <Link href="/stock">
+                            <Link href={ROUTES.stock}>
                                 <Image src={StockIcon} alt="stock" />
                                 Акции
                             </Link>

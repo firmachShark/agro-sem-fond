@@ -14,8 +14,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7104);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var src_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9827);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5844);
+/* harmony import */ var src_constants_routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(src_constants_routes__WEBPACK_IMPORTED_MODULE_2__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([src_http__WEBPACK_IMPORTED_MODULE_1__]);
 src_http__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 class CategoryService {
@@ -38,14 +41,14 @@ class CategoryService {
                 }
             },
             pagination: {
-                limit: 7
+                limit: 5
             }
         }, {
             encodeValuesOnly: true
         });
         const categories = await (0,src_http__WEBPACK_IMPORTED_MODULE_1__/* .getModels */ .hM)(`categories?${query}`);
         return categories.reduce((result, category)=>{
-            const href = "/catalog/" + category.href;
+            const href = `${(src_constants_routes__WEBPACK_IMPORTED_MODULE_2___default().catalog)}/${category.href}`;
             const submenu = category.subcategories?.length ? {
                 title: category.fullName,
                 href,

@@ -21,19 +21,20 @@ import {
 import { Button } from 'src/components/button'
 import { useDispatchCreator } from 'src/hooks/useStore'
 import { openModalOrder } from 'src/store/slices/modal-order.slice'
+import ROUTES from 'src/constants/routes'
 
 const links = [
     {
         name: 'Сидки и акции',
-        href: '/stock',
+        href: ROUTES.stock,
     },
     {
         name: 'О компании',
-        href: '/about',
+        href: ROUTES.about,
     },
     {
         name: 'Блог',
-        href: '/blog',
+        href: ROUTES.blog,
     },
 ]
 
@@ -80,7 +81,7 @@ export const Footer = () => {
                             </Link>
                         ))}
                         <Link
-                            href={'/payment'}
+                            href={ROUTES.payment}
                             className={
                                 'flex-grow-1 d-flex align-items-end pb-1'
                             }

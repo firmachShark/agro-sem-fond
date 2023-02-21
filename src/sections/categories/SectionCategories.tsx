@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Container } from 'src/components/layout/container'
+import ROUTES from 'src/constants/routes'
 import { ICategory } from 'src/models/ICatergory'
 import { concatClass } from 'utils/concatClass'
 import styles from './SectionCategories.module.scss'
@@ -28,7 +29,7 @@ export const SectionCategories: React.FC<SectionCategoriesProps> = ({
                 <div className={styles.items}>
                     {categories.map((category) => (
                         <Link
-                            href={'/catalog/' + category.href}
+                            href={`${ROUTES.catalog}/${category.href}`}
                             key={category.id}
                             className={styles.item}
                             style={{

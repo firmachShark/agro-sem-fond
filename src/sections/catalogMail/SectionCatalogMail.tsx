@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from 'src/components/button'
 import { Container } from 'src/components/layout/container'
+import ROUTES from 'src/constants/routes'
 import { useDispatchCreator } from 'src/hooks/useStore'
 import { CatalogMailPhoto } from 'src/image_export/catalog-mail'
 import { openModalOrder } from 'src/store/slices/modal-order.slice'
@@ -47,7 +48,7 @@ export const SectionCatalogMail = () => {
                                         <li>Доставка товара круглый год</li>
                                     </ul>
                                     <Button
-                                        isLink={{ href: '/catalog' }}
+                                        isLink={{ href: ROUTES.catalog }}
                                         variant="primary"
                                         className="my-3"
                                     >
@@ -66,7 +67,7 @@ export const SectionCatalogMail = () => {
                     </div>
                     <div className="col-lg-6 col-12 mt-lg-0 mt-4">
                         <Link
-                            href="/stock"
+                            href={ROUTES.stock}
                             className={concatClass([
                                 styles.item,
                                 styles.right_item,

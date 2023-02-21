@@ -3,21 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { parseURL } from 'utils/parseURL'
 import { Container } from '../layout/container'
 
-const defaultReplace: Record<string, string> = {
-    catalog: 'Каталог',
-    search: 'Поиск',
-    cart: 'Корзина',
-    delivery: 'Доставка',
-    payment: 'Оплата',
-    about: 'О нас',
-    stock: 'Акции',
-    blog: 'Блог',
-    faq: 'Задать вопрос',
-    galery: 'Галерея',
-    garanty: 'Гарантия',
-    viewed: 'Раннее вы смотрели',
-}
-
 interface BreadcrumbLink {
     href: string
     name: string
@@ -41,14 +26,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ replace }) => {
             .map((link) => {
                 const href = prev + link + '/'
                 prev = href
-
-                const inReplace = !!(replace && replace[link] !== undefined)
-                const inDefaultReplace = !!(defaultReplace[link] !== undefined)
-                const name = inReplace
-                    ? replace[link]
-                    : inDefaultReplace
-                    ? defaultReplace[link]
-                    : parseURL(link)
+                const name = parseURL(link)
 
                 return {
                     href,

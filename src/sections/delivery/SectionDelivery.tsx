@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'src/components/button'
 import { Container } from 'src/components/layout/container'
+import ROUTES from 'src/constants/routes'
 import styles from './SectionDelivery.module.scss'
 
 export const SectionDelivery = () => {
@@ -14,7 +15,10 @@ export const SectionDelivery = () => {
                             Акции и льготы на доставку! Почтой России и в пункты
                             выдачи
                         </p>
-                        <Button isLink={{ href: '/delivery' }} variant="orange">
+                        <Button
+                            isLink={{ href: ROUTES.delivery }}
+                            variant="orange"
+                        >
                             Подробнее
                         </Button>
                     </div>
@@ -24,7 +28,10 @@ export const SectionDelivery = () => {
                             Онлайн или наложенным платежом! Выберите удобный для
                             вас способ
                         </p>
-                        <Button isLink={{ href: '/payment' }} variant="orange">
+                        <Button
+                            isLink={{ href: ROUTES.payment }}
+                            variant="orange"
+                        >
                             Подробнее
                         </Button>
                     </div>

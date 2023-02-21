@@ -7,4 +7,5 @@ export interface ICategory {
     preview?: Image
     subcategories?: ISubcategory[]
     href: string
+    scriptURL?: string
 }

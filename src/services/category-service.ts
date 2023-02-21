@@ -3,6 +3,7 @@ import qs from 'qs'
 import { getModels } from 'src/http'
 import { ICategory } from 'src/models/ICatergory'
 import { ISubcategory } from 'src/models'
+import ROUTES from 'src/constants/routes'
 
 export class CategoryService {
     async getForHeader(): Promise<MenuItemProps[]> {
@@ -21,7 +22,7 @@ export class CategoryService {
                     },
                 },
                 pagination: {
-                    limit: 7,
+                    limit: 5,
                 },
             },
             {
@@ -32,7 +33,7 @@ export class CategoryService {
         const categories = await getModels<ICategory>(`categories?${query}`)
 
         return categories.reduce((result: MenuItemProps[], category) => {
-            const href = '/catalog/' + category.href
+            const href = `${ROUTES.catalog}/${category.href}`
 
             const submenu: any = category.subcategories?.length
                 ? {

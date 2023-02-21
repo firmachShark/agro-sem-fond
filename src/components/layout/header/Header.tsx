@@ -16,6 +16,7 @@ import {
 import { useRouter } from 'next/router'
 import { Phone, IconLink, Cart } from './Common'
 import { LogoWord } from 'src/components/logo-word/LogoWord'
+import ROUTES from 'src/constants/routes'
 
 export const Header = () => {
     const router = useRouter()
@@ -103,13 +104,13 @@ export const Header = () => {
                         <IconLink
                             text="Заказ по каталогу"
                             imageSrc={CatalogIcon}
-                            href="/catalog"
+                            href={ROUTES.catalog}
                             className="d-lg-block d-none"
                         />
                         <IconLink
                             text="Вы смотрели"
                             imageSrc={ViewedIcon}
-                            href="/viewed"
+                            href={ROUTES.viewed}
                             className="d-lg-block d-none"
                         />
                     </div>

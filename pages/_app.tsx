@@ -43,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
         require('bootstrap/dist/js/bootstrap.bundle.min.js')
     }, [])
+
     return (
         <SSRProvider>
             <Provider store={store}>
@@ -59,6 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 </main>
                 <Footer />
                 <ModalOrder />
+                {/* <CRMScript /> */}
             </Provider>
         </SSRProvider>
     )
