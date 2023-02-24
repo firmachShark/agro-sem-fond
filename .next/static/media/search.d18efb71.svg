@@ -1,0 +1,16 @@
+<svg id="search.svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #298d3f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_1_copy_копия" data-name="Rounded Rectangle 1 copy копия" class="cls-1" width="40" height="40" rx="20" ry="20"/>
+  <path id="Эллипс_758" data-name="Эллипс 758" class="cls-2" d="M912.8,156.769a1,1,0,0,1-1.414,0l-2.9-2.9a6.006,6.006,0,1,1,1.411-1.417l2.9,2.9A1,1,0,0,1,912.8,156.769ZM905,145a4,4,0,1,0,4,4A4,4,0,0,0,905,145Z" transform="translate(-886 -130)"/>
+</svg>

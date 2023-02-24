@@ -83,29 +83,29 @@ __webpack_require__.d(__webpack_exports__, {
 ;// CONCATENATED MODULE: ./public/images/about/page/preview.png
 /* harmony default export */ const preview = ({"src":"/_next/static/media/preview.c7068fd5.png","height":396,"width":623,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAsElEQVR4nAGlAFr/AcivlQHG3/r/IyMTDwMECjMYAAi+8P/2QxQZHU8iISJyAf8AAAFDF10Fveii/sC5skru5OXjFykpOvf6/VEIKCtEAeN0PgCM7fVL4u3NBK8KQf+XVlRjIv0EThTy3HYN9gKLAfaZULn0OVs67fP5DMfk4gCeCQ0Aj9vFADH2qAD4ChSpAfaYOJL9NmxJBxMc5O7x7rZNxc7US+C89nUR3UP//PIokn5Orq6qAnAAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./public/images/about/page/1.svg
-/* harmony default export */ const page_1 = ({"src":"/_next/static/media/1.b6bf401c.svg","height":103,"width":93});
+/* harmony default export */ const page_1 = ({"src":"/_next/static/media/1.16293ac7.svg","height":103,"width":93});
 ;// CONCATENATED MODULE: ./public/images/about/page/2.svg
-/* harmony default export */ const page_2 = ({"src":"/_next/static/media/2.eff434d3.svg","height":102,"width":102});
+/* harmony default export */ const page_2 = ({"src":"/_next/static/media/2.f3c41915.svg","height":102,"width":102});
 ;// CONCATENATED MODULE: ./public/images/about/page/3.svg
-/* harmony default export */ const page_3 = ({"src":"/_next/static/media/3.8c1ba034.svg","height":109,"width":85});
+/* harmony default export */ const page_3 = ({"src":"/_next/static/media/3.b87c7f3a.svg","height":109,"width":85});
 ;// CONCATENATED MODULE: ./public/images/about/page/4.svg
-/* harmony default export */ const page_4 = ({"src":"/_next/static/media/4.f7831280.svg","height":60,"width":92});
+/* harmony default export */ const page_4 = ({"src":"/_next/static/media/4.d62cb482.svg","height":60,"width":92});
 ;// CONCATENATED MODULE: ./public/images/about/page/5.svg
-/* harmony default export */ const page_5 = ({"src":"/_next/static/media/5.504be76d.svg","height":90,"width":90});
+/* harmony default export */ const page_5 = ({"src":"/_next/static/media/5.b3f24118.svg","height":90,"width":90});
 ;// CONCATENATED MODULE: ./public/images/about/page/6.svg
-/* harmony default export */ const page_6 = ({"src":"/_next/static/media/6.8aea63c4.svg","height":87,"width":59});
+/* harmony default export */ const page_6 = ({"src":"/_next/static/media/6.91645ee1.svg","height":87,"width":59});
 ;// CONCATENATED MODULE: ./public/images/about/page/7.svg
-/* harmony default export */ const page_7 = ({"src":"/_next/static/media/7.8040cc12.svg","height":90,"width":68});
+/* harmony default export */ const page_7 = ({"src":"/_next/static/media/7.05f2afb1.svg","height":90,"width":68});
 ;// CONCATENATED MODULE: ./public/images/about/page/8.svg
-/* harmony default export */ const page_8 = ({"src":"/_next/static/media/8.1c55746e.svg","height":98,"width":98});
+/* harmony default export */ const page_8 = ({"src":"/_next/static/media/8.028c0fa9.svg","height":98,"width":98});
 ;// CONCATENATED MODULE: ./public/images/about/page/9.svg
-/* harmony default export */ const page_9 = ({"src":"/_next/static/media/9.18fa958f.svg","height":83,"width":87});
+/* harmony default export */ const page_9 = ({"src":"/_next/static/media/9.34b5e8ed.svg","height":83,"width":87});
 ;// CONCATENATED MODULE: ./public/images/about/page/10.svg
-/* harmony default export */ const page_10 = ({"src":"/_next/static/media/10.9076e73e.svg","height":87,"width":69});
+/* harmony default export */ const page_10 = ({"src":"/_next/static/media/10.d31580cc.svg","height":87,"width":69});
 ;// CONCATENATED MODULE: ./public/images/about/page/11.svg
-/* harmony default export */ const _11 = ({"src":"/_next/static/media/11.77e55247.svg","height":79,"width":79});
+/* harmony default export */ const _11 = ({"src":"/_next/static/media/11.c3e1559a.svg","height":79,"width":79});
 ;// CONCATENATED MODULE: ./public/images/about/page/12.svg
-/* harmony default export */ const _12 = ({"src":"/_next/static/media/12.350c249b.svg","height":76,"width":84});
+/* harmony default export */ const _12 = ({"src":"/_next/static/media/12.6cc67c17.svg","height":76,"width":84});
 ;// CONCATENATED MODULE: ./src/image_export/about.ts
 
 

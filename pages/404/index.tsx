@@ -1,5 +1,4 @@
 import { Container } from 'src/components/layout/container'
-import { Modal } from 'src/components/modal'
 import { IMAGE_404 } from 'src/image_export/404'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -14,7 +13,6 @@ const PageNotFound = () => {
                 <title>Страница не найдена</title>
             </Head>
             <Container>
-                <Modal isOpen={false} onClose={() => {}} title="r" text="s" />
                 <div className={styles.page}>
                     <Image src={IMAGE_404} alt="page not found" />
                     <h5>

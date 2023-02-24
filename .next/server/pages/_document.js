@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const CRM_SCRIPT = "http://localhost:5000/connect?domain=https://teplicin24.ru&url=https://teplicin24.ru/беседки" || 0;
+const CRM_SCRIPT = "https://firma-crm.by/connect?domain=https://загородный.бел&url=https://загородный.бел" || 0;
 function Document() {
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Html, {
         lang: "ru",

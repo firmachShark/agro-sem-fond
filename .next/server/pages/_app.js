@@ -1705,7 +1705,8 @@ const ROUTES = {
     viewed: "/просмотрено",
     catalog: "/каталог",
     "catalog/:categoryName": "/каталог/:categoryName",
-    "catalog/:categoryName/:productName": "/каталог/:categoryName/:productName"
+    "catalog/:categoryName/:productName": "/каталог/:categoryName/:productName",
+    thank: "/спасибо"
 };
 // const ROUTES_ENG = Object.keys(ROUTES).reduce((result, route) => {
 //     result[route] = '/' + [route]
@@ -1815,35 +1816,35 @@ __webpack_require__.d(__webpack_exports__, {
 // UNUSED EXPORTS: LogoWord, SearchIcon
 
 ;// CONCATENATED MODULE: ./public/images/header/phone.svg
-/* harmony default export */ const phone = ({"src":"/_next/static/media/phone.725ee7e8.svg","height":25,"width":25});
+/* harmony default export */ const phone = ({"src":"/_next/static/media/phone.470fda7e.svg","height":25,"width":25});
 ;// CONCATENATED MODULE: ./public/images/header/logo.png
 /* harmony default export */ const logo = ({"src":"/_next/static/media/logo.95d6da0f.png","height":103,"width":150,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAbElEQVR42j3JLQqEUABF4eu8malTZiabxB1oEPEHTEZ3YLcZrCJ2wYWYrW7A5Ho8yMMDHzdckQORQYsBP9yfgSjChhUFpJeesn2wYMeB+rob35Htjw49RlRy355sJVLkeihjE31NrDksNAX5CSYBDIC/dFW4AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./public/images/header/logo-small.png
 /* harmony default export */ const logo_small = ({"src":"/_next/static/media/logo-small.33c132a9.png","height":83,"width":100,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAQAAACfUMTVAAAAbElEQVR42iXIIQoCURRA0aOibXAFLsIoGkUwmAwmg2WS67C5BJsIgkmrBjH+IMwCZhlT33wYLrcceiFYWpnoB8HQSaNyMOhgLLl5eMrAyE5ydvEKgbm32j//UeQsXP18JXdbJTNHG6W9tamiBSXoHWUQkSu4AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":7});
 ;// CONCATENATED MODULE: ./public/images/header/logo-word.svg
-/* harmony default export */ const logo_word = ({"src":"/_next/static/media/logo-word.9f6f2062.svg","height":16,"width":150});
+/* harmony default export */ const logo_word = ({"src":"/_next/static/media/logo-word.2ac76784.svg","height":16,"width":150});
 ;// CONCATENATED MODULE: ./public/images/header/status.svg
-/* harmony default export */ const header_status = ({"src":"/_next/static/media/status.3334a73f.svg","height":20,"width":20});
+/* harmony default export */ const header_status = ({"src":"/_next/static/media/status.c6405ecd.svg","height":20,"width":20});
 ;// CONCATENATED MODULE: ./public/images/header/cart.svg
-/* harmony default export */ const cart = ({"src":"/_next/static/media/cart.ce2895c1.svg","height":34,"width":36});
+/* harmony default export */ const cart = ({"src":"/_next/static/media/cart.8c79721c.svg","height":34,"width":36});
 ;// CONCATENATED MODULE: ./public/images/header/mail.svg
-/* harmony default export */ const mail = ({"src":"/_next/static/media/mail.c381b25c.svg","height":16,"width":22});
+/* harmony default export */ const mail = ({"src":"/_next/static/media/mail.1f7c4c36.svg","height":16,"width":22});
 ;// CONCATENATED MODULE: ./public/images/header/search.svg
-/* harmony default export */ const search = ({"src":"/_next/static/media/search.ea7ebc79.svg","height":40,"width":40});
+/* harmony default export */ const search = ({"src":"/_next/static/media/search.d18efb71.svg","height":40,"width":40});
 ;// CONCATENATED MODULE: ./public/images/header/viewed.svg
-/* harmony default export */ const viewed = ({"src":"/_next/static/media/viewed.98a0e751.svg","height":16,"width":26});
+/* harmony default export */ const viewed = ({"src":"/_next/static/media/viewed.85fef97a.svg","height":16,"width":26});
 ;// CONCATENATED MODULE: ./public/images/header/catalog-order.svg
 /* harmony default export */ const catalog_order = ({"src":"/_next/static/media/catalog-order.72759219.svg","height":297,"width":297});
 ;// CONCATENATED MODULE: ./public/images/header/delivery.svg
-/* harmony default export */ const delivery = ({"src":"/_next/static/media/delivery.08fb89e3.svg","height":21,"width":31});
+/* harmony default export */ const delivery = ({"src":"/_next/static/media/delivery.26d7ed83.svg","height":21,"width":31});
 ;// CONCATENATED MODULE: ./public/images/header/order.svg
-/* harmony default export */ const order = ({"src":"/_next/static/media/order.4ff41014.svg","height":26,"width":26});
+/* harmony default export */ const order = ({"src":"/_next/static/media/order.ecfd0ba0.svg","height":26,"width":26});
 ;// CONCATENATED MODULE: ./public/images/header/howto.svg
-/* harmony default export */ const howto = ({"src":"/_next/static/media/howto.0ee6f3d5.svg","height":26,"width":26});
+/* harmony default export */ const howto = ({"src":"/_next/static/media/howto.adf47899.svg","height":26,"width":26});
 ;// CONCATENATED MODULE: ./public/images/header/ruble.svg
-/* harmony default export */ const ruble = ({"src":"/_next/static/media/ruble.6c9f9df9.svg","height":24,"width":19});
+/* harmony default export */ const ruble = ({"src":"/_next/static/media/ruble.9308256c.svg","height":24,"width":19});
 ;// CONCATENATED MODULE: ./public/images/header/action.svg
-/* harmony default export */ const action = ({"src":"/_next/static/media/action.194ed9e9.svg","height":31,"width":31});
+/* harmony default export */ const action = ({"src":"/_next/static/media/action.1a0da02e.svg","height":31,"width":31});
 ;// CONCATENATED MODULE: ./src/image_export/header.ts
 
 
