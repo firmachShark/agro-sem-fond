@@ -24,7 +24,7 @@ jobs:
         - name: FTP Deploy to WP Engine (Staging)
           uses: SamKirkland/FTP-Deploy-Action@4.3.3
           with:
-            ftp-server: s4.open.by
-            ftp-username: mycrmby
-            ftp-password: _4F_assK-2
+            server: s4.open.by
+            user: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
             server-dir: /repositories/test/
