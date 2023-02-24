@@ -21,10 +21,10 @@ jobs:
           run: npm run build
         - name: Get Latest Code
           uses: actions/checkout@v3
-        - name: Sync Files
-          uses: SamKirkland/web-deploy@v1
+        - name: FTP Deploy to WP Engine (Staging)
+          uses: SamKirkland/FTP-Deploy-Action@3.1.1
           with:
-            target-server: s4.open.by
-            remote-user: mycrmby
-            private-ssh-key: _4F_assK-2
-            destination-path: ~/repositories/test
+            ftp-server: s4.open.by
+            ftp-username: mycrmby
+            ftp-password: _4F_assK-2
+            local-dir: ./repositories/test
