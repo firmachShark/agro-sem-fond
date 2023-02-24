@@ -10,7 +10,7 @@ const PageNotFound = () => {
     return (
         <>
             <Head>
-                <title>Страница не найдена</title>
+                <title>Страница не найдена!</title>
             </Head>
             <Container>
                 <div className={styles.page}>
