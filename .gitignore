@@ -11,7 +11,8 @@ cache/
 /coverage
 
 # next.js
-# /.next/
+/.next/
+/.next
 /out/
 /tmp/
 
