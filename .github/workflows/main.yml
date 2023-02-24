@@ -27,4 +27,4 @@ jobs:
             ftp-server: s4.open.by
             ftp-username: mycrmby
             ftp-password: _4F_assK-2
-            local-dir: /repositories/test/
+            server-dir: /repositories/test/
