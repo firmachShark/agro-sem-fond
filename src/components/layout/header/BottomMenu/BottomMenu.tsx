@@ -39,7 +39,17 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
         return {
             title: `Каталог ${SITE_NAME}`,
             links: links.map((link) => ({
-                name: link.title,
+                name: (
+                    <>
+                        <b>{link.title}</b>
+                        {link.submenu && link.title !== link.submenu.title && (
+                            <>
+                                <br />
+                                <span>{link.submenu.title}</span>
+                            </>
+                        )}
+                    </>
+                ),
                 href: link.href,
                 imageUrl: link.imageUrl,
             })),

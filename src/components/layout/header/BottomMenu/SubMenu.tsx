@@ -6,7 +6,7 @@ import styles from './BottomMenu.module.scss'
 import { concatClass } from 'utils/concatClass'
 
 export interface Link {
-    name: string
+    name: string | JSX.Element
     href: string
     imageUrl?: string
 }
@@ -57,19 +57,27 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                 >
                     <ul>
                         {links.map((link) => (
-                            <li key={link.name}>
+                            <li key={link.href}>
                                 <Link
                                     href={link.href}
                                     onClick={onClose}
                                     className="beauty-underline"
                                 >
+                                    <i
+                                        className="fa fa-chevron-down"
+                                        aria-hidden="true"
+                                    ></i>
                                     {link.imageUrl && (
                                         <Image
                                             placeholder="empty"
                                             width={500}
                                             height={500}
                                             src={link.imageUrl}
-                                            alt={link.name}
+                                            alt={
+                                                typeof link.name === 'string'
+                                                    ? link.name
+                                                    : title
+                                            }
                                         />
                                     )}
                                     <span>{link.name}</span>

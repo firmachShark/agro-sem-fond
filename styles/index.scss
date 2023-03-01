@@ -37,27 +37,29 @@ a {
 }
 
 .beauty-underline {
-    position: relative;
+    // position: relative;
 
-    &::after {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 0;
-        left: 50%;
-        height: 2px;
-        bottom: -6px;
-        background: #83D477;
-        transform: translateX(-50%);
-        z-index: 1;
+    // &::before {
+    //     // position: absolute;
+    //     content: "";
+    //     display: block;
+    //     // width: 0;
+    //     // left: 0;
+    //     height: 50px;
+    //     // bottom: -6px;
+    //     // background: #83D477;
+    //     background: $color-primary;
+    //     box-shadow: 5px 0 4px $color-primary;
+    //     // transform: translateX(-50%);
+    //     // z-index: 1;
 
-        transition: width .2s ease;
-        transform-origin: center center;
-    }
+    //     transition: width .2s ease;
+    //     transform-origin: center center;
+    // }
 
     &:hover {
-        &::after {
-            width: 100%;
+        &::before {
+            width: 10px;
         }
     }
 }
