@@ -2,10 +2,10 @@ import React, { useMemo } from 'react'
 import { IProductInCart } from '../../../pages/cart'
 import styles from './MobileView.module.scss'
 import cartApi from 'utils/cart'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from 'src/components/button'
 import { CountInput } from 'src/components/count-input'
+import { Img } from '../img'
 
 interface MobileViewProps {
     product: IProductInCart
@@ -60,7 +60,7 @@ export const MobileView: React.FC<MobileViewProps> = ({
                 <div className="col-4">
                     <div className={styles.mobile_image}>
                         {previewData && (
-                            <Image
+                            <Img
                                 src={previewData.imageURL}
                                 width={previewData.imageWidth}
                                 height={previewData.imageHeight}

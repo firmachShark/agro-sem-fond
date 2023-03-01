@@ -7,7 +7,6 @@ import {
     StatusIcon,
     ViewedIcon,
 } from 'src/image_export/header'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useMemo, useRef, useState } from 'react'
@@ -16,6 +15,7 @@ import { concatClass } from 'utils/concatClass'
 import { IconLink, Phone } from '../Common'
 import styles from './MobileMenu.module.scss'
 import ROUTES from 'src/constants/routes'
+import { Img } from 'src/components/img'
 
 export const links = [
     {
@@ -173,7 +173,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ parentRef }) => {
                         ])}
                         isLink={{ href: ROUTES.faq }}
                     >
-                        <Image src={StatusIcon} alt="status" />
+                        <Img src={StatusIcon} alt="status" />
                         Что с моим заказом
                     </Button>,
                     isMD ? listRef.current : parentRef.current,

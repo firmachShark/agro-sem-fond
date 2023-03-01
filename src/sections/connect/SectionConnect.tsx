@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { Img } from 'src/components/img'
 import { ConnectPhoto } from 'src/image_export/connect'
 import styles from './SectionConnect.module.scss'
 
@@ -32,8 +32,7 @@ export const SectionConnect = () => {
                         </div>
                     </div>
                     <div className="col-xl-4 col-5 d-lg-block d-none">
-                        <Image
-                            placeholder="empty"
+                        <Img
                             width={421}
                             height={456}
                             className={styles.photo}

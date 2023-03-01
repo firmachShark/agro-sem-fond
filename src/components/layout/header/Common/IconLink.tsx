@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { Img } from 'src/components/img'
 import { concatClass } from 'utils/concatClass'
 import styles from './Common.module.scss'
 
@@ -19,7 +19,7 @@ export const IconLink: React.FC<IconLinkProps> = ({
 }) => {
     return (
         <Link href={href} className={concatClass([styles.iconLink, className])}>
-            <Image src={imageSrc} alt={text} />
+            <Img src={imageSrc} alt={text} />
             <strong>{text}</strong>
         </Link>
     )

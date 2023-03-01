@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import React from 'react'
 import { Container } from 'src/components/layout/container'
 import styles from './SectionAbout.module.scss'
@@ -16,6 +16,7 @@ import {
     AboutPhoto,
 } from 'src/image_export/about'
 import { SITE_NAME } from 'src/constants/info'
+import { Img } from 'src/components/img'
 
 const props: Array<{
     image: StaticImageData
@@ -84,12 +85,11 @@ export const SectionAbout = () => {
                         <ul>
                             {props.map((prop, i) => (
                                 <li key={i}>
-                                    <Image
+                                    <Img
                                         width={60}
                                         height={60}
                                         src={prop.image}
                                         alt={prop.text}
-                                        placeholder="empty"
                                     />
                                     <span>{prop.text}</span>
                                 </li>
@@ -97,10 +97,9 @@ export const SectionAbout = () => {
                         </ul>
                     </div>
                     <div className="col-5 d-xl-block d-none">
-                        <Image
+                        <Img
                             width={400}
                             height={1000}
-                            placeholder="empty"
                             src={AboutPhoto}
                             alt="Наши преимущества"
                             className="w-100 h-auto"

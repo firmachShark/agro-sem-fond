@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { TopMenu, BottomMenu } from './'
 import styles from './Header.module.scss'
 import { Container } from '../container'
-import Image from 'next/image'
 
 import { SearchInput } from 'src/components/layout/search-input'
 import { MAIL_ATTR, MAIL } from 'src/constants/info'
@@ -11,12 +10,12 @@ import {
     MailIcon,
     CatalogIcon,
     ViewedIcon,
-    // LogoWord,
 } from 'src/image_export/header'
 import { useRouter } from 'next/router'
 import { Phone, IconLink, Cart } from './Common'
 import { LogoWord } from 'src/components/logo-word/LogoWord'
 import ROUTES from 'src/constants/routes'
+import { Img } from 'src/components/img'
 
 export const Header = () => {
     const router = useRouter()
@@ -57,7 +56,6 @@ export const Header = () => {
                                 className={styles.fixedLogo}
                             >
                                 <LogoWord />
-                                {/* <Image priority src={LogoWord} alt="Logo" /> */}
                             </div>
                             <div className={styles.fixedSearch}>
                                 <SearchInput />
@@ -72,7 +70,7 @@ export const Header = () => {
             <Container>
                 <div className={styles.inner}>
                     <div onClick={handleClickLogo} className={styles.logo}>
-                        <Image
+                        <Img
                             priority
                             src={Logo}
                             width={Logo.width}

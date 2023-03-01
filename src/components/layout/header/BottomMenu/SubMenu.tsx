@@ -1,9 +1,9 @@
 import { Container } from 'src/components/layout/container'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import styles from './BottomMenu.module.scss'
 import { concatClass } from 'utils/concatClass'
+import { Img } from 'src/components/img'
 
 export interface Link {
     name: string | JSX.Element
@@ -68,8 +68,7 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                                         aria-hidden="true"
                                     ></i>
                                     {link.imageUrl && (
-                                        <Image
-                                            placeholder="empty"
+                                        <Img
                                             width={500}
                                             height={500}
                                             src={link.imageUrl}
@@ -87,8 +86,7 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                     </ul>
                     {imageUrl && withPreviewImage && (
                         <div className={styles.previewImage}>
-                            <Image
-                                placeholder="empty"
+                            <Img
                                 width={500}
                                 height={500}
                                 src={imageUrl}

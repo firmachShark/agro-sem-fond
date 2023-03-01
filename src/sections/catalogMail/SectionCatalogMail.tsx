@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from 'src/components/button'
+import { Img } from 'src/components/img'
 import { Container } from 'src/components/layout/container'
 import ROUTES from 'src/constants/routes'
 import { useDispatchCreator } from 'src/hooks/useStore'
@@ -26,8 +26,7 @@ export const SectionCatalogMail = () => {
                             </h2>
                             <div className="row align-items-center">
                                 <div className="col-6 d-sm-block d-none">
-                                    <Image
-                                        placeholder="empty"
+                                    <Img
                                         src={CatalogMailPhoto}
                                         width={238}
                                         height={336}

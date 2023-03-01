@@ -1,10 +1,10 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 import { CountInput } from 'src/components/count-input'
 import styles from './ProductRow.module.scss'
 import cartApi from 'utils/cart'
 import { IProductInCart } from 'pages/cart'
+import { Img } from '../img'
 
 interface ProductRowProps {
     product: IProductInCart
@@ -61,7 +61,7 @@ export const ProductRow: React.FC<ProductRowProps> = ({
             <td>
                 <Link href={href} className={styles.title}>
                     {previewData && (
-                        <Image
+                        <Img
                             src={previewData.imageURL}
                             width={previewData.imageWidth}
                             height={previewData.imageHeight}

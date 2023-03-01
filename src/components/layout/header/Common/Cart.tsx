@@ -1,5 +1,4 @@
 import { CartIcon } from 'src/image_export/header'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 import { concatClass } from 'utils/concatClass'
@@ -7,6 +6,7 @@ import styles from './Common.module.scss'
 import { ICart } from 'src/models/ICart'
 import { useLocalStorage } from 'src/hooks/useLocalStorage'
 import ROUTES from 'src/constants/routes'
+import { Img } from 'src/components/img'
 
 interface CartProps {
     className?: string
@@ -36,7 +36,7 @@ export const Cart: React.FC<CartProps> = ({ className }) => {
             className={concatClass([styles.cart, className])}
         >
             <label>{count}</label>
-            <Image src={CartIcon} alt="cart" />
+            <Img src={CartIcon} alt="cart" />
             <span>
                 товаров на сумму <br />
                 <b>{price.toFixed(2)}</b> руб.

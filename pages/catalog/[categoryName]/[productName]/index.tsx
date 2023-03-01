@@ -1,6 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import React, { useEffect, useMemo, useState } from 'react'
 import { Carousel, Tab, Tabs } from 'react-bootstrap'
 import { Breadcrumbs } from 'src/components/breadcrumbs'
@@ -27,6 +26,7 @@ import { ProductReview } from 'src/components/productReview'
 import { Input } from 'src/components/input'
 import viewedApi from 'utils/viewedApi'
 import ROUTES from 'src/constants/routes'
+import { Img } from 'src/components/img'
 
 interface ProductPageProps {
     product: IProduct
@@ -164,7 +164,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                     >
                                         {images.map((image, i) => (
                                             <Carousel.Item key={i}>
-                                                <Image
+                                                <Img
                                                     itemProp={
                                                         i === 0 ? 'image' : ''
                                                     }
@@ -176,7 +176,6 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                                     }
                                                     src={image.url}
                                                     alt={name}
-                                                    placeholder="empty"
                                                 />
                                             </Carousel.Item>
                                         ))}
@@ -200,7 +199,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                                         width: `${width}%`,
                                                     }}
                                                 >
-                                                    <Image
+                                                    <Img
                                                         onClick={() =>
                                                             handleSelect(i)
                                                         }
@@ -208,7 +207,6 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                                         height={image.height}
                                                         src={image.url}
                                                         alt={name}
-                                                        placeholder="empty"
                                                     />
                                                 </div>
                                             )

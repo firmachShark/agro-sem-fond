@@ -3,9 +3,9 @@ import styles from './SectionBlog.module.scss'
 import React, { useMemo } from 'react'
 import { IPost } from 'src/models/IBlog'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from 'src/components/button'
 import ROUTES from 'src/constants/routes'
+import { Img } from 'src/components/img'
 
 interface BlogItemProps {
     post: IPost
@@ -24,12 +24,11 @@ export const BlogItem: React.FC<BlogItemProps> = ({ post }) => {
     return (
         <article key={post.id} className={styles.item}>
             <Link href={href} className={styles.preview}>
-                <Image
+                <Img
                     width={600}
                     height={600}
                     src={post.preview?.url || ''}
                     alt={post.title}
-                    placeholder="empty"
                 />
             </Link>
             <Link href={href} className={styles.title}>

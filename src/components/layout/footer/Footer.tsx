@@ -9,7 +9,6 @@ import {
     PaymentIcon,
     UserIcon,
 } from 'src/image_export/footer'
-import Image from 'next/image'
 import {
     ADDRESS,
     MAIL,
@@ -22,6 +21,7 @@ import { Button } from 'src/components/button'
 import { useDispatchCreator } from 'src/hooks/useStore'
 import { openModalOrder } from 'src/store/slices/modal-order.slice'
 import ROUTES from 'src/constants/routes'
+import { Img } from 'src/components/img'
 
 const links = [
     {
@@ -86,7 +86,7 @@ export const Footer = () => {
                                 'flex-grow-1 d-flex align-items-end pb-1'
                             }
                         >
-                            <Image src={Payment} alt="payment" />
+                            <Img src={Payment} alt="payment" />
                         </Link>
                     </div>
                     <div>
@@ -116,14 +116,14 @@ export const Footer = () => {
                         </Link>
                         <span>{ADDRESS}</span>
                         <Button onClick={handleClick('about')}>
-                            <Image src={UserIcon} alt="Продавец" />О продавце
+                            <Img src={UserIcon} alt="Продавец" />О продавце
                         </Button>
                         <Button onClick={handleClick('payment')}>
-                            <Image src={PaymentIcon} alt="Оплата" />
+                            <Img src={PaymentIcon} alt="Оплата" />
                             Оплата
                         </Button>
                         <Button onClick={handleClick('delivery')}>
-                            <Image src={DeliveryIcon} alt="Доставка" />
+                            <Img src={DeliveryIcon} alt="Доставка" />
                             Доставка
                         </Button>
                     </div>

@@ -4,7 +4,6 @@ import { Container } from 'src/components/layout/container'
 import styles from './BottomMenu.module.scss'
 import { MenuItem, MenuItemProps } from './MenuItem'
 import Link from 'next/link'
-import Image from 'next/image'
 import {
     DeliveryIcon,
     HowToIcon,
@@ -16,6 +15,7 @@ import useSWR from 'swr'
 import categoryService from 'src/services/category-service'
 import ROUTES from 'src/constants/routes'
 import { SITE_NAME } from 'src/constants/info'
+import { Img } from 'src/components/img'
 
 interface BottomMenuProps {
     navRef: React.Ref<HTMLDivElement>
@@ -85,34 +85,31 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                     <ul className={styles.menuLinks}>
                         <li>
                             <Link href={`${ROUTES.stock + '?modal=delivery'}`}>
-                                <Image src={DeliveryIcon} alt="delivery" />
+                                <Img src={DeliveryIcon} alt="delivery" />
                                 Доставка: Бесплатно
                             </Link>
                         </li>
                         <li className="d-md-block d-none">
                             <p>
-                                <Image src={MinOrderIcon} alt="minimal order" />
+                                <Img src={MinOrderIcon} alt="minimal order" />
                                 Мин. Заказ 150 руб.
                             </p>
                         </li>
                         <li className="d-lg-block d-none">
                             <Link href={ROUTES.faq}>
-                                <Image
-                                    src={HowToIcon}
-                                    alt="how to make order"
-                                />
+                                <Img src={HowToIcon} alt="how to make order" />
                                 Как сделать заказ?
                             </Link>
                         </li>
                         <li className="d-md-block d-none">
                             <p>
-                                <Image src={RubleIcon} alt="ruble" />
+                                <Img src={RubleIcon} alt="ruble" />
                                 Оплата по факту
                             </p>
                         </li>
                         <li>
                             <Link href={ROUTES.stock}>
-                                <Image src={StockIcon} alt="stock" />
+                                <Img src={StockIcon} alt="stock" />
                                 Акции
                             </Link>
                         </li>

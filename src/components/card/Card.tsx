@@ -151,7 +151,6 @@ export const Card: React.FC<CardProps> = ({
                         height={previewData.imageHeight}
                         src={previewData.imageURL}
                         alt={product.name}
-                        placeholder="empty"
                     />
                 </Link>
             )}
