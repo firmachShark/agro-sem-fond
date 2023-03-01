@@ -10,18 +10,20 @@ jobs:
           node-version: [ 17.x ]
 
       steps:
-        - uses: actions/checkout@v2
+        - name: 🚚 Get latest code
+          uses: actions/checkout@v3
+
         - name: Starting Node JS ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
+          uses: actions/setup-node@v2
           with:
             node-version: ${{ matrix.node-version }}
-        - name: Install modules
-          run: npm install
-        - name: Build project
-          run: npm run build
-        - name: Get Latest Code
-          uses: actions/checkout@v3
-        - name: Deploy to FTP
+
+        - name: 🔨 Build Project
+          run: |
+            npm install
+            npm run build
+
+        - name: 📂 Deploy to FTP
           uses: SamKirkland/FTP-Deploy-Action@4.3.3
           with:
             server: s4.open.by
