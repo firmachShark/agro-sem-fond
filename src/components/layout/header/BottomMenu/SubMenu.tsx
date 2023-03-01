@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import styles from './BottomMenu.module.scss'
+import { concatClass } from 'utils/concatClass'
 
 export interface Link {
     name: string
@@ -14,13 +15,22 @@ export interface SubMenuProps {
     title: string
     href: string
     imageUrl?: string
+    withPreviewImage?: boolean
     links: Link[]
     anchor: number | null
     onClose: () => void
 }
 
 export const SubMenu: React.FC<SubMenuProps> = (props) => {
-    const { title, anchor, links, href, imageUrl, onClose } = props
+    const {
+        title,
+        anchor,
+        links,
+        href,
+        imageUrl,
+        withPreviewImage = true,
+        onClose,
+    } = props
 
     useEffect(() => {
         if (anchor) window.addEventListener('scroll', onClose)
@@ -39,7 +49,12 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                 >
                     {title}
                 </Link>
-                <div className={styles.submenuInner}>
+                <div
+                    className={concatClass([
+                        styles.submenuInner,
+                        !withPreviewImage ? styles.withoutImage : undefined,
+                    ])}
+                >
                     <ul>
                         {links.map((link) => (
                             <li key={link.name}>
@@ -62,7 +77,7 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
                             </li>
                         ))}
                     </ul>
-                    {imageUrl && (
+                    {imageUrl && withPreviewImage && (
                         <div className={styles.previewImage}>
                             <Image
                                 placeholder="empty"

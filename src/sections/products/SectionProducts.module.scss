@@ -1,6 +1,7 @@
 .section {
     & article {
         width: 18.75em;
+        margin: 0 auto;
     }
 
     @include breakpoint($bp-xxl) {

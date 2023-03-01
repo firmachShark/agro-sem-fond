@@ -172,7 +172,7 @@ export const Card: React.FC<CardProps> = ({
                 <div className="d-flex justify-content-between mt-3 align-items-center">
                     {inCart ? (
                         <>
-                            <Link href="/cart">
+                            <Link href={ROUTES.cart}>
                                 В корзине{count > 1 && <b> ({count} шт.)</b>}
                             </Link>
                             <Button

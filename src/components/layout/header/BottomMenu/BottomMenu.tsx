@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Container } from 'src/components/layout/container'
 
 import styles from './BottomMenu.module.scss'
@@ -15,6 +15,7 @@ import {
 import useSWR from 'swr'
 import categoryService from 'src/services/category-service'
 import ROUTES from 'src/constants/routes'
+import { SITE_NAME } from 'src/constants/info'
 
 interface BottomMenuProps {
     navRef: React.Ref<HTMLDivElement>
@@ -26,14 +27,38 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
         categoryService.getForHeader,
     )
 
+    const slicedLinks = useMemo(() => {
+        if (!links) return null
+
+        return links.slice(0, 5)
+    }, [links])
+
+    const catalogSubMenu: MenuItemProps['submenu'] | undefined = useMemo(() => {
+        if (!links) return undefined
+
+        return {
+            title: `Каталог ${SITE_NAME}`,
+            links: links.map((link) => ({
+                name: link.title,
+                href: link.href,
+                imageUrl: link.imageUrl,
+            })),
+        }
+    }, [links])
+
     return (
         <>
             <nav ref={navRef} className={styles.nav}>
                 <Container>
                     <ul className={styles.navLinks}>
-                        <MenuItem href={ROUTES.catalog} title={'Каталог'} />
-                        {links &&
-                            links.map((link, i) => (
+                        <MenuItem
+                            withPreviewImage={false}
+                            href={ROUTES.catalog}
+                            title={'Каталог'}
+                            submenu={catalogSubMenu}
+                        />
+                        {slicedLinks &&
+                            slicedLinks.map((link, i) => (
                                 <MenuItem
                                     key={i}
                                     href={link.href}

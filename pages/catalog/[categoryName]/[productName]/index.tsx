@@ -26,6 +26,7 @@ import { openModalOrder } from 'src/store/slices/modal-order.slice'
 import { ProductReview } from 'src/components/productReview'
 import { Input } from 'src/components/input'
 import viewedApi from 'utils/viewedApi'
+import ROUTES from 'src/constants/routes'
 
 interface ProductPageProps {
     product: IProduct
@@ -249,7 +250,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                     </strong>
                                     {inCart ? (
                                         <>
-                                            <Link href="/cart">
+                                            <Link href={ROUTES.cart}>
                                                 <i
                                                     className="fa fa-check"
                                                     aria-hidden="true"
@@ -292,22 +293,13 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                             <div className={styles.content}>
                                 {shortProps && (
                                     <ul className={styles.short_props}>
-                                        {Object.keys(shortProps).map(
-                                            (key, i) => (
-                                                <li
-                                                    key={key}
-                                                    style={{
-                                                        animationDelay: `${
-                                                            (i + 1) * 300
-                                                        }ms`,
-                                                    }}
-                                                >
-                                                    <span>{key}</span>
-                                                    <hr />
-                                                    <b>{shortProps[key]}</b>
-                                                </li>
-                                            ),
-                                        )}
+                                        {Object.keys(shortProps).map((key) => (
+                                            <li key={key}>
+                                                <span>{key}</span>
+                                                <hr />
+                                                <b>{shortProps[key]}</b>
+                                            </li>
+                                        ))}
                                     </ul>
                                 )}
                                 <div className={styles.delivery}>
@@ -358,21 +350,12 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                                 'mw-100',
                                             ])}
                                         >
-                                            {Object.keys(props).map(
-                                                (key, i) => (
-                                                    <li
-                                                        key={key}
-                                                        style={{
-                                                            animationDelay: `${
-                                                                i * 200
-                                                            }ms`,
-                                                        }}
-                                                    >
-                                                        <span>{key}</span>
-                                                        <b>{props[key]}</b>
-                                                    </li>
-                                                ),
-                                            )}
+                                            {Object.keys(props).map((key) => (
+                                                <li key={key}>
+                                                    <span>{key}</span>
+                                                    <b>{props[key]}</b>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </Tab>
                                 )}

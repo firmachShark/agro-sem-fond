@@ -5,6 +5,7 @@ import { Link as LinkProps, SubMenu } from './SubMenu'
 export interface MenuItemProps {
     href: string
     title: string
+    withPreviewImage?: boolean
     imageUrl?: string
     submenu?: {
         title: string
@@ -13,7 +14,7 @@ export interface MenuItemProps {
 }
 
 export const MenuItem: React.FC<MenuItemProps> = (props) => {
-    const { title, href, submenu, imageUrl } = props
+    const { title, href, submenu, imageUrl, withPreviewImage = true } = props
     const [anchor, setAnchor] = useState<number | null>(null)
     const ref = useRef<HTMLAnchorElement>(null)
 
@@ -50,6 +51,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
             </Link>
             {submenu && (
                 <SubMenu
+                    withPreviewImage={withPreviewImage}
                     imageUrl={imageUrl}
                     href={href}
                     title={submenu.title}

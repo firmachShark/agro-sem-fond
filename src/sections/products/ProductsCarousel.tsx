@@ -32,6 +32,7 @@ export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
             slidesToShow={initial}
             autoplay
             autoplaySpeed={4000}
+            variableWidth
             responsive={[
                 {
                     breakpoint: 991,

@@ -21,9 +21,6 @@ export class CategoryService {
                         },
                     },
                 },
-                pagination: {
-                    limit: 5,
-                },
             },
             {
                 encodeValuesOnly: true,

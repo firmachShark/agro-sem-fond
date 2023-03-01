@@ -27,4 +27,4 @@ jobs:
             server: s4.open.by
             username: ${{ secrets.FTP_USERNAME }}
             password: ${{ secrets.FTP_PASSWORD }}
-            server-dir: /repositories/agro-sem-fond/
+            server-dir: /deplot-tests/agro-sem-fond/
