@@ -40,6 +40,9 @@ const nextConfig = {
         locales: ['ru'],
         defaultLocale: 'ru',
     },
+    generateBuildId: async () => {
+        return `${new Date().getTime()}`
+    },
 }
 
 module.exports = nextConfig
