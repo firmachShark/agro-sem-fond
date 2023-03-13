@@ -7,6 +7,7 @@ import {
 } from 'utils/getNumbersFromObject'
 import priceService, { PriceRequestItem } from './price-service'
 import { convertToHTML } from 'utils/convertToHTML'
+import { ICalculator } from 'src/models/ICalculator'
 
 export const baseQuery: object = {
     populate: {
@@ -21,6 +22,7 @@ export const baseQuery: object = {
             populate: {
                 category: {
                     fields: ['name'],
+                    populate: ['calculator'],
                 },
             },
         },
@@ -62,12 +64,43 @@ class ProductService {
         const ids: PriceRequestItem[] = []
 
         items.forEach((product) => {
-            const id = product.calculator
-                ? getNumbersFromObject(product.calculator)
-                : [product.price_id]
-            id.forEach((id) =>
-                ids.push({ id, priceWithDelivery: product.priceWithDelivery }),
-            )
+            const calculator = getCalculator(product)
+            ids.push({
+                id: product.price_id,
+                priceWithDelivery: product.priceWithDelivery,
+            })
+
+            if (calculator)
+                Object.keys(product.calculator).forEach((partId) => {
+                    const part = getPart(calculator, partId)
+                    if (!part) return
+
+                    let calcIds: number[] = []
+
+                    switch (part.type) {
+                        case 'nested': {
+                            calcIds = getNumbersFromObject(
+                                product.calculator[part.id],
+                            )
+                            break
+                        }
+                        case 'switch': {
+                            calcIds = product.calculator[part.id].map(
+                                (item: any) => item.value,
+                            )
+                            break
+                        }
+                        default:
+                            return
+                    }
+
+                    ids.push(
+                        ...calcIds.map((id) => ({
+                            id,
+                            priceWithDelivery: product.priceWithDelivery,
+                        })),
+                    )
+                })
         })
 
         const prices = await priceService.loadPrices(ids)
@@ -83,19 +116,58 @@ class ProductService {
             ) as GetAllReturnType<T>
 
         const products = []
+
         for (const product of items) {
             let price = prices[product.price_id]
+            const calculator = getCalculator(product)
+            if (calculator) {
+                Object.keys(product.calculator).forEach((partId) => {
+                    const part = getPart(calculator, partId)
+                    if (!part) return
 
-            if (product.calculator) {
-                const ids = getNumbersFromObject(product.calculator)
-                ids.forEach((id, i) => {
-                    if (i === 0) price = prices[id]
+                    switch (part.type) {
+                        case 'switch': {
+                            const ids: number[] = product.calculator[
+                                part.id
+                            ].map(
+                                (inputData: { value: number; title: string }) =>
+                                    inputData.value,
+                            )
 
-                    const place = getObjectByNumber(product.calculator, id)
+                            ids.forEach((id) => {
+                                const place = getObjectByNumber(
+                                    product.calculator[partId],
+                                    id,
+                                )
 
-                    if (place) {
-                        const [item, key] = place
-                        item[key] = prices[id]
+                                if (place) {
+                                    const [item, key] = place
+                                    item[key] = prices[id]
+                                }
+                            })
+                            break
+                        }
+                        case 'nested': {
+                            const ids = getNumbersFromObject(
+                                product.calculator[part.id],
+                            )
+                            ids.forEach((id, i) => {
+                                if (i === 0 && prices[id]) price = prices[id]
+
+                                const place = getObjectByNumber(
+                                    product.calculator[partId],
+                                    id,
+                                )
+
+                                if (place) {
+                                    const [item, key] = place
+                                    item[key] = prices[id]
+                                }
+                            })
+                            break
+                        }
+                        default:
+                            return
                     }
                 })
             }
@@ -247,3 +319,31 @@ class ProductService {
 }
 
 export default new ProductService()
+
+function getPart(calculator: ICalculator, partId: string) {
+    const part = calculator.schema.find((part) => part.id === partId)
+
+    if (!part) return null
+    if (part.loadType !== 'id') return null
+
+    return part
+}
+
+function getCalculator(product: IProduct) {
+    if (!product.calculator) {
+        return null
+    }
+
+    if (!product.subcategories) return null
+    const subcategory = product.subcategories[0]
+
+    if (!subcategory) return null
+    const category = subcategory.category
+
+    if (!category) return null
+    const calculator = category.calculator
+
+    if (!calculator) return null
+
+    return calculator
+}

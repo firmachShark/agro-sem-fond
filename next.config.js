@@ -21,6 +21,11 @@ const nextConfig = {
                 hostname: 'localhost',
                 port: '1337',
             },
+            {
+                protocol: 'http',
+                hostname: '127.0.0.1',
+                port: '1337',
+            },
         ],
     },
     reactStrictMode: true,
@@ -30,6 +35,10 @@ const nextConfig = {
     },
     async rewrites() {
         return rewrites
+    },
+    i18n: {
+        locales: ['ru'],
+        defaultLocale: 'ru',
     },
 }
 

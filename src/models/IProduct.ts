@@ -15,5 +15,5 @@ export interface IProduct {
     isGift: boolean
     priceWithDelivery: boolean
     props: Record<string, string> | null
-    calculator?: Record<string, Record<string, number>>
+    calculator?: any
 }

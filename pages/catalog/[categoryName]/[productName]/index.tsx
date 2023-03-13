@@ -75,6 +75,15 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
     const cart = useLocalStorage<ICart>('cart')
     const inCart = cart && !!cart[product.id]
 
+    const calculatorScheme = useMemo(() => {
+        if (!product.subcategories) return null
+        if (!product.subcategories[0]) return null
+        if (!product.subcategories[0].category) return null
+        if (!product.subcategories[0].category.calculator) return null
+
+        return product.subcategories[0].category.calculator
+    }, [product])
+
     const [count, setCount] = useState(() => {
         const cart = localStorageWrapper.get<ICart>('cart')
         if (!cart) return 1
@@ -282,10 +291,12 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                     )}
                                 </div>
                             </div>
-                            {calculator && (
+                            {calculatorScheme && calculator && (
                                 <Calculator
                                     data={calculator}
                                     setPrice={setPrice}
+                                    calculator={calculatorScheme}
+                                    defaultPrice={initialPrice}
                                 />
                             )}
                             <div className={styles.content}>

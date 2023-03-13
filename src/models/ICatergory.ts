@@ -1,4 +1,5 @@
 import { Image, ISubcategory } from './'
+import { ICalculator } from './ICalculator'
 
 export interface ICategory {
     id: number
@@ -8,4 +9,5 @@ export interface ICategory {
     subcategories?: ISubcategory[]
     href: string
     scriptURL?: string
+    calculator?: ICalculator
 }
