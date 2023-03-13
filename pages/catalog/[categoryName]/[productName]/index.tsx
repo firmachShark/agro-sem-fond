@@ -34,6 +34,11 @@ interface ProductPageProps {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+    context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59',
+    )
+
     const parsedName = parseURL(context.query.productName as string)
     const categoryName = parseURL(context.query.categoryName as string)
 
