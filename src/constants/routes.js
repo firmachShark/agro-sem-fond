@@ -1,5 +1,6 @@
 const ROUTES = {
     blog: '/блог',
+    'blog/:postTitle': '/блог/:postTitle',
     about: '/о-нас',
     cart: '/корзина',
     delivery: '/доставка',
