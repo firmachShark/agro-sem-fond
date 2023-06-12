@@ -48,14 +48,7 @@ export const ProductReview: React.FC<ProductReviewProps> = ({
                     {reviews && reviews.length ? (
                         reviews.map((review) => (
                             <div key={review.id} className={styles.review}>
-                                <h6>
-                                    {review.author}{' '}
-                                    <span>
-                                        {new Date(
-                                            review.createdAt,
-                                        ).toLocaleString('ru')}
-                                    </span>
-                                </h6>
+                                <h6>{review.author}</h6>
                                 <p>{review.content}</p>
                             </div>
                         ))
