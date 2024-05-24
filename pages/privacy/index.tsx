@@ -2,15 +2,9 @@ import Head from 'next/head'
 import { Breadcrumbs } from 'src/components/breadcrumbs'
 import { Container } from 'src/components/layout/container'
 import ROUTES from 'src/constants/routes'
-import { useEffect, useState } from 'react'
 import styles from './Privacy.module.scss'
 
 const PrivacyPage = () => {
-    const [location, setLocation] = useState('')
-    useEffect(() => {
-        setLocation(window.location.origin + ROUTES.privacy)
-    }, [])
-
     return (
         <section className={styles.privacy}>
             <Head>
@@ -341,11 +335,13 @@ const PrivacyPage = () => {
                         <br />
                         9.3. Все предложения или вопросы по настоящей Политике
                         конфиденциальности следует направлять на электронный
-                        адрес Администрации Сайта: info@benzomag.by
+                        адрес Администрации Сайта: https://загородный.бел
                         <br />
                         9.4. Действующая Политика конфиденциальности размещена
-                        на странице по адресу{' '}
-                        <a href={ROUTES.privacy}>{location}</a>
+                        на странице по адресу
+                        <a href={ROUTES.privacy}>
+                            https://загородный.бел{ROUTES.privacy}
+                        </a>
                     </p>
                 </div>
             </Container>
