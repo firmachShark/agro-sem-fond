@@ -1,0 +1,15 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 1em;
+    }
+}

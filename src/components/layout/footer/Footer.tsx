@@ -122,10 +122,23 @@ export const Footer = () => {
                             <Img src={PaymentIcon} alt="Оплата" />
                             Оплата
                         </Button>
-                        <Button onClick={handleClick('delivery')}>
+                        <Button
+                            isLink={{
+                                href: ROUTES.delivery,
+                                'aria-label': 'Доставка',
+                            }}
+                        >
                             <Img src={DeliveryIcon} alt="Доставка" />
                             Доставка
                         </Button>
+                        <Link href={ROUTES.privacy}>
+                            <i className="fa fa-shield" aria-hidden="true"></i>
+                            <span>Политика конфеденциальности</span>
+                        </Link>
+                        <Link href={ROUTES['return-terms']}>
+                            <i className="fa fa-undo" aria-hidden="true"></i>
+                            <span>Условия возврата</span>
+                        </Link>
                     </div>
                     <div>
                         <h5>Оставьте заявку и мы перезвоним!</h5>

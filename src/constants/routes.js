@@ -15,6 +15,8 @@ const ROUTES = {
     'catalog/:categoryName': '/каталог/:categoryName',
     'catalog/:categoryName/:productName': '/каталог/:categoryName/:productName',
     thank: '/спасибо',
+    privacy: '/политика',
+    'return-terms': '/условия-возврата',
 }
 
 // const ROUTES_ENG = Object.keys(ROUTES).reduce((result, route) => {
