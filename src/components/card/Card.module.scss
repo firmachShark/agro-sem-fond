@@ -13,6 +13,17 @@
     }
 }
 
+.oldPrice {
+    font-size: .8em;
+    text-decoration: line-through;
+    margin-left: 1em;
+    opacity: .75;
+}
+
+.price {
+    color: red;
+}
+
 .d_wrapper {
     &:hover {
         @media (min-width: $bp-xl) {

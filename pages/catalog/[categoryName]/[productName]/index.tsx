@@ -75,6 +75,11 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
     const [index, setIndex] = useState(0)
 
     const [price, setPrice] = useState(initialPrice)
+
+    const oldPrice = useMemo(() => {
+        return (price / 0.75).toFixed()
+    }, [price])
+
     const [tabKey, setKey] = useState('description')
 
     const cart = useLocalStorage<ICart>('cart')
@@ -254,12 +259,20 @@ const ProductPage: NextPage<ProductPageProps> = ({ product, products }) => {
                                     itemType="http://schema.org/Offer"
                                 >
                                     <strong>
-                                        <span itemProp="lowPrice">{price}</span>{' '}
+                                        <span
+                                            itemProp="lowPrice"
+                                            className={styles.price}
+                                        >
+                                            {price}
+                                        </span>{' '}
                                         <span itemProp="priceCurrency">
                                             BYN
                                         </span>
                                         /шт
                                     </strong>
+                                    <span className={styles.oldPrice}>
+                                        {oldPrice} BYN
+                                    </span>
                                     {inCart ? (
                                         <>
                                             <Link href={ROUTES.cart}>

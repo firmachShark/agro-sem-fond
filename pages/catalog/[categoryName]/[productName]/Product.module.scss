@@ -64,6 +64,23 @@ $offset-left: 3.5rem;
     border-radius: 1em;
 }
 
+.price {
+    color: red;
+}
+
+.oldPrice {
+    margin-right: 1em;
+    flex-grow: 1;
+    font-weight: 500;
+    text-decoration: line-through;
+    font-size: 1.2em;
+    white-space: nowrap;
+    opacity: .75;
+
+    @include breakpoint($bp-xl) {
+        order: 1;
+    }
+}
 
 .carousel_dots {
     display: flex;
@@ -163,10 +180,18 @@ $offset-left: 3.5rem;
         width: 100%;
         padding-left: var(--offset-left);
 
+        @include breakpoint($bp-xl) {
+            flex-wrap: wrap;
+        }
+
         strong {
             font-size: 1.7em;
             margin-right: 0.5em;
-            flex-grow: 1;
+            white-space: nowrap;
+
+            @include breakpoint($bp-xl) {
+                flex-grow: 1;
+            }
         }
 
         &>button {

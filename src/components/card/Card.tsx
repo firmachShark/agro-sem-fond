@@ -36,6 +36,10 @@ export const Card: React.FC<CardProps> = ({
         return cartCount !== undefined ? cartCount : 1
     })
 
+    const oldPrice = useMemo(() => {
+        return (product.price / 0.75).toFixed()
+    }, [product.price])
+
     const props = useMemo(() => {
         const props = product.props
         if (!props) return null
@@ -165,8 +169,11 @@ export const Card: React.FC<CardProps> = ({
                     itemScope
                     itemType="http://schema.org/Offer"
                 >
-                    <span itemProp="lowPrice">{product.price}</span>{' '}
+                    <span className={styles.price} itemProp="lowPrice">
+                        {product.price}
+                    </span>{' '}
                     <span itemProp="priceCurrency">BYN</span>
+                    <span className={styles.oldPrice}>{oldPrice} BYN</span>
                 </strong>
                 <div className="d-flex justify-content-between mt-3 align-items-center">
                     {inCart ? (
