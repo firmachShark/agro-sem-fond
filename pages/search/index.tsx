@@ -114,6 +114,7 @@ const SearchPage: NextPage<SearchPageProps> = ({
                             value={search}
                             onChange={handleChange}
                             onKeyDown={handleKeyDown}
+                            aria-search={true}
                         />
                         <Button
                             onClick={handleClick}
@@ -125,7 +126,7 @@ const SearchPage: NextPage<SearchPageProps> = ({
                     </div>
                     <h4 className="my-3">Результаты поиска:</h4>
                     {products.length ? (
-                        <div className="row justify-content-md-start justify-content-center">
+                        <div className="justify-content-center justify-content-md-start row">
                             {products.map((product) => (
                                 <div
                                     key={product.id}
@@ -148,7 +149,7 @@ const SearchPage: NextPage<SearchPageProps> = ({
                             найдено.
                         </p>
                     )}
-                    <div className="d-flex justify-content-center mt-3 order-5">
+                    <div className="d-flex justify-content-center order-5 mt-3">
                         <Pagination
                             page={pagination.page}
                             total={pagination.total}

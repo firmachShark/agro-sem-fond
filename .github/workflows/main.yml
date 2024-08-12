@@ -40,3 +40,12 @@ jobs:
             username: ${{ secrets.FTP_USERNAME }}
             password: ${{ secrets.FTP_PASSWORD }}
             server-dir: /repositories/agro-sem-fond/
+
+        - name: Restart application...
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: s4.open.by
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            port: 20022
+            script: touch /repositories/agro-sem-fond/tmp/restart.txt
