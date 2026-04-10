@@ -14,7 +14,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'api.xn--80agdjnxfar7i.xn--90ais',
+                hostname: 'api.stroisad.by',
             },
             {
                 protocol: 'http',
