@@ -36,7 +36,7 @@ jobs:
         - name: 📂 Deploy to FTP
           uses: SamKirkland/FTP-Deploy-Action@4.3.3
           with:
-            server: s4.open.by
+            server:  ${{ secrets.FTP_HOST }}
             username: ${{ secrets.FTP_USERNAME }}
             password: ${{ secrets.FTP_PASSWORD }}
             server-dir: /repositories/agro-sem-fond/
@@ -44,7 +44,7 @@ jobs:
         - name: Restart application...
           uses: appleboy/ssh-action@v1.0.3
           with:
-            host: s4.open.by
+            host: ${{ secrets.FTP_HOST }}
             username: ${{ secrets.FTP_USERNAME }}
             password: ${{ secrets.FTP_PASSWORD }}
             port: 20022
