@@ -2,9 +2,13 @@ import axios, { AxiosRequestConfig } from 'axios'
 import { convertToModel } from 'utils/convertToModel'
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN
 
 export const $api = axios.create({
     baseURL: API_URL + '/api/',
+    headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+    },
 })
 
 export const getModels = async <Model>(
