@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios, { AxiosRequestConfig, isAxiosError } from 'axios'
 import { convertToModel } from 'utils/convertToModel'
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL
@@ -51,6 +51,12 @@ export const getPaginatedModels = async <Model>(
             pagination: response.data.meta.pagination,
         }
     } catch (e) {
+        if (isAxiosError(e) && e.response?.status === 404)
+            return {
+                items: [],
+                pagination: { page: 1, pageSize: 0, pageCount: 0, total: 0 },
+            }
+
         console.log(e)
         return {
             items: [],
@@ -68,7 +74,12 @@ export const getModel = async <Model>(
     url: string,
     config?: AxiosRequestConfig,
 ) => {
-    const response = await $api.get<{ data: any }>(url, config)
+    try {
+        const response = await $api.get<{ data: any }>(url, config)
 
-    return convertToModel<Model>(response.data.data)
+        return convertToModel<Model>(response.data.data)
+    } catch (e) {
+        console.log(e)
+        return null
+    }
 }

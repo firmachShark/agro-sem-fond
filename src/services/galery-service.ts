@@ -5,7 +5,7 @@ class GaleryService {
     async getPhotos() {
         const item = await getModel<IGaleryPhoto>('galery?populate=*')
 
-        return item.images
+        return item?.images ?? []
     }
 }
 
