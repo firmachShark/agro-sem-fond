@@ -1,7 +1,10 @@
 import Image, { ImageProps } from 'next/image'
 import Loading from 'public/images/loading.gif'
 
-type ImgProps = ImageProps & React.ImgHTMLAttributes<HTMLImageElement>
+type ImgProps = Omit<
+    ImageProps & React.ImgHTMLAttributes<HTMLImageElement>,
+    'src'
+> & { src: any }
 
 function hasValue(v: unknown) {
     return v !== undefined && v !== null
