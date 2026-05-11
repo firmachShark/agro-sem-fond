@@ -9,7 +9,6 @@
 .navLinks {
     display: flex;
     align-items: center;
-    justify-content: center;
 
     @include breakpoint($bp-lg) {
         font-size: .8em;
@@ -17,7 +16,7 @@
 
     &>li {
         position: relative;
-        width: 12.5%;
+        flex-grow: 1;
 
         @include breakpoint($bp-lg) {
             flex-grow: 1;
@@ -29,10 +28,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2em 0;
+            padding: 2em 0.5em;
             color: #fff;
             font-weight: 600;
+            font-size: 12px;
             letter-spacing: 1px;
+            white-space: nowrap;
 
             transition: background .2s ease;
 

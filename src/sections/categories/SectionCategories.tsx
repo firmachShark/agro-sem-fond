@@ -39,7 +39,9 @@ export const SectionCategories: React.FC<SectionCategoriesProps> = ({
                             }}
                         >
                             <div>
-                                <h6>{category.fullName}</h6>
+                                {category.fullName && (
+                                    <h6>{category.fullName}</h6>
+                                )}
                                 <div>
                                     <h4>{category.name}</h4>
                                 </div>

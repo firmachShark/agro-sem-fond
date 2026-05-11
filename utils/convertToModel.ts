@@ -1,4 +1,5 @@
 import { API_URL } from 'src/http'
+import { createSlug } from './slug'
 
 export const convertToModel = <T>(item: any) => {
     const newItem = getLevelObject(item)
@@ -16,11 +17,7 @@ const getLevelObject = (item: any) => {
             const value = item.attributes[key]
 
             if (key === 'name' || key === 'title') {
-                let href =
-                    value?.toString()?.toLowerCase()?.replaceAll(' ', '_') ||
-                    null
-                if (href) href = encodeURI(href)
-                created.href = href
+                created.href = value ? createSlug(value) : null
             }
 
             if (typeof value === 'object') {

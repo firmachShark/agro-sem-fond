@@ -54,7 +54,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
                     withPreviewImage={withPreviewImage}
                     imageUrl={imageUrl}
                     href={href}
-                    title={submenu.title}
+                    title={title}
                     links={submenu.links}
                     anchor={anchor}
                     onClose={handleMouseLeave}

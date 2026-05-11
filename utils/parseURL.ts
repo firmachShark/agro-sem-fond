@@ -1,3 +1,5 @@
+import { parseSlug } from './slug'
+
 export const parseURL = (url: string) => {
-    return decodeURI(url).replaceAll('_', ' ')
+    return parseSlug(url)
 }

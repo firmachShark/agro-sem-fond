@@ -8,7 +8,7 @@ import {
     DeliveryIcon,
     HowToIcon,
     MinOrderIcon,
-    RubleIcon,
+    BynIcon,
     StockIcon,
 } from 'src/image_export/header'
 import useSWR from 'swr'
@@ -81,7 +81,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                 </Container>
             </nav>
             <div className={styles.menu}>
-                <Container className="container px-sm-2 px-0">
+                <Container className="px-0 px-sm-2 container">
                     <ul className={styles.menuLinks}>
                         <li>
                             <Link href={`${ROUTES.stock + '?modal=delivery'}`}>
@@ -103,7 +103,7 @@ export const BottomMenu: React.FC<BottomMenuProps> = ({ navRef }) => {
                         </li>
                         <li className="d-md-block d-none">
                             <p>
-                                <Img src={RubleIcon} alt="ruble" />
+                                <Img src={BynIcon} alt="ruble" />
                                 Оплата по факту
                             </p>
                         </li>

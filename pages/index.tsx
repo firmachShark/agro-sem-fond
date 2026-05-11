@@ -74,7 +74,7 @@ export const Home: NextPage<HomePageProps> = ({
             <SectionReviews reviews={reviews} />
             <SectionDelivery />
             <SectionProducts isNew products={newProducts} title="Новинки" />
-            <SectionCatalogMail />
+            {/* <SectionCatalogMail /> */}
             <SectionConnect />
             <SectionBlog posts={posts} title="Полезно знать" />
             <SectionAbout />
